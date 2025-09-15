@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -84,7 +84,9 @@ const Consulting = () => {
               {/* النصوص جوّا الصورة */}
               <div
                 className={`absolute bottom-4 md:bottom-6 text-white font-roboto transition-all duration-500 ${
-                  isRTL ? "right-2 md:right-7 text-right" : "left-2 md:left-7 text-left"
+                  isRTL
+                    ? "right-2 md:right-7 text-right"
+                    : "left-2 md:left-7 text-left"
                 }`}
               >
                 <h3 className="text-2xl font-bold">{item.title}</h3>
