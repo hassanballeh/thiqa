@@ -59,15 +59,6 @@ const SubjectsSliders = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollByAmount = () => {
-    if (scrollRef.current) {
-      const itemWidth =
-        scrollRef.current.querySelector("div")?.clientWidth || 200;
-      return itemWidth + 16;
-    }
-    return 220;
-  };
-
   const iconKeys = Object.keys(dataSets) as Array<keyof typeof dataSets>;
 
   const goNext = () => {
