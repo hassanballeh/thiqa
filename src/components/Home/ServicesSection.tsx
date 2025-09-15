@@ -9,13 +9,15 @@ interface ServiceCardProps {
   title: string;
   description: string;
   highlight?: boolean;
+  HoverIcon: ReactNode;
 }
 
 const ServiceCard = ({
-  icon: Icon,
+  icon: DefaultIcon,
   title,
   description,
   highlight,
+  HoverIcon,
 }: ServiceCardProps) => {
   const { t } = useTranslation();
 
@@ -57,13 +59,21 @@ const ServiceCard = ({
 
       <div className="relative z-10 inline-flex">
         <div className="p-3 rounded-xl transition-all duration-500 ease-in-out group-hover:stroke-white">
-          <div
+          {/* <div
             className="w-12 h-12 
                     [&>svg]:w-full [&>svg]:h-full 
                     [&>svg]:text-primary group-hover:[&>svg]:stroke-white 
                     transition-colors duration-500 "
           >
             {Icon}
+          </div> */}
+          <div className="block group-hover:hidden w-[60px] h-[60px]">
+            {DefaultIcon}
+          </div>
+
+          {/* Hover icon */}
+          <div className="hidden group-hover:block w-[60px] h-[60px]">
+            {HoverIcon}
           </div>
         </div>
       </div>
@@ -84,7 +94,8 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: (
+      HoverIcon: <img src="/tutor-white.svg"></img>,
+      DefaultIcon: (
         <svg
           width="60"
           height="60"
@@ -103,7 +114,8 @@ const ServicesSection = () => {
       description: t("home.20-service1-2"),
     },
     {
-      icon: (
+      HoverIcon: <img src="/elearning-white.svg"></img>,
+      DefaultIcon: (
         <svg
           width="66"
           height="66"
@@ -150,7 +162,8 @@ const ServicesSection = () => {
       description: t("home.20-service2-2"),
     },
     {
-      icon: (
+      HoverIcon: <img src="/people-white.svg"></img>,
+      DefaultIcon: (
         <svg
           width="52"
           height="40"
@@ -187,7 +200,8 @@ const ServicesSection = () => {
       description: t("home.20-service3-2"),
     },
     {
-      icon: (
+      HoverIcon: <img src="/lamp-white.svg"></img>,
+      DefaultIcon: (
         <svg
           width="52"
           height="52"
@@ -278,8 +292,9 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
           {services.map((service, index) => (
             <ServiceCard
+              HoverIcon={service.HoverIcon}
               key={index}
-              icon={service.icon}
+              icon={service.DefaultIcon}
               title={service.title}
               description={service.description}
               highlight={service.highlight}
