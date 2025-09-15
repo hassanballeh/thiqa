@@ -173,11 +173,11 @@ const Numbers = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl text-center relative">
           {/* العمود الأول */}
-          <div className="md:py-6 px-4 relative">
-            <h3 className="text-5xl md:text-6xl font-bold text-primary">
+          <div className="flex flex-col justify-center items-center gap-4 relative ">
+            <h3 className="text-5xl  font-bold text-primary">
               +<CountUp end={50000} duration={1} separator="," />
             </h3>
-            <p className="text-gray1 text-[17px] md:text-lg max-w-32 mx-auto ">
+            <p className="text-gray1 text-[20px]   max-w-32 mx-auto ">
               {t("home.29-number1")}
             </p>
 
@@ -186,24 +186,24 @@ const Numbers = () => {
           </div>
 
           {/* العمود الثاني */}
-          <div className="py-6 px-4 relative">
-            <h3 className="text-5xl md:text-6xl font-bold text-primary">
+          <div className="flex flex-col justify-center items-center gap-4 ">
+            <h3 className="text-5xl  font-bold text-primary">
               +<CountUp end={200} duration={1} />
             </h3>
-            <p className="text-gray1 text-[17px] md:text-lg max-w-52 mx-auto ">
+            <p className="text-gray1 text-[20px]  max-w-52 mx-auto ">
               {t("home.29-number2")}
             </p>
 
             {/* الخط الفاصل */}
-            <span className="hidden md:block absolute top-1/4 right-0 h-1/2 w-[1px] bg-gray-300"></span>
+            <span className="hidden md:block absolute right-[30%] h-1/2 w-[1px] bg-gray-300"></span>
           </div>
 
           {/* العمود الثالث (بدون خط) */}
-          <div className="py-6 px-4">
-            <h3 className="text-5xl md:text-6xl font-bold text-primary">
+          <div className="flex flex-col justify-center items-center gap-4 ">
+            <h3 className="text-5xl  font-bold text-primary">
               +<CountUp end={5} duration={1} />
             </h3>
-            <p className="text-gray1 text-[17px] md:text-lg max-w-52 mx-auto ">
+            <p className="text-gray1 text-[20px]   max-w-52 mx-auto ">
               {t("home.29-number3")}
             </p>
           </div>

@@ -58,7 +58,7 @@ const ServiceCard = ({
       )}
 
       <div className="relative z-10 inline-flex">
-        <div className="p-3 rounded-xl transition-all duration-500 ease-in-out group-hover:stroke-white">
+        <div className=" rounded-xl transition-all duration-500 ease-in-out group-hover:stroke-white">
           {/* <div
             className="w-12 h-12 
                     [&>svg]:w-full [&>svg]:h-full 
@@ -78,11 +78,11 @@ const ServiceCard = ({
         </div>
       </div>
 
-      <h3 className="text-lg font-bold text-gray1 relative z-10 group-hover:text-white transition-colors duration-500">
+      <h3 className="text-xl font-bold text-gray1 relative z-10 group-hover:text-white transition-colors duration-500">
         {title}
       </h3>
 
-      <p className="text-gray1 text-xs leading-relaxed relative z-10 group-hover:text-white/80 transition-colors duration-500">
+      <p className="text-gray1 text-sm leading-relaxed relative z-10 group-hover:text-white/80 transition-colors duration-500">
         {description}
       </p>
     </div>
@@ -121,6 +121,7 @@ const ServicesSection = () => {
           height="66"
           viewBox="0 0 66 66"
           fill="none"
+          className=" relative top-[-15%]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <mask id="path-1-inside-1_206_178" fill="white">
@@ -289,7 +290,7 @@ const ServicesSection = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-5">
           {services.map((service, index) => (
             <ServiceCard
               HoverIcon={service.HoverIcon}

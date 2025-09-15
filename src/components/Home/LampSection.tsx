@@ -1,75 +1,74 @@
-"use client"
-import React from 'react'
+"use client";
+import React from "react";
 import { useState } from "react";
-import Step1 from '../StartNow/Step1';
-import { useTranslation } from 'react-i18next'
+import Step1 from "../StartNow/Step1";
+import { useTranslation } from "react-i18next";
 
 const LampSection = () => {
-        const { t } = useTranslation();
-    const [showStartNow, setShowStartNow] = useState(false);
+  const { t } = useTranslation();
+  const [showStartNow, setShowStartNow] = useState(false);
 
   if (showStartNow) {
     return <Step1 />;
   }
   return (
-<div className=" md:pb-0">
-  <section className="flex flex-col md:flex-row w-full items-center">
-    {/* النصوص */}
-    <div className="text-xl sm:text-4xl container mx-auto px-4 flex flex-col justify-center text-center md:text-start max-w-60 md:max-w-md z-10 mt-6 md:mt-0">
-      <h2 className=" font-bold text-primary leading-tight relative inline-block">
-        {t("home.49-heading1-1")}
-        <br />
-        {t("home.49-heading1-2")}
-        <img
-          src="/line.svg"
-          alt="underline"
-          className="mx-auto md:mx-0 mt-2 w-40 md:w-60"
-        />
-      </h2>
+    <div className=" md:pb-0">
+      <section className="flex flex-col md:flex-row w-full items-center">
+        {/* النصوص */}
+        <div className="text-xl sm:text-4xl container mx-auto px-4 flex flex-col justify-center text-center md:text-start max-w-60 md:max-w-md z-10 mt-6 md:mt-0">
+          <h2 className=" font-bold text-primary leading-tight relative inline-block">
+            {t("home.49-heading1-1")}
+            <br />
+            {t("home.49-heading1-2")}
+            <img
+              src="/line.svg"
+              alt="underline"
+              className="mx-auto md:mx-0 mt-2 w-40 md:w-60"
+            />
+          </h2>
 
-      <div className="relative flex justify-center md:justify-start items-center mt-10">
-          <button
+          <div className="relative flex justify-center md:justify-start items-center mt-10">
+            <button
               onClick={() => setShowStartNow(true)}
-              className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-sm sm:text-base"
+              className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-xl"
             >
               <span>{t("home.start-now")}</span>
             </button>
-        <img
-          src="/arrow-lamp.svg"
-          alt="Arrow"
-          className=" absolute start-44 top-0 -translate-y-1/2 w-12 h-12"
-        />
-      </div>
+            <img
+              src="/arrow-lamp.svg"
+              alt="Arrow"
+              className=" absolute  top-0  -translate-y-1/2 left-[50%] w-12 h-12"
+            />
+          </div>
+        </div>
+
+        {/* الصور */}
+        <section className="relative w-full md:w-1/2 flex justify-center md:justify-end items-end z-0">
+          <img
+            src="/image-lamp.png"
+            alt="Student"
+            className="w-3/4 sm:w-4/5 md:w-full h-auto object-contain"
+          />
+
+          <img
+            src="/gif/itolamp-unscreen (1).gif"
+            alt="Lamp icon"
+            className="hidden md:block absolute  top-6 right-10 sm:right-20 md:top-16 md:right-1/2 translate-x-8 md:translate-x-28 w-40 h-40  object-contain z-10"
+          />
+          <img
+            src="/gif/istolain-unscreen.gif"
+            alt="Lamp icon"
+            className="hidden md:block absolute top-[56%] left-[29%]   translate-x-8 md:translate-x-20 2xl:translate-x-28 w-20 h-20 md:w-10 md:h-10 object-contain z-10"
+          />
+          <img
+            src="/gif/istoai-unscreen.gif"
+            alt="Lamp icon"
+            className="hidden md:block absolute  top-[41%] left-[58%] translate-x-8 md:translate-x-8 w-20 h-20 md:w-16 md:h-16 object-contain z-10"
+          />
+        </section>
+      </section>
     </div>
+  );
+};
 
-    {/* الصور */}
-    <section className="relative w-full md:w-1/2 flex justify-center md:justify-end items-end z-0">
-      <img
-        src="/image-lamp.png"
-        alt="Student"
-        className="w-3/4 sm:w-4/5 md:w-full h-auto object-contain"
-      />
-
-<img
-  src="/gif/itolamp-unscreen (1).gif"
-  alt="Lamp icon"
-  className="hidden md:block absolute  top-6 right-10 sm:right-20 md:top-16 md:right-1/2 translate-x-8 md:translate-x-28 w-20 h-20 md:w-32 md:h-32 2xl:w-40 2 object-contain z-10"
-/>
-<img
-  src="/gif/istolain-unscreen.gif"
-  alt="Lamp icon"
-  className="hidden md:block absolute  top-6 left-10 sm:left-20 md:top-52 2xl:top-80 md:left-1/3 translate-x-8 md:translate-x-20 2xl:translate-x-28 w-20 h-20 md:w-10 md:h-10 object-contain z-10"
-/>
-<img
-  src="/gif/istoai-unscreen.gif"
-  alt="Lamp icon"
-  className="hidden md:block absolute  top-6 right-10 sm:right-20 md:top-36 2xl:top-60 md:right-1/3 translate-x-8 md:translate-x-8 w-20 h-20 md:w-16 md:h-16 object-contain z-10"
-/>
-    </section>
-  </section>
-</div>
-
- )
-}
-
-export default LampSection
+export default LampSection;
