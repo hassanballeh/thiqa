@@ -15,20 +15,20 @@ export default function HeroSection() {
       icon1: t("home.1-icons1"),
       icon2: t("home.1-icons2"),
       link1: "/tutoring-plan#book-form",
-      link2: "",
+      changePos: false,
       testimonials: [
         {
           name: t("home.1-feedback1-name"),
           text: t("home.1-feedback1"),
-          position: "bottom-[33%] left-[12%] w-[262px] h-[196px]",
+          position: "bottom-[37%] left-[12%] w-[262px] h-[196px]",
           avatar: "/gif/isto-unscreen.gif",
           layerImage: "/Layer_1 (3).svg",
-          layerPosition: "bottom-[30%] left-[10%]",
+          layerPosition: "bottom-[35%] left-[10%]",
         },
         {
           name: t("home.1-feedback2-name"),
           text: t("home.1-feedback2"),
-          position: "top-[18%] right-[11%] w-[262px] h-[165px]",
+          position: "top-[13%] right-[11%] w-[262px] h-[165px]",
           avatar: "/Layer_1 (3).svg",
           layerGif: "/gif/isto-unscreen.gif",
           layerPosition: "top-[11%] right-[6%]",
@@ -36,7 +36,7 @@ export default function HeroSection() {
         {
           name: t("home.1-feedback3-name"),
           text: t("home.1-feedback3"),
-          position: "bottom-[4%] right-[11%] w-[223px] h-[196px]",
+          position: "bottom-[9%] right-[11%] w-[223px] h-[196px]",
           avatar: "/student3-avatar.svg",
           bgColor: "bg-gold",
           textColor: "text-white",
@@ -47,11 +47,11 @@ export default function HeroSection() {
       title: t("home.8-heading-primary"),
       subtitle: t("home.8-heading-black"),
       description: t("home.8-heading2"),
-      image: "/2.png",
+      image: "/Untitled-71.png",
       icon1: t("home.8-icons1"),
       icon2: t("home.8-icons2"),
       link1: "/form/join-us",
-      link2: "",
+      changePos: true,
       testimonials: [
         {
           name: t("home.8-feedback1-name"),
@@ -83,11 +83,11 @@ export default function HeroSection() {
       title: t("home.14-heading-primary"),
       subtitle: t("home.14-heading-black"),
       description: t("home.14-heading2"),
-      image: "/3.png",
+      image: "/boy1.png",
       icon1: t("home.14-icons1"),
       icon2: t("home.14-icons2"),
       link1: "/tutoring-plan#book-form",
-      link2: "",
+      changePos: true,
       testimonials: [
         {
           name: t("home.14-feedback1-name"),

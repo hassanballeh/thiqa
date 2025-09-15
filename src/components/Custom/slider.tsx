@@ -23,6 +23,7 @@ interface HeroSlideProps {
   icon1: string;
   icon2: string;
   link1: string;
+  changePos: boolean;
 }
 
 export default function HeroSlide({
@@ -34,57 +35,69 @@ export default function HeroSlide({
   icon1,
   icon2,
   link1,
+  changePos,
 }: HeroSlideProps) {
   return (
     <section className="container mx-auto  sm:px-6 px-20 flex flex-col lg:flex-row w-full h-full items-center">
       {/* Left Content Section */}
-      <div className="w-full lg:w-2/5 xl:w-1/3 flex flex-col justify-center order-2 lg:order-1 mt-8 lg:mt-0">
+      <div className="w-1/3 flex flex-col justify-start order-2 lg:order-1 mt-8 lg:mt-0 h-[400px]">
         {/* Title */}
-        <div className="mb-4 lg:mb-6">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-primary font-roboto leading-tight">
+        <div className=" ">
+          <h1
+            className={`${
+              changePos ? "text-[55px]" : "text-[61px]"
+            } font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
+          >
             {title}
           </h1>
         </div>
 
         {/* Subtitle */}
-        <div className="mb-4 lg:mb-6">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-bold_gray font-roboto leading-tight">
+        <div className="mb-2">
+          <h2
+            className={`${
+              changePos ? "text-[55px]" : "text-[61px]"
+            } font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
+          >
             {subtitle}
           </h2>
         </div>
 
         {/* Description */}
-        <div className="mb-6 lg:mb-8">
-          <p className="text-[20px] text-[#0C1E4B] font-light leading-[30px] max-w-lg">
+        <div className="">
+          <p className="text-[20px] text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
             {description}
           </p>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute top-[83%]">
           <Link
             href={link1}
-            className="inline-flex items-center justify-center bg-primary text-white text-sm sm:text-base lg:text-lg font-semibold px-5  py-3  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center bg-primary text-white text-[20px] font-semibold px-6  py-2  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon1}
           </Link>
           <Link
             href="/under-develop"
-            className="inline-flex items-center justify-center border-2 border-primary text-primary text-sm sm:text-base lg:text-lg font-semibold px-5 py-3  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center border-2 border-primary text-primary text-[20px] font-semibold px-6 py-2  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon2}
           </Link>
         </div>
       </div>
-
       {/* Right Image Section */}
-      <div className="w-full lg:w-3/5 xl:w-2/3 relative flex justify-center items-center order-1 lg:order-2 min-h-[500px] sm:min-h-[600px] lg:min-h-[600px]">
+      <div
+        className={`relative ${
+          changePos ? "top-[-32px]" : ""
+        } w-full lg:w-3/5 xl:w-2/3  flex justify-center items-center order-1 lg:order-2`}
+      >
         {/* Main Image */}
         <div className="relative z-10">
           <img
             src={image}
             alt="Student"
-            className="w-[280px] sm:w-[320px] md:w-[380px] lg:w-[500px] xl:w-[500px] h-auto object-contain z-10 relative"
+            className="w-[500px] h-[600px]  z-10 relative"
           />
         </div>
 
@@ -125,7 +138,7 @@ export default function HeroSlide({
               className={`
                 hidden lg:flex flex-col justify-around  absolute ${
                   testimonial.position
-                } 
+                } ${changePos ? "" : ""}
                 
                 ${testimonial.bgColor ?? "bg-white"}
                 rounded-2xl xl:rounded-3xl shadow-lg p-[1rem] z-20 
