@@ -46,10 +46,10 @@
     "20-service3-2": "A specialized companion supporting children with special needs for academic excellence.",
     "20-service4-1": "  Consultations",
     "20-service4-2": "Specialized consultations to improve your children's behavior and academic performance, supervised by experts.",
-    "off": "OFF",
+    "off": "Off",
     "26-heading1": "Private lessons at home with professional teachers",
     "26-heading2": "Private home lessons with specialized teachers for all subjects, using interactive methods for all academic levels.",
-    "26-icons1": "  Get a free class",
+    "26-icons1": "  Book a trial class",
     "26-icons2": "Log in to continue learning easily",
 
     "29-number1": " Successful lesson",
@@ -146,7 +146,7 @@
     "68-heading1-3": "extra income?",
     "68-heading2": "Join the Thiqa team even if you don't have an educational certificate. We provide full training and support to help you start your journey and make a difference in student's futures.",
     "68-icon1": " Join Thiqa",
-    "68-icon2": " Log in as a Tutor",
+    "68-icon2": " Log in as a Teacher",
 
     "71-forbes": " Proud to have Thiqa’s founders recognized in Forbes Middle East’s 30 Under 30 for their leadership and innovation in education.",
     "71-2": "Thiqa proudly participated in the Sharjah International Summit for Education Development, showcasing our latest innovations and reaffirming our commitment to a future-ready education.",
@@ -322,7 +322,7 @@
     "54-answer5": "Yes, intensive training is provided before starting field teaching, and detailed training continues while working with students."
   },
   "academic": {
-    "1-heading1": " Academic consultations to support your child.",
+    "1-heading1": " Academic consultations \nto support your child",
     "1-heading2": " We offer tailored academic, educational, and psychological consultations designed to support your child’s learning, behavior, and emotional well-being all provided by trusted specialists.",
     "1-icon1": " Book a Consultation",
     "1-icon2": " Learn More About Our Consultations",
@@ -346,7 +346,7 @@
     "11-feedback2": "Holds a Master’s in Educational Evaluation, offering specialized academic support.",
 
     "15-heading1-1": "Proud that our consultations support you in caring ",
-    "15-heading1-2": "for your children.",
+    "15-heading1-2": "for your children",
     "15-feedback1-name": "Abu Ahmad ",
     "15-feedback1": " May Allah reward you with all the best. Your efforts are truly commendable, the consultations really helped me in how to deal with my children.",
     "15-feedback2-name": " Um Tala",
@@ -360,7 +360,7 @@
     "18-heading2": "We offer comprehensive consulting packages with personalized plans, assessments, and resources to support your children's educational success",
     "18-icon1": "Book a Consultation",
 
-    "22-heading1": " What our consultations offer? ",
+    "22-heading1": " What do our consultations offer? ",
     "22-heading2": "An overview of key cases supported by the Educational and Pedagogical Counseling Department.",
     "22-number1-1": " Speech delay",
     "22-number1-2": "Providing individual training programs to stimulate language and communication, in collaboration with speech-language pathologists.",
@@ -375,12 +375,12 @@
     "22-number6-1": " Psychological and behavioral issues",
     "22-number6-2": "Offering guidance sessions for behavior modification and emotional balance.",
 
-    "26-heading1-1": "Book your ",
-    "26-heading1-2": "consultation today.",
+    "26-heading1-1": "Book Your ",
+    "26-heading1-2": "Consultation Today",
     "26-heading2": "A simple step to a consultation that makes a real difference, whether academic, educational, or psychological.",
     "26-book": " Book your consultation",
 
-    "36-heading1": "Got questions about our consultations?",
+    "36-heading1": "Got questions about \nour consultations?",
     "36-heading2": "See how our experts can support your children with tailored solutions.",
     "36-questions1": " Who can book a consultation?",
     "36-answer1": " Consultations are open to everyone for student follow-ups or any educational or psychological matter.",
@@ -400,7 +400,7 @@
     "con-package1-2": " 30 to 45 minutes",
     "con-package1-3": " No individual implementation plan or supervision by our consultant, but comes with advice and guidance.",
     "con-package1-4": " No support links or files provided.",
-    "con-package1-5": "  No evaluation reports with recommendations.",
+    "con-package1-5": " No evaluation reports with recommendations.",
     "con-package1-6": " Nofollow-up session at the end of the program.",
 
     "con-package2-heading1": " First Package",
@@ -409,16 +409,16 @@
     "con-package2-1": "  2 sessions",
     "con-package2-2": " 30 to 45 minutes",
     "con-package2-3": " Personalized implementation plan including specific solutions for the challenges addressed.",
-    "con-package2-4": "  Support links provided.",
+    "con-package2-4": " Support links provided.",
 
-    "con-package3-heading1": "  Second Package",
+    "con-package3-heading1": " Second Package",
     "con-package3-heading2": "1200   ",
     "con-package3-heading3": " 900 ",
     "con-package3-1": " 4 session",
     "con-package3-2": " 30 to 45 minutes",
-    "con-package3-3": "  Implementation plan supervised by our consultant, plus advice and guidance.",
+    "con-package3-3": " Implementation plan supervised by our consultant, plus advice and guidance.",
     "con-package3-4": "Support files provided.",
-    "con-package3-5": "   No final report with actionable recommendations.",
+    "con-package3-5": " No final report with actionable recommendations.",
 
     "con-package4-heading1": " Third Package",
     "con-package4-heading2": "2400  ",

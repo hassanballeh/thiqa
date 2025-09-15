@@ -77,7 +77,7 @@ const Support = () => {
       className="relative w-full py-8 pb-24 bg-white"
     >
       <div className="container mx-auto space-y-12">
-        <div className="text-center mb-16 mx-auto">
+        <div className="text-center mb-20 mx-auto">
           <div className="inline-block relative max-w-xl mx-auto">
             <h3 className="text-2xl lg:text-3xl font-bold text-primary leading-relaxed">
               {t("academic.15-heading1-1")}

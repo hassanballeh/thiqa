@@ -33,13 +33,13 @@ const Consulting = () => {
               isRTL ? "text-center md:text-right" : "text-center md:text-left"
             }`}
           >
-            <h2 className="text-3xl md:text-6xl text-primary font-roboto font-extrabold leading-snug">
-              <span className="relative inline-block">
+            <h2 className="relative text-3xl md:text-6xl text-primary font-roboto font-extrabold leading-snug">
+              <span className=" inline-block">
                 {t("academic.11-heading1-1")}
                 <img
                   src="/under-line-cons.svg"
                   alt="underline"
-                  className={`absolute -bottom-2 w-full ${
+                  className={`absolute -bottom-4 w-full ${
                     isRTL ? "right-0" : "left-0"
                   }`}
                 />
@@ -56,7 +56,7 @@ const Consulting = () => {
               </span>
             </h2>
 
-            <p className="text-sm font-light text-gray1 leading-relaxed mt-4 max-w-sm">
+            <p className="text-sm font-light text-gray1 leading-relaxed mt-4 max-w-sm lg:max-w-md">
               {t("academic.11-heading2")}
             </p>
           </div>

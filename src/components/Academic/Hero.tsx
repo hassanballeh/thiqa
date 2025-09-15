@@ -28,10 +28,10 @@ const Hero = () => {
       <div className="h-[80vh]  px-4 hidden md:block">
         <section className="container mx-auto h-full flex items-start pt-16">
           <div className="text-center md:text-start flex flex-col justify-start max-w-2xl gap-4 w-full">
-            <h2 className="text-5xl font-bold text-primary leading-tight ">
+            <h2 className="text-5xl font-bold text-primary leading-tight whitespace-pre-line ">
               {t("academic.1-heading1")}{" "}
             </h2>
-            <p className="max-w-lg text-[15px] text-gray1 font-light  leading-relaxed">
+            <p className="max-w-lg text-[15px] text-gray1 font-light  leading-relaxed ">
               {t("academic.1-heading2")}{" "}
             </p>
             <div className="mt-2 flex gap-4 mx-auto md:mx-0 items-center">
@@ -47,7 +47,7 @@ const Hero = () => {
                 <img
                   src="/arrow2.svg"
                   alt="Arrow"
-                  className="absolute animate-wiggle -end-24 bottom-4 -translate-y-1/2 w-8 h-8"
+                  className="absolute  -end-24 bottom-4 -translate-y-1/2 w-8 h-8"
                 />
               </div>
             </div>
@@ -82,8 +82,8 @@ const Hero = () => {
         id="our-cons"
         className="relative md:absolute md:-bottom-44 h-fit left-1/2 md:-translate-y-1/2 translate-x-[-50%] w-full md:w-[90%] 2xl:w-[1400px] md:bg-white rounded-3xl shadow-lg px-6 py-12 md:px-20 md:py-16 z-10 mx-auto"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
-          <div className="text-3xl md:text-5xl text-center md:text-start flex flex-col justify-start max-w-lg w-full">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 flex-wrap">
+          <div className="text-3xl md:text-5xl text-center md:text-start flex flex-col justify-start max-w-lg w-full lg:">
             <h2 className="text-primary leading-tight">
               {t("academic.5-heading1-1")}{" "}
               <span className="relative inline-block font-extrabold">
@@ -95,12 +95,14 @@ const Hero = () => {
                 />
               </span>
             </h2>
-            <p className="max-w-[400px] text-[15px] text-gray1 font-light mt-6 leading-relaxed">
+          </div>
+          <div className={"order-2 md:order-3 max-w-full md:max-w-[480px] "}>
+            <p className=" max-w-full text-[15px] text-gray1 font-light mt-6 tracking-wider">
               {t("academic.5-heading2")}{" "}
             </p>
           </div>
 
-          <div className="relative w-full md:w-auto flex justify-center md:justify-end mt-6 md:mt-0">
+          <div className="relative w-full md:w-auto flex justify-center md:justify-end mt-6 md:mt-[0] self-center order-3 md:order-2">
             <CustomButton
               label="  Book a Consultation"
               bgColor="bg-gold"
@@ -121,14 +123,14 @@ const Hero = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex-1 text-gray1 flex flex-col gap-2 md:gap-4 items-start justify-center text-center md:text-start"
+              className="flex-1 text-gray1 flex flex-col gap-2 md:gap-1 items-start justify-center text-center md:text-start"
             >
               {/* الصورة مع طول ثابت */}
               <div className="flex justify-center md:justify-start min-h-[40px]">
                 <img
                   src={item.img}
                   alt="Icon"
-                  className="w-6 h-6 md:w-8 md:h-8"
+                  className="w-6 h-6 md:w-12 md:h-12"
                 />
               </div>
 
