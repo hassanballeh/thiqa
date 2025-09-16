@@ -19,8 +19,6 @@ const ServiceCard = ({
   highlight,
   HoverIcon,
 }: ServiceCardProps) => {
-  const { t } = useTranslation();
-  console.log(title);
   return (
     <div
       className={`relative  shadow-md bg-white rounded-3xl p-4 md:p-6
