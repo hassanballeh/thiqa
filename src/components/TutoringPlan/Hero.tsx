@@ -56,12 +56,12 @@ const Hero = () => {
                 />
               </span>
             </h2>
-            <p className="max-w-sm text-xs md:text-[15px] text-gray1 font-light mt-4 leading-relaxed">
+            <p className=" text-xs md:text-[17px] text-gray1 font-light mt-4 leading-relaxed">
               {t("tutoring.1-why2")}
             </p>
           </div>
 
-          <div className="hidden md:block relative w-full md:w-auto flex justify-center md:justify-end mt-6 md:mt-0">
+          <div className="  relative w-[300px] md:w-auto flex justify-center md:justify-end mt-4">
             <img
               src="/gif/istol-unscreen.gif"
               alt="left decoration"
