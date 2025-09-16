@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 interface CustomFieldProps {
   label: string;
   icon?: React.ReactNode;
   name: string;
-  type?: 'text' | 'email' | 'time' | 'textarea' | 'number' | 'file' | 'date'; // ✅ أضفنا date
+  type?: "text" | "email" | "time" | "textarea" | "number" | "file" | "date"; // ✅ أضفنا date
   placeholder?: string;
   value?: string;
   onChange?: (
@@ -23,7 +23,7 @@ const CustomField: React.FC<CustomFieldProps> = ({
   label,
   icon,
   name,
-  type = 'text',
+  type = "text",
   placeholder,
   value,
   onChange,
@@ -34,15 +34,22 @@ const CustomField: React.FC<CustomFieldProps> = ({
   ...rest
 }) => {
   const baseClasses = `
-    w-full px-4 py-3
-    ${bg_white ? 'bg-white' : 'bg-blue_gray'}
+    w-full px-4 py-3 md:py-[13.3px]
+    ${bg_white ? "bg-white" : "bg-blue_gray"}
     focus:outline-none focus:ring-2 focus:ring-primary
-    transition text-sm
+    transition text-[14px]
   `;
-  const roundedClass = type === 'textarea' ? 'rounded-xl' : 'rounded-2xl';
+  {
+    /* text-sm py-3 */
+  }
+  const roundedClass = type === "textarea" ? "rounded-xl" : "rounded-2xl";
 
   return (
-    <div className="flex flex-col gap-2 w-full">
+    <div
+      className={`flex flex-col gap-2 w-full ${
+        type === "textarea" && "h-full"
+      }`}
+    >
       {/* Label */}
       <label className="flex items-center gap-2 text-sm font-medium text-gray1">
         {icon && <span className="text-primary">{icon}</span>}
@@ -51,7 +58,7 @@ const CustomField: React.FC<CustomFieldProps> = ({
       </label>
 
       {/* Field Type Rendering */}
-      {type === 'textarea' ? (
+      {type === "textarea" ? (
         <textarea
           name={name}
           placeholder={placeholder}
@@ -59,10 +66,10 @@ const CustomField: React.FC<CustomFieldProps> = ({
           onChange={onChange}
           rows={5}
           required={required}
-          className={`${baseClasses} ${roundedClass} resize-none`}
+          className={`${baseClasses} ${roundedClass} resize-none md:flex-1`}
           {...rest}
         />
-      ) : type === 'file' ? (
+      ) : type === "file" ? (
         <input
           type="file"
           name={name}

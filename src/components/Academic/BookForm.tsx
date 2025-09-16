@@ -196,14 +196,13 @@ const BookForm: React.FC = () => {
           {/* العمود الثاني */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2  ">
-              {/*mb-2.5 */}
               <label className="flex items-center text-sm font-medium text-gray1 gap-1">
                 <FaChalkboardUser className="text-primary" />
                 {t("form.shadow")}
                 <span className="text-red-500">*</span> {/* نجمة حمراء */}
               </label>
-              <div className="flex items-center gap-4 py-3">
-                <label className="flex items-center gap-1 text-sm">
+              <div className="flex items-center gap-4 py-3 md:h-[47.59px]">
+                <label className="flex items-center gap-1 text-[14px]">
                   <input
                     type="radio"
                     value="Online"
@@ -211,7 +210,7 @@ const BookForm: React.FC = () => {
                   />
                   {t("form.online")}
                 </label>
-                <label className="flex items-center gap-1 text-sm ">
+                <label className="flex items-center gap-1 text-[14px] ">
                   <input
                     type="radio"
                     value="Home"

@@ -26,12 +26,12 @@ const Hero = () => {
   return (
     <div className="relative w-full">
       <div className="h-[80vh]  px-4 hidden md:block">
-        <section className="container mx-auto h-full flex items-start pt-16">
-          <div className="text-center md:text-start flex flex-col justify-start max-w-2xl gap-4 w-full">
+        <section className="container mx-auto h-full flex items-start justify-center lg:justify-start pt-8 lg:pt-16">
+          <div className="text-center lg:text-start flex flex-col items-center lg:items-stretch justify-start max-w-2xl gap-4 w-full">
             <h2 className="text-5xl font-bold text-primary leading-tight whitespace-pre-line ">
               {t("academic.1-heading1")}{" "}
             </h2>
-            <p className="max-w-lg text-[15px] text-gray1 font-light  leading-relaxed ">
+            <p className="max-w-lg text-[15px] text-gray1 font-light  ">
               {t("academic.1-heading2")}{" "}
             </p>
             <div className="mt-2 flex gap-4 mx-auto md:mx-0 items-center">
@@ -47,7 +47,7 @@ const Hero = () => {
                 <img
                   src="/arrow2.svg"
                   alt="Arrow"
-                  className="absolute  -end-24 bottom-4 -translate-y-1/2 w-8 h-8"
+                  className="absolute  lg:bottom-0 lg:-end-24 -translate-y-1/2 w-8 h-8"
                 />
               </div>
             </div>
@@ -80,9 +80,9 @@ const Hero = () => {
 
       <div
         id="our-cons"
-        className="relative md:absolute md:-bottom-44 h-fit left-1/2 md:-translate-y-1/2 translate-x-[-50%] w-full md:w-[90%] 2xl:w-[1400px] md:bg-white rounded-3xl shadow-lg px-6 py-12 md:px-20 md:py-16 z-10 mx-auto"
+        className="relative md:absolute md:-bottom-36 h-fit left-1/2 md:-translate-y-1/2 translate-x-[-50%] w-full md:w-[90%] 2xl:w-[1400px] md:bg-white rounded-3xl shadow-lg px-6 py-12 md:px-20 md:py-16 z-10 mx-auto"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 flex-wrap">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-7 flex-wrap">
           <div className="text-3xl md:text-5xl text-center md:text-start flex flex-col justify-start max-w-lg w-full lg:">
             <h2 className="text-primary leading-tight">
               {t("academic.5-heading1-1")}{" "}
@@ -96,8 +96,12 @@ const Hero = () => {
               </span>
             </h2>
           </div>
-          <div className={"order-2 md:order-3 max-w-full md:max-w-[480px] "}>
-            <p className=" max-w-full text-[15px] text-gray1 font-light mt-6 tracking-wider">
+          <div
+            className={
+              "order-2 md:order-3 max-w-full lg:max-w-[444px] hyphens-auto "
+            }
+          >
+            <p className=" max-w-full text-[15px] text-gray1 font-light ">
               {t("academic.5-heading2")}{" "}
             </p>
           </div>

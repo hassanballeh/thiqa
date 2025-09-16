@@ -69,7 +69,7 @@ const Steps = () => {
           </div>
         </div>
 
-        <div className="md:col-span-2 flex flex-wrap lg:flex-nowrap gap-4 mt-10 justify-center ">
+        <div className="md:col-span-2 flex flex-wrap lg:flex-nowrap gap-4  justify-center ">
           {[0, 1].map((colIdx) => (
             <div key={colIdx} className="flex flex-col gap-4 items-start">
               {stepsData

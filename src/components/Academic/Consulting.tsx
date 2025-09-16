@@ -39,7 +39,7 @@ const Consulting = () => {
                 <img
                   src="/under-line-cons.svg"
                   alt="underline"
-                  className={`absolute -bottom-4 w-full ${
+                  className={`absolute -bottom-4 w-full h-[15px] ${
                     isRTL ? "right-0" : "left-0"
                   }`}
                 />
@@ -50,13 +50,13 @@ const Consulting = () => {
                   src="/arrow-consulting.svg"
                   alt="arrow"
                   className={`hidden md:block  absolute mt-2 w-28 ${
-                    isRTL ? "-end-24 top-8" : "start-20 2xl:start-32 top-8"
+                    isRTL ? "-end-24 top-8" : "start-24 2xl:start-32 top-8 "
                   }`}
                 />
               </span>
             </h2>
 
-            <p className="text-sm font-light text-gray1 leading-relaxed mt-4 max-w-sm lg:max-w-md">
+            <p className="text-sm md:text-[15px] font-light text-gray1  md:mt-10 max-w-sm lg:max-w-[450px]">
               {t("academic.11-heading2")}
             </p>
           </div>

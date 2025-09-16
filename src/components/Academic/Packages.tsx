@@ -80,7 +80,11 @@ const Packages = () => {
             <h3 className="text-3xl lg:text-5xl font-extrabold text-primary leading-snug">
               {t("academic.18-heading1")}
             </h3>
-            <img src="/line-comp.svg" alt="line" className="w-full  mx-auto" />
+            <img
+              src="/line-comp.svg"
+              alt="line"
+              className="w-full h-[16px] object-cover  mx-auto"
+            />
           </div>
           <span className="text-gray1 block max-w-lg mx-auto mt-6">
             {t("academic.18-heading2")}{" "}
@@ -141,8 +145,11 @@ const Packages = () => {
                         </svg>
                       )}
                     </span>
-                    <span className="line-clamp-1 hover:line-clamp-none transition-all duration-700 text-sm text-gray1 text-start whitespace-pre-line max-h-[100px] tracking-tight">
-                      
+                    <span
+                      className={`text-sm text-gray1 text-start max-h-[100px] tracking-tight hyphens-auto ${
+                        idx != 0 && i == 2 ? "lg:h-[80px]" : "lg:h-auto"
+                      }  `}
+                    >
                       {feature.text}
                     </span>
                   </li>

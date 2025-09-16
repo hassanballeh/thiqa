@@ -18,7 +18,7 @@ const Hero = () => {
             />
           </h2>
 
-          <p className="text-[15px] text-gray1 mt-10 max-w-[402px] md:max-w-[450px]">
+          <p className="text-[15px] text-gray1 mt-10 max-w-[402px] md:max-w-[430px] hyphens-auto">
             {t("contact.1-heading1")}
             <br />
             {t("contact.1-heading2")}{" "}
