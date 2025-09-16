@@ -44,8 +44,8 @@ const Company = () => {
         ))}
       </div>
 
-      <section className=" mx-auto mt-14 md:mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
-        <div className="flex flex-col justify-start ml-[175px]  text-center md:text-start max-w-lg relative">
+      <section className=" mx-auto mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
+        <div className="flex flex-col justify-start xl:ml-[75px] 2xl:ml-[175px]  sm:ml-[40px]  text-center md:text-start max-w-lg relative">
           <h2 className="text-3xl font-bold text-primary leading-relaxed">
             Ready?
           </h2>

@@ -76,13 +76,13 @@ export default function HeroSlide({
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute top-[75%]">
           <Link
             href={link1}
-            className="inline-flex items-center justify-center bg-primary text-white text-base font-semibold px-4  py-2  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center bg-primary text-white text-base font-semibold px-6  py-1.5  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon1}
           </Link>
           <Link
             href="/under-develop"
-            className="inline-flex items-center justify-center border-2 border-primary text-primary text-base font-semibold px-4 py-2  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center border-2 border-primary text-primary text-base font-semibold px-6 py-1.5  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon2}
           </Link>

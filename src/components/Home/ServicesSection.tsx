@@ -70,7 +70,7 @@ const ServiceCard = ({
           </div>
 
           {/* Hover icon */}
-          <div className="hidden group-hover:flex w-[66px] h-[66px] justify-center items-center">
+          <div className="hidden group-hover:flex  justify-center items-center">
             {HoverIcon}
           </div>
         </div>
@@ -96,7 +96,9 @@ const ServicesSection = () => {
 
   const services = [
     {
-      HoverIcon: <img src="/tutor-white.svg"></img>,
+      HoverIcon: (
+        <img className="w-[60px] h-[60px]" src="/tutor-white.svg"></img>
+      ),
       DefaultIcon: (
         <svg
           width="60"
@@ -117,7 +119,9 @@ const ServicesSection = () => {
       description: t("home.20-service1-2"),
     },
     {
-      HoverIcon: <img src="/elearning-white.svg"></img>,
+      HoverIcon: (
+        <img className="w-[60px] h-[60px]" src="/elearning-white.svg"></img>
+      ),
       DefaultIcon: (
         <img src="/elearning-blue.svg" alt="" className="w-[60px] h-[60px]" />
       ),
@@ -126,7 +130,9 @@ const ServicesSection = () => {
       description: t("home.20-service2-2"),
     },
     {
-      HoverIcon: <img src="/people-white.svg"></img>,
+      HoverIcon: (
+        <img src="/people-white.svg" className="w-[50px] h-[50px]"></img>
+      ),
       DefaultIcon: (
         <svg
           width="52"
@@ -134,7 +140,7 @@ const ServicesSection = () => {
           viewBox="0 0 52 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[60px] h-[60px]"
+          className="w-[50px] h-[50px]"
         >
           <g clip-path="url(#clip0_206_207)">
             <path
@@ -165,14 +171,16 @@ const ServicesSection = () => {
       description: t("home.20-service3-2"),
     },
     {
-      HoverIcon: <img src="/lamp-white.svg"></img>,
+      HoverIcon: (
+        <img className="w-[50px] h-[50px]" src="/lamp-white.svg"></img>
+      ),
       DefaultIcon: (
         <svg
           width="52"
           height="52"
           viewBox="0 0 52 52"
           fill="none"
-          className="w-[60px] h-[60px]"
+          className="w-[50px] h-[50px]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g clip-path="url(#clip0_206_186)">
