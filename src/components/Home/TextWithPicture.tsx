@@ -16,10 +16,10 @@ const TextWithPicture = () => {
               {t("home.26-heading1")}
             </h2>
           </div>
-          <p className="text-base text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
+          <p className="text-[18px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
             {t("home.26-heading2")}
           </p>
-          <div className="relative flex items-centers my-4 md:my-6 text-xl">
+          <div className="relative flex items-centers my-4 md:my-6 text-[16px]">
             <CustomButton
               label={t("home.26-icons1")}
               bgColor="bg-gold"
@@ -30,13 +30,13 @@ const TextWithPicture = () => {
             <img
               src="/arrow-private.svg"
               alt="Arrow"
-              className="absolute left-[110%] top-[40%] -translate-y-1/2 w-10 h-10 "
+              className="absolute left-[110%] top-[40%] -translate-y-1/2   "
             />
           </div>
 
           <Link
             href="/under-develop"
-            className="flex items-center text-white underline font-medium hover:text-gray-200 text-xl"
+            className="flex items-center text-white underline font-medium hover:text-gray-200 text-[18px]"
           >
             <span> {t("home.26-icons2")}</span>
             {/* السهم على اليمين */}
@@ -63,6 +63,16 @@ const TextWithPicture = () => {
               src="/image.png"
               alt="Student"
               className="object-contain z-10 relative transition-transform duration-500 ease-out  "
+            />
+            <img
+              src="/Layer_1 (3).svg"
+              alt="Zaina small"
+              className="absolute bottom-[-3%] left-[-2%] w-8 h-8 z-10 "
+            />
+            <img
+              src="/Layer_1 (1).svg"
+              alt="Zaina small"
+              className="absolute top-[-1%] -right-[4%] w-10 h-10 z-10 "
             />
           </div>
         </section>

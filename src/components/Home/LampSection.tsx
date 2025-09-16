@@ -30,14 +30,14 @@ const LampSection = () => {
           <div className="relative flex justify-center md:justify-start items-center mt-10">
             <button
               onClick={() => setShowStartNow(true)}
-              className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-xl"
+              className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-base"
             >
               <span>{t("home.start-now")}</span>
             </button>
             <img
               src="/arrow-lamp.svg"
               alt="Arrow"
-              className=" absolute  top-0  -translate-y-1/2 left-[50%] w-12 h-12"
+              className=" absolute  top-0  -translate-y-1/2 left-[42%] w-12 h-12"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ const LampSection = () => {
           <img
             src="/gif/istolain-unscreen.gif"
             alt="Lamp icon"
-            className="hidden md:block absolute top-[56%] left-[29%]   translate-x-8 md:translate-x-20 2xl:translate-x-28 w-20 h-20 md:w-10 md:h-10 object-contain z-10"
+            className="hidden md:block absolute top-[56%] left-[30%]   translate-x-8 md:translate-x-20 2xl:translate-x-28 w-20 h-20 md:w-10 md:h-10 object-contain z-10"
           />
           <img
             src="/gif/istoai-unscreen.gif"

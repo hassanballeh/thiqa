@@ -259,7 +259,7 @@ const Numbers = () => {
           </div>
 
           {/* Description */}
-          <p className="text-sm text-gray-600 max-w-sm">
+          <p className="text-[18px] text-gray-600 max-w-sm">
             {activeTab === "messages" && t("home.30-heading2")}
             {activeTab === "voice" && t("home.39-heading2")}
             {activeTab === "video" && t("home.44-heading2")}

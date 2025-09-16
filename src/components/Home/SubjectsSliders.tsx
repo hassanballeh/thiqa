@@ -27,7 +27,7 @@ const SubjectsSliders = () => {
     icon1: [
       { title: t(getArabicKey()), image: "/arabic.svg" },
       { title: t("home.55-islamic"), image: "/book 1.svg" },
-      { title: t("home.55-social"), image: "/social-studies2.svg" },
+      { title: t("home.55-social"), image: "/social-studies 1.svg" },
       { title: t("home.55-history"), image: "/history 1.svg" },
       { title: t("home.55-geo"), image: "/globe 1.svg" },
     ],
@@ -59,46 +59,22 @@ const SubjectsSliders = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const iconKeys = Object.keys(dataSets) as Array<keyof typeof dataSets>;
-
-  const goNext = () => {
-    const currentIndex = iconKeys.indexOf(selected);
-    const nextIndex = (currentIndex + 1) % iconKeys.length; // loop back
-    setSelected(iconKeys[nextIndex]);
-  };
-
-  const goPrev = () => {
-    const currentIndex = iconKeys.indexOf(selected);
-    const prevIndex = (currentIndex - 1 + iconKeys.length) % iconKeys.length;
-    setSelected(iconKeys[prevIndex]);
-  };
-  // --- paste/replace inside your component ---
-  const rafRef = useRef<number | null>(null);
-  const scrollSpeedRef = useRef<number>(2); // px per frame, adjust as needed
-
-  const startAutoScroll = (direction: "next" | "prev") => {
-    stopAutoScroll();
-    const step = () => {
-      if (!scrollRef.current) return;
-      // add/subtract pixels per frame
-      scrollRef.current.scrollLeft +=
-        direction === "next" ? scrollSpeedRef.current : -scrollSpeedRef.current;
-      rafRef.current = requestAnimationFrame(step);
-    };
-    rafRef.current = requestAnimationFrame(step);
-  };
-
-  const stopAutoScroll = () => {
-    if (rafRef.current !== null) {
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
+  const scrollByAmount = () => {
+    if (scrollRef.current) {
+      const itemWidth =
+        scrollRef.current.querySelector("div")?.clientWidth || 200;
+      return itemWidth + 16;
     }
+    return 220;
   };
 
-  // cleanup on unmount
-  useEffect(() => {
-    return () => stopAutoScroll();
-  }, []);
+  const goNext = () =>
+    scrollRef.current?.scrollBy({ left: scrollByAmount(), behavior: "smooth" });
+  const goPrev = () =>
+    scrollRef.current?.scrollBy({
+      left: -scrollByAmount(),
+      behavior: "smooth",
+    });
 
   return (
     <motion.div
@@ -162,19 +138,17 @@ const SubjectsSliders = () => {
             {/* أزرار موبايل - تبقى كما هي */}
             <div className="lg:hidden relative flex">
               <button
-                onMouseEnter={() => startAutoScroll("prev")}
-                onMouseLeave={stopAutoScroll}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary text-white p-1.5 rounded-full z-10 hover:bg-blue-600 shadow-md"
+                onClick={goPrev}
+                className="absolute left-0 top-full md:top-1/2 md:-translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600"
               >
-                <IoMdArrowBack size={18} />
+                <IoMdArrowBack size={24} />
               </button>
 
               <button
-                onMouseEnter={() => startAutoScroll("next")}
-                onMouseLeave={stopAutoScroll}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-1.5 rounded-full z-10 hover:bg-blue-600 shadow-md"
+                onClick={goNext}
+                className="absolute right-0 top-full md:top-1/2 md:-translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600"
               >
-                <IoMdArrowForward size={18} />
+                <IoMdArrowForward size={24} />
               </button>
 
               <AnimatePresence mode="wait">
