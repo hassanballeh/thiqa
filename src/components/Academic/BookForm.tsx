@@ -124,7 +124,7 @@ const BookForm: React.FC = () => {
             </span>
           </h2>
 
-          <p className="max-w-[430px] md:max-w-[500px] text-[15px] text-gray1 font-light mt-4 [word-spacing:0.1rem]">
+          <p className="max-w-[430px] md:max-w-lg text-[15px] text-gray1 font-light mt-4 hyphens-auto ">
             {t("academic.26-heading2")}
           </p>
         </div>

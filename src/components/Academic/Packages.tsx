@@ -86,7 +86,7 @@ const Packages = () => {
               className="w-full h-[16px] object-cover  mx-auto"
             />
           </div>
-          <span className="text-gray1 block max-w-lg mx-auto mt-6">
+          <span className="text-gray1 text-[15px] font-light block max-w-lg mx-auto mt-6">
             {t("academic.18-heading2")}{" "}
           </span>
         </div>

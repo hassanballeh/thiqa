@@ -47,7 +47,7 @@ const Steps = () => {
               {t("academic.22-heading1")}
             </h2>
 
-            <p className="text-sm md:text-base font-light max-w-full md:max-w-80">
+            <p className="text-[15px] text-white  font-light max-w-full md:max-w-80">
               {t("academic.22-heading2")}
             </p>
 
