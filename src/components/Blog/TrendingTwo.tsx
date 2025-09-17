@@ -24,8 +24,8 @@ const TrendingTwo = () => {
   const [lang, setLang] = useState<string>(
     typeof window !== "undefined" ? localStorage.getItem("lang") || "en" : "en"
   );
-  const [selectedCategory, setSelectedCategory] = useState<string>("General"); // new state
-
+  // const [selectedCategory, setSelectedCategory] = useState<string>("General"); // new state
+  const selectedCategory = "General";
   useEffect(() => {
     const handleLanguageChange = (lng: string) => {
       localStorage.setItem("lang", lng);
@@ -53,10 +53,9 @@ const TrendingTwo = () => {
   }, [lang]);
 
   // Filter blogs based on category
-  const filteredBlogs =
-    selectedCategory === "all"
-      ? blogs
-      : blogs.filter((blog) => blog.category === selectedCategory);
+  const filteredBlogs = blogs.filter(
+    (blog) => blog.category === selectedCategory
+  );
 
   if (loading) return <p className="text-center">Loading...</p>;
 
