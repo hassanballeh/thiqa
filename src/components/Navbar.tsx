@@ -148,7 +148,7 @@ export default function Navbar() {
 
                 {isDropdown && dropdownOpen[item.name] && (
                   <div
-                    className="absolute top-full mt-1 px-2  -left-4 py-5 w-44 space-y-3 bg-white shadow-md rounded-xl z-50"
+                    className="absolute top-full mt-1 px-2 -left-3 py-5 w-44 md:w-[calc(100%+3rem)] md:-left-4 md:pl-4 md:pr-0 space-y-3 bg-white shadow-md rounded-xl z-50 "
                     onMouseEnter={() => handleMouseEnter(item.name)}
                     onMouseLeave={() => handleMouseLeave(item.name)}
                   >
@@ -162,7 +162,7 @@ export default function Navbar() {
                             [item.name]: false,
                           }))
                         }
-                        className="block text-xs text-gray1 hover:text-primary pl-3"
+                        className="block text-xs md:text-[13px] font-medium text-gray1 hover:text-primary"
                       >
                         {child.name}
                       </Link>
