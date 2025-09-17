@@ -22,6 +22,10 @@ const SubjectsSliders = () => {
     return () => window.removeEventListener("country-changed", updateCountry);
   }, []);
 
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ left: 0, behavior: "auto" });
+  }, [selected]);
+
   const getArabicKey = () =>
     country === "sa" ? "home.55-arabic-sa" : "home.55-arabic";
 
@@ -63,20 +67,7 @@ const SubjectsSliders = () => {
     ],
   };
 
-  // Scroll speed in pixels per frame
   const scrollSpeed = 1;
-
-  // Duplicate items if fewer than 5 to always show 5
-  const getDisplayedItems = () => {
-    const items = [...dataSets[selected]];
-    while (items.length < 5) {
-      items.push(...dataSets[selected]);
-    }
-    return items;
-  };
-
-  const displayedItems = getDisplayedItems();
-  const scrollItems = [...displayedItems, ...displayedItems]; // duplicate for infinite scroll
 
   const startScroll = (direction: "next" | "prev") => {
     const scrollContainer = scrollRef.current;
@@ -86,18 +77,19 @@ const SubjectsSliders = () => {
       if (!scrollContainer) return;
 
       if (direction === "next") {
-        scrollContainer.scrollLeft += scrollSpeed;
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          scrollContainer.scrollLeft = 0;
+        if (
+          scrollContainer.scrollLeft + scrollContainer.clientWidth <
+          scrollContainer.scrollWidth
+        ) {
+          scrollContainer.scrollLeft += scrollSpeed;
+          animationRef.current = requestAnimationFrame(step);
         }
       } else {
-        scrollContainer.scrollLeft -= scrollSpeed;
-        if (scrollContainer.scrollLeft <= 0) {
-          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2;
+        if (scrollContainer.scrollLeft > 0) {
+          scrollContainer.scrollLeft -= scrollSpeed;
+          animationRef.current = requestAnimationFrame(step);
         }
       }
-
-      animationRef.current = requestAnimationFrame(step);
     };
 
     animationRef.current = requestAnimationFrame(step);
@@ -113,13 +105,24 @@ const SubjectsSliders = () => {
   return (
     <div className="relative w-full py-10 md:py-20 bg-white">
       <div className="container mx-auto space-y-6 md:space-y-12">
-        <div className="text-center mb-8 md:mb-16">
-          <h3 className="font-bold text-primary text-2xl md:text-3xl">
-            {t("home.55-heading1")}
-          </h3>
-          <span className="text-gray1 text-[15px] md:text-sm mt-2 block">
-            {t("home.55-heading2")}
-          </span>
+        <div className="text-center mb-8 md:mb-16 flex flex-col items-center justify-center">
+          <div>
+            <h3 className="font-bold text-primary text-2xl md:text-3xl mb-2">
+              {t("home.55-heading1")}
+            </h3>
+            <h3 className="font-bold text-primary text-2xl md:text-3xl">
+              {t("home.55-heading2")}
+            </h3>
+          </div>
+          <div>
+            <img src="/Lines22.svg" alt="" className="w-[500px]" />
+          </div>
+          <p className="text-gray1 text-[18px] mt-2 block">
+            {t("home.55-heading3")}
+          </p>
+          <p className="text-gray1 text-[18px] mt-2 block">
+            {t("home.55-heading4")}
+          </p>
         </div>
 
         {/* Icon Tabs */}
@@ -147,27 +150,15 @@ const SubjectsSliders = () => {
           )}
         </div>
 
-        {/* Desktop Infinite Scroll Carousel */}
-        <div className="hidden lg:flex items-center justify-center relative">
-          {/* Prev Arrow */}
-          <button
-            onMouseEnter={() => startScroll("prev")}
-            onMouseLeave={stopScroll}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
-          >
-            <IoMdArrowBack size={18} />
-          </button>
-
-          {/* Scroll Container */}
-          <div
-            ref={scrollRef}
-            className="flex flex-nowrap overflow-hidden gap-4 w-full max-w-5xl"
-          >
-            {scrollItems.map((item, index) => (
+        {/* Desktop */}
+        {selected === "icon4" ? (
+          // Static row for icon4
+          <div className="hidden lg:flex justify-center gap-4">
+            {dataSets.icon4.map((item, index) => (
               <div
                 key={index}
                 className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0"
-                style={{ minWidth: "20%" }} // show 5 cards
+                style={{ minWidth: "20%" }}
               >
                 <img
                   src={item.image}
@@ -180,16 +171,48 @@ const SubjectsSliders = () => {
               </div>
             ))}
           </div>
+        ) : (
+          // Carousel for other icons
+          <div className="hidden lg:flex items-center justify-center relative">
+            <button
+              onMouseEnter={() => startScroll("prev")}
+              onMouseLeave={stopScroll}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
+            >
+              <IoMdArrowBack size={18} />
+            </button>
 
-          {/* Next Arrow */}
-          <button
-            onMouseEnter={() => startScroll("next")}
-            onMouseLeave={stopScroll}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
-          >
-            <IoMdArrowForward size={18} />
-          </button>
-        </div>
+            <div
+              ref={scrollRef}
+              className="flex flex-nowrap overflow-hidden gap-4 w-full max-w-5xl"
+            >
+              {dataSets[selected].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0"
+                  style={{ minWidth: "20%" }}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-10 h-10 object-cover rounded-lg mb-4"
+                  />
+                  <p className="text-gray-700 text-sm font-medium">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onMouseEnter={() => startScroll("next")}
+              onMouseLeave={stopScroll}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
+            >
+              <IoMdArrowForward size={18} />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

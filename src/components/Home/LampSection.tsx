@@ -21,7 +21,7 @@ const LampSection = () => {
             <br />
             {t("home.49-heading1-2")}
             <img
-              src="/line.svg"
+              src="/line32.svg"
               alt="underline"
               className="mx-auto md:mx-0 mt-2 w-40 md:w-60"
             />

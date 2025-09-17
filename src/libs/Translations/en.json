@@ -1,7 +1,7 @@
 {
   "home": {
     "1-heading-primary": " Guiding your ",
-    "1-heading-black": "children's steps to excellence",
+    "1-heading-black": "children's steps   to excellence",
     "1-heading2": "We provide top private tutors with flexible in home or online options, ensuring a quality learning experience that empowers your child to excel.",
     "1-icons1": " Book a trial class",
     "1-icons2": "Login as a  parent",
@@ -24,8 +24,8 @@
     "8-feedback3-name": " Razan Hadeed",
     "8-feedback3": "A comfortable and flexible work environment greatly helped me acquire new skills and opened up wonderful career horizons for me.",
 
-    "14-heading-primary": " Your First Step",
-    "14-heading-black": "  to Excellence",
+    "14-heading-primary": " Begin Your Path",
+    "14-heading-black": "Step by Step Toward Greatness",
     "14-heading2": "We support your learning journey with flexible study options at home or online, guided by certified teachers to help you excel in school and university.",
     "14-icons1": "Get a free class",
     "14-icons2": "Log in as a student",
@@ -45,7 +45,7 @@
     "20-service3-1": " Shadow Teacher",
     "20-service3-2": "A specialized companion supporting children with special needs for academic excellence.",
     "20-service4-1": "  Consultations",
-    "20-service4-2": "Specialized consultations to improve your children's behavior and academic performance, supervised by experts.",
+    "20-service4-2": "Expert consultations to enhance your child’s behavior and performance.",
     "off": "Off",
     "26-heading1": "Private lessons at home with professional teachers",
     "26-heading2": "Private home lessons with specialized teachers for all subjects, using interactive methods for all academic levels.",
@@ -105,8 +105,10 @@
     "home": "At Home",
     "online": "Online",
 
-    "55-heading1": " Explore the subjects taught by our expert private tutors.",
-    "55-heading2": "Over 200+ expert tutors teaching 35+ subjects across all levels, helping your children succeed with confidence.",
+    "55-heading1": " Explore the subjects taught",
+    "55-heading2": " by our expert private tutors.",
+    "55-heading3": "Over 200+ expert tutors teaching 35+ subjects across all levels",
+    "55-heading4": "helping your children succeed with confidence.",
     "55-icon1": "  British Curriculum",
     "55-icon2": "  American Curriculum",
     "55-icon3": " Government curriculum",
