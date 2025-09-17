@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { getBlogs } from "@/services/blogs";
 import { getImageUrl } from "@/services/images";
+
 interface Blog {
   id: number;
   slug: string;
@@ -13,15 +14,17 @@ interface Blog {
   content: string;
   createdAt: string;
   updatedAt: string;
+  category: string; // make sure your API provides this
 }
 
 const Trending = () => {
   const { t } = useTranslation();
-const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState<string>(
     typeof window !== "undefined" ? localStorage.getItem("lang") || "en" : "en"
   );
+  const [selectedCategory, setSelectedCategory] = useState<string>("Trend"); // new state
 
   useEffect(() => {
     const handleLanguageChange = (lng: string) => {
@@ -49,6 +52,12 @@ const [blogs, setBlogs] = useState<Blog[]>([]);
     fetchBlogs();
   }, [lang]);
 
+  // Filter blogs based on category
+  const filteredBlogs =
+    selectedCategory === "all"
+      ? blogs
+      : blogs.filter((blog) => blog.category === selectedCategory);
+
   if (loading) return <p className="text-center">Loading...</p>;
 
   return (
@@ -57,13 +66,13 @@ const [blogs, setBlogs] = useState<Blog[]>([]);
         {t("blog.trending-article")}
       </h2>
 
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {blogs.map((blog) => (
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {filteredBlogs.map((blog) => (
           <BlogCard
             key={blog.id}
-  image={getImageUrl(blog.image)}     
-         title={blog.title}
-            readmore
+            image={getImageUrl(blog.image)}
+            title={blog.title}
+            readMore
             link={`/detail-blog/${blog.slug}`}
           />
         ))}

@@ -13,26 +13,48 @@ interface BlogData {
 
 const BlogDetails = () => {
   const params = useParams();
-const blogId = Array.isArray(params?.id) ? params.id[0] : params?.id;
-
+  const blogId = Array.isArray(params?.id) ? params.id[0] : params?.id;
+  // console.log(blogId);
   const [blog, setBlog] = useState<BlogData | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!blogId) return;
+    setLoading(true);
+    if (
+      blogId === "booking-a-private-tutor-for-your-child-is-the-best-investment"
+    ) {
+      setBlog({
+        title:
+          "Why Booking a Private Tutor for Your Child is the Best Investment",
+        content:
+          "Booking a private tutor provides personalized support that helps your child understand subjects deeply and boosts their confidence. Private tutoring fills learning gaps, enhances academic skills, and prepares students for exams. Additionally, a private tutor can continuously monitor progress and tailor teaching plans to fit the student's learning style.",
+        image: "/blog-tall.png",
+      });
+    } else if (blogId == "leading-real-change-in-private-tutoring") {
+      setBlog({
+        title: "Thiqa Education: Leading Real Change in Private Tutoring",
+        content:
+          " At Thiqa, we have made a real impact in private tutoring by creating a professional learning environment that ensures quality education and teacher support. We focus on selecting top teachers and using advanced teaching methods tailored to each student’s needs. This approach helps achieve measurable results and continuously improve students’ performance. Our goal is to build trust between parents and teachers, making the learning journey successful and enjoyable.",
+        image: "/blog-details.png",
+      });
+    } else {
+      if (!blogId) return;
+      const fetchBlogs = async () => {
+        setLoading(true);
+        try {
+          const data = await getBlogById(blogId);
+          setBlog(data);
+        } catch (error) {
+          console.error("Error fetching blogs:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    const fetchBlog = async () => {
-      try {
-        const data = await getBlogById(blogId);
-        setBlog(data); // نخزن الـ object كامل وليس content فقط
-      } catch (err) {
-        console.error("Failed to fetch blog details:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+      fetchBlogs();
+    }
 
-    fetchBlog();
+    setLoading(false);
   }, [blogId]);
 
   if (loading) {
@@ -42,7 +64,6 @@ const blogId = Array.isArray(params?.id) ? params.id[0] : params?.id;
   if (!blog) {
     return <p className="text-center py-10">Blog not found.</p>;
   }
-
   return (
     <div className="bg-white md:py-0 px-4">
       <section className="pt-10 container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center  gap-4  w-full">
@@ -54,14 +75,13 @@ const blogId = Array.isArray(params?.id) ? params.id[0] : params?.id;
           {blog.image && (
             <div className="relative z-10 w-full max-w-md min-h-72">
               <Image
-  src={getImageUrl(blog.image)}
-  alt={blog.title}
-  width={600}
-  height={400}
-  className="object-contain w-full h-auto rounded-[30px]"
-  priority
-/>
-
+                src={getImageUrl(blog.image)}
+                alt={blog.title}
+                width={600}
+                height={400}
+                className="object-contain w-full h-auto rounded-[30px]"
+                priority
+              />
             </div>
           )}
         </section>
