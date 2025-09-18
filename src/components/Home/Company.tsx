@@ -1,5 +1,6 @@
 "use client";
 import i18n from "@/libs";
+import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -76,11 +77,13 @@ const Company = () => {
           <div className="flex gap- mt-6 flex-col">
             <h3 className="font-semibold text-gray1">Download ON:</h3>
             <div className="flex items-center gap-2 mt-4">
-              <img
-                src="/google-play-black.svg"
-                alt="Play Store"
-                className="w-48"
-              />
+              <Link href="https://play.google.com/store/apps/details?id=com.thiqaeducation.tutoringapp&hl=en">
+                <img
+                  src="/google-play-black.svg"
+                  alt="Play Store"
+                  className="w-48 cursor-pointer"
+                />
+              </Link>
               <img
                 src="/app-store-black.svg"
                 alt="App Store"

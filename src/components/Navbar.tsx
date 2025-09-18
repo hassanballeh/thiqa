@@ -188,7 +188,7 @@ export default function Navbar() {
             Log In
           </Link>
           <SelectCountry />
-          <SelectLanguage />
+          {/* <SelectLanguage /> */}
         </div>
       </nav>
 
@@ -291,7 +291,7 @@ export default function Navbar() {
                       Log In
                     </Link>
                     <SelectCountry />
-                    <SelectLanguage />
+                    {/* <SelectLanguage /> */}
                   </div>
                 </div>
               </motion.div>

@@ -122,7 +122,7 @@ export default function Footer() {
                     />
                   </a>
                   <a
-                    href="https://play.google.com/store/apps/details?id=your_app_id"
+                    href="https://play.google.com/store/apps/details?id=com.thiqaeducation.tutoringapp&hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group"
