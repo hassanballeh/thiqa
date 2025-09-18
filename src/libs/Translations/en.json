@@ -305,12 +305,14 @@
     "48-heading-1-3": "3 awards",
     "48-heading2": "Great efforts deserve recognition. Give your best, achieve your goals, and your dedication will lead to distinction and rewards.",
     "48-number1-1": " Thiqa INCENTIVE BOARD ",
-    "48-number1-2": "Reach 59, 79, and 99 hours to earn DORE, ACHIEVER, and SUPERSTAR titles. Every lesson boosts your rewards.",
+    "48-number1-2": "Reach 59, 79, and 99 hours to earn DORE, ACHIEVER, and SUPERSTAR titles.",
     "48-number2-1": "Thiqa EXCELLENCE BOARD ",
-    "48-number2-2": "Shine with Thiqa in 10 categories. Every effort counts. Ready to stand out?",
+    "48-number2-2": "Shine with Thiqa in 10 categories. Every effort counts.",
     "48-number3-1": "Thiqa HONOR BOARD",
-    "48-number3-2": "Join Thiqa’s Honor Board earn a medal, higher pay, and a chance to win in the annual draw. Ready to shine?",
-
+    "48-number3-2": "Join Thiqa’s Honor Board earn a medal, higher pay, and a chance to win in the annual draw.",
+    "48-button1-2": "Every lesson boosts your rewards.",
+    "48-button2-2": "Ready to stand out?",
+    "48-button3-2":"Ready to shine?",
     "54-heading1": " Any questions about tutoring?",
     "54-heading2": "Discover how we can support you in achieving the best learning experience, whether online or at home, and provide the assistance you need.",
     "54-questions1": "How is the resume filtered?",
@@ -748,8 +750,8 @@
     "31-number2-2": "We were ranked among the Top 50 Future Companies and honored by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai, as one of the promising companies shaping the future of education. This recognition motivates us to continue delivering innovative educational solutions that meet the needs of future generations.",
     "31-number3-1": " Majra Sustainable Impact Challenge 2025",
     "31-number3-2": "We won 2nd place in the Majra Sustainable Impact Challenge 2025 for our 'One Dirham Makes a Difference' initiative. Through this initiative, we dedicate one dirham from every tutoring hour to support the education of underprivileged students.",
-    "31-number4-1": " HolonIQ List",
-    "31-number4-2": "Thiqah was recognized among the leading companies and initiatives impacting the development of the education sector. This acknowledgment highlights our active role in shaping the future of education through innovation and forward-thinking."
+    "31-number4-1": "HolonIQ List",
+    "31-number4-2": "Thiqa was recognized among the leading companies and initiatives impacting the development of the education sector. This acknowledgment highlights our active role in shaping the future of education through innovation and forward-thinking."
   },
   "gallery": {
     "heading1": "",
