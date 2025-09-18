@@ -78,13 +78,17 @@ const ServiceCard = ({
 
       <h3
         className={` text-xl font-bold text-gray1 relative ${
-          title.trim() == "Consultations" ? "top-[12px]" : ""
+          title.trim() == "Consultations" ? "bottom-[10px]" : ""
         } z-10 group-hover:text-white transition-colors duration-500`}
       >
         {title}
       </h3>
 
-      <p className="text-gray1 text-sm leading-relaxed relative z-10 group-hover:text-white/80 transition-colors duration-500">
+      <p
+        className={`text-gray1 text-sm leading-relaxed relative ${
+          title.trim() == "Consultations" ? "bottom-[10px]" : ""
+        } z-10 group-hover:text-white/80 transition-colors duration-500`}
+      >
         {description}
       </p>
     </div>
@@ -172,7 +176,10 @@ const ServicesSection = () => {
     },
     {
       HoverIcon: (
-        <img className="w-[50px] h-[50px]" src="/lamp-white.svg"></img>
+        <img
+          className="w-[50px] h-[50px] relative bottom-[15px]"
+          src="/lamp-white.svg"
+        ></img>
       ),
       DefaultIcon: (
         <svg
@@ -180,7 +187,7 @@ const ServicesSection = () => {
           height="52"
           viewBox="0 0 52 52"
           fill="none"
-          className="w-[50px] h-[50px]"
+          className="w-[50px] h-[50px] relative bottom-[15px]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g clip-path="url(#clip0_206_186)">

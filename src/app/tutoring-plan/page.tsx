@@ -8,7 +8,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="">
+    <div className="relative">
       <Hero />
       <TextSection />
       <SuccessStories />

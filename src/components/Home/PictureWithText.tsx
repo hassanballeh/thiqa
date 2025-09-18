@@ -13,7 +13,7 @@ const PictureWithText = () => {
             <img
               src="/image2.png"
               alt="Student"
-              className=" object-contain z-10 w-[400px]"
+              className=" object-contain z-10 w-[500px]"
             />
           </div>
 

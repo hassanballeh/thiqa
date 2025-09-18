@@ -47,7 +47,7 @@ export default function HeroSlide({
         <div className=" ">
           <h1
             className={`${
-              changePos ? "text-[55px]" : "text-[61px]"
+              changePos ? "text-[55px]" : "text-[55px]"
             } font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {title}
@@ -58,7 +58,7 @@ export default function HeroSlide({
         <div className="mb-2">
           <h2
             className={`${
-              changePos ? "text-[55px]" : "text-[61px]"
+              changePos ? "text-[55px]" : "text-[55px]"
             } font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {subtitle}

@@ -12,7 +12,6 @@ import { ENDPOINTS } from "@/app/api/api";
 import Axios from "@/app/api/axios";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
-import { BiBookmarkAltPlus } from "react-icons/bi";
 import { IoBookOutline } from "react-icons/io5";
 import { FaChalkboardUser } from "react-icons/fa6";
 
