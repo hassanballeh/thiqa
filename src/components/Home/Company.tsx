@@ -1,5 +1,5 @@
 "use client";
-import i18n from "@/libs";
+// import i18n from "@/libs";
 import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
