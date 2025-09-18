@@ -50,7 +50,7 @@ export default function HeroSlide({
               changePos ? "text-[55px]" : "text-[55px]"
             } font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
-            {/* {title} */}
+            {title}
           </h1>
         </div>
 
@@ -61,7 +61,7 @@ export default function HeroSlide({
               changePos ? "text-[55px]" : "text-[55px]"
             } font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
-            {/* {subtitle} */}
+            {subtitle}
           </h2>
         </div>
 
