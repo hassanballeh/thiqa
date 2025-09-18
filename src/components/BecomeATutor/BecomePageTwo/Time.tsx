@@ -20,10 +20,10 @@ const Time = () => {
   // 🟢 القيم الحالية بناءً على الرقم المختار (افتراضي = صفر)
   const currentFrom = activePoint ? data[activePoint].from : "0";
   const currentTo = activePoint ? data[activePoint].to : "0";
-  const [val, setVal] = useState<Number>(0);
-  const [percentage, setPercentage] = useState<Number>(0);
+  const [val, setVal] = useState<number>(0);
+  const [percentage, setPercentage] = useState<number>(0);
 
-  const handleSliderChange = (e: Number) => {
+  const handleSliderChange = (e: number) => {
     setVal(e);
     console.log(e);
     setPercentage((Number(e) / 150) * 100);
