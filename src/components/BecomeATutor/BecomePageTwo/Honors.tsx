@@ -10,16 +10,19 @@ const Honors = () => {
     {
       img: "honor1.svg",
       text: t("become.48-number1-2"),
+      linkText: t("become.48-button1-2"),
       size: "w-[199px] h-[83px]",
     },
     {
       img: "honor2.svg",
       text: t("become.48-number2-2"),
+      linkText: t("become.48-button2-2"),
       size: "w-[217px] h-[93px]",
     },
     {
       img: "honor3.svg",
       text: t("become.48-number3-2"),
+      linkText: t("become.48-button3-2"),
       size: "w-[160px] h-[96px]",
     },
   ];
@@ -97,7 +100,7 @@ const Honors = () => {
                   href="/some-link"
                   className="flex items-center justify-center md:justify-start underline font-light text-sm text-[#F8B21F] group-hover:text-white transition-colors duration-300 mt-3"
                 >
-                  <span>{"become.37-button"}</span>
+                  <span>{item.linkText}</span>
                   <motion.svg
                     className="w-4 h-4 ml-1"
                     fill="none"
