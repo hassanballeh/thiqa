@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import CustomField from "@/components/Custom/CustomField";
 import CustomButton from "@/components/Custom/CustomButton";
@@ -46,14 +46,22 @@ const JoinTeam: React.FC = () => {
     { value: "Hybrid", label: "Hybrid" },
   ]);
 
-  const { register, handleSubmit, control, formState: { errors } } = useForm<FormValues>({
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     defaultValues: { desiredPosition: [] },
   });
 
   useEffect(() => {
     getCountries()
       .then((data: Country[]) =>
-        setCountries(data.map(c => ({ value: c.id.toString(), label: c.name })))
+        setCountries(
+          data.map((c) => ({ value: c.id.toString(), label: c.name }))
+        )
       )
       .catch(console.error);
 
@@ -67,7 +75,7 @@ const JoinTeam: React.FC = () => {
 
   const appendFiles = (formData: FormData, key: string, files: FileValue) => {
     if (!files) return;
-    Array.from(files).forEach(file => formData.append(key, file));
+    Array.from(files).forEach((file) => formData.append(key, file));
   };
 
   const onSubmit = async (data: FormValues) => {
@@ -83,7 +91,9 @@ const JoinTeam: React.FC = () => {
       formData.append("age", data.age);
       formData.append("positionType", data.positionType?.value || "");
       formData.append("workPreference", data.workPreference?.value || "");
-      data.desiredPosition.forEach(pos => formData.append("desiredPosition[]", pos.value));
+      data.desiredPosition.forEach((pos) =>
+        formData.append("desiredPosition[]", pos.value)
+      );
       formData.append("linkedinProfile", data.linkedinProfile);
 
       appendFiles(formData, "resume", data.resume);
@@ -93,15 +103,18 @@ const JoinTeam: React.FC = () => {
       const response = await Axios.post(`${ENDPOINTS.joinTeam}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
+      reset();
       toast.success(t("messsage.success"));
       console.log("✅ Success:", response.data);
     } catch (err: unknown) {
-      const error = err as AxiosError<{ message?: string; errors?: { msg: string }[] }>;
+      const error = err as AxiosError<{
+        message?: string;
+        errors?: { msg: string }[];
+      }>;
       if (error.response?.data) {
         const { message, errors } = error.response.data;
         if (errors?.length) {
-          toast.error(errors.map(e => e.msg).join("\n"));
+          toast.error(errors.map((e) => e.msg).join("\n"));
         } else if (message) {
           toast.error(message);
         }
@@ -112,73 +125,174 @@ const JoinTeam: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mt-6 p-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mt-6 p-4"
+    >
       <div className="flex flex-col gap-4">
         <CustomField
-        required label="Name" type="text" {...register("name", { required: true })} />
-        {errors.name && <p className="text-red-500 text-sm">This field is required</p>}
+          required
+          label="Name"
+          type="text"
+          {...register("name", { required: true })}
+        />
+        {errors.name && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-<CustomField
-required 
-  label="Email" 
-  type="email" 
-  {...register("emailFrom", { 
-    required: true, 
-    pattern: {
-      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-      message: "Please enter a valid email address",
-    }
-  })} 
-/>
-{errors.emailFrom && <p className="text-red-500 text-sm">{errors.emailFrom.message}</p>}
+        <CustomField
+          required
+          label="Email"
+          type="email"
+          {...register("emailFrom", {
+            required: true,
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Please enter a valid email address",
+            },
+          })}
+        />
+        {errors.emailFrom && (
+          <p className="text-red-500 text-sm">{errors.emailFrom.message}</p>
+        )}
 
-        <CustomField label="Phone Number" type="text" {...register("phoneNumber", { required: true })} />
-        {errors.phoneNumber && <p className="text-red-500 text-sm">This field is required</p>}
+        <CustomField
+          label="Phone Number"
+          required
+          type="text"
+          {...register("phoneNumber", { required: true })}
+        />
+        {errors.phoneNumber && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-        <CustomField required label="City" type="text" {...register("residenceCity", { required: true })} />
+        <CustomField
+          required
+          label="City"
+          type="text"
+          {...register("residenceCity", { required: true })}
+        />
 
-        <Controller name="country" control={control} rules={{ required: true }}
-          render={({ field }) => <SelectField required {...field} label="Country" options={countries} />} />
+        <Controller
+          name="country"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              {...field}
+              label="Country"
+              options={countries}
+            />
+          )}
+        />
         {errors.country && <p className="text-red-500 text-sm">Required</p>}
 
-        <CustomField required label="Age" type="text" {...register("age", { required: true })} />
+        <CustomField
+          required
+          label="Age"
+          type="text"
+          {...register("age", { required: true })}
+        />
 
-        <Controller name="positionType" control={control} rules={{ required: true }}
-          render={({ field }) => <SelectField required {...field} label="Position Type" options={positionTypes} />} />
-        {errors.positionType && <p className="text-red-500 text-sm">Required</p>}
+        <Controller
+          name="positionType"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              {...field}
+              label="Position Type"
+              options={positionTypes}
+            />
+          )}
+        />
+        {errors.positionType && (
+          <p className="text-red-500 text-sm">Required</p>
+        )}
       </div>
 
       <div className="flex flex-col gap-4">
-        <Controller name="workPreference" control={control} rules={{ required: true }}
-          render={({ field }) => <SelectField required {...field} label="Work Preference" options={workPreferences} />} />
-        {errors.workPreference && <p className="text-red-500 text-sm">Required</p>}
+        <Controller
+          name="workPreference"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              {...field}
+              label="Work Preference"
+              options={workPreferences}
+            />
+          )}
+        />
+        {errors.workPreference && (
+          <p className="text-red-500 text-sm">Required</p>
+        )}
 
-        <Controller name="desiredPosition" control={control} rules={{ required: true }}
-          render={({ field }) => <SelectField required {...field} isMulti label="Desired Position" options={desiredPositions} />} />
+        <Controller
+          name="desiredPosition"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              {...field}
+              isMulti
+              label="Desired Position"
+              options={desiredPositions}
+            />
+          )}
+        />
 
-        <CustomField required label="LinkedIn Profile" type="text"
+        <CustomField
+          required
+          label="LinkedIn Profile"
+          type="text"
           {...register("linkedinProfile", {
             required: true,
-            pattern: /^https:\/\/(www\.)?linkedin\.com\/.*$/i
-          })} />
-        {errors.linkedinProfile && <p className="text-red-500 text-sm">Enter valid LinkedIn URL</p>}
+            pattern: /^https:\/\/(www\.)?linkedin\.com\/.*$/i,
+          })}
+        />
+        {errors.linkedinProfile && (
+          <p className="text-red-500 text-sm">Enter valid LinkedIn URL</p>
+        )}
 
-        <CustomField required label="Resume" type="file" {...register("resume", { required: true })} />
-        {errors.resume && <p className="text-red-500 text-sm">Resume required</p>}
+        <CustomField
+          required
+          label="Resume"
+          type="file"
+          {...register("resume", { required: true })}
+        />
+        {errors.resume && (
+          <p className="text-red-500 text-sm">Resume required</p>
+        )}
 
-        <CustomField label="Supporting Documents" type="file" {...register("supportingDocuments")} multiple />
-        <CustomField label="Video Submission" type="file" {...register("videoSubmission")} multiple />
+        <CustomField
+          label="Supporting Documents"
+          type="file"
+          {...register("supportingDocuments")}
+          multiple
+        />
+        <CustomField
+          label="Video Submission"
+          type="file"
+          {...register("videoSubmission")}
+          multiple
+        />
       </div>
 
       <div className="md:col-span-2">
- <CustomButton
+        <CustomButton
           label={isLoading ? "Sending ..." : "Submit"}
           bgColor="bg-primary"
           textColor="text-white"
           hoverBg="bg-primary/70"
           type="submit"
           disabled={isLoading}
-        />      </div>
+        />{" "}
+      </div>
     </form>
   );
 };

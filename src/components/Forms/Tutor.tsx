@@ -1,17 +1,22 @@
-"use client"
-import React, { useEffect, useState } from 'react'
-import RadioGroup from '@/components/Custom/RadioGroup'
-import CustomField from '@/components/Custom/CustomField'
-import CustomButton from '@/components/Custom/CustomButton'
-import {  ENDPOINTS } from '@/app/api/api';
-import Axios from '@/app/api/axios'
-import { getCountries, getCurriculums, getGrades, getSubjects } from '@/services/get_all_select'
-import SelectField from '@/components/Custom/SelectField'
-import toast from 'react-hot-toast'
-import { AxiosError } from 'axios'
-import { useTranslation } from 'react-i18next'
+"use client";
+import React, { useEffect, useState } from "react";
+import RadioGroup from "@/components/Custom/RadioGroup";
+import CustomField from "@/components/Custom/CustomField";
+import CustomButton from "@/components/Custom/CustomButton";
+import { ENDPOINTS } from "@/app/api/api";
+import Axios from "@/app/api/axios";
+import {
+  getCountries,
+  getCurriculums,
+  getGrades,
+  getSubjects,
+} from "@/services/get_all_select";
+import SelectField from "@/components/Custom/SelectField";
+import toast from "react-hot-toast";
+import { AxiosError } from "axios";
+import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 
 export interface Option {
   value: string;
@@ -50,7 +55,9 @@ const TutorForm: React.FC = () => {
   const { t } = useTranslation();
 
   // ✅ نخزن ref في state ليتحدث تلقائياً عند أي تغيير على الرابط
-  const [refParam, setRefParam] = useState<string | null>(searchParams.get("ref"));
+  const [refParam, setRefParam] = useState<string | null>(
+    searchParams.get("ref")
+  );
 
   useEffect(() => {
     setRefParam(searchParams.get("ref"));
@@ -68,7 +75,13 @@ const TutorForm: React.FC = () => {
     { value: "Online Only", label: "Online Only" },
   ];
 
-  const { register, handleSubmit, control, formState: { errors } } = useForm<FormValues>({
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     defaultValues: {
       country: null,
       tutoringType: null,
@@ -79,21 +92,37 @@ const TutorForm: React.FC = () => {
   });
 
   useEffect(() => {
-    getCountries().then((data: Country[]) =>
-      setCountries(data.map(c => ({ value: c.id.toString(), label: c.name })))
-    ).catch(console.error);
+    getCountries()
+      .then((data: Country[]) =>
+        setCountries(
+          data.map((c) => ({ value: c.id.toString(), label: c.name }))
+        )
+      )
+      .catch(console.error);
 
-    getSubjects().then((data: Options[]) =>
-      setSubjects(data.map(s => ({ value: s.id.toString(), label: s.x_name })))
-    ).catch(console.error);
+    getSubjects()
+      .then((data: Options[]) =>
+        setSubjects(
+          data.map((s) => ({ value: s.id.toString(), label: s.x_name }))
+        )
+      )
+      .catch(console.error);
 
-    getGrades().then((data: Options[]) =>
-      setGrades(data.map(g => ({ value: g.id.toString(), label: g.x_name })))
-    ).catch(console.error);
+    getGrades()
+      .then((data: Options[]) =>
+        setGrades(
+          data.map((g) => ({ value: g.id.toString(), label: g.x_name }))
+        )
+      )
+      .catch(console.error);
 
-    getCurriculums().then((data: Options[]) =>
-      setCurriculums(data.map(c => ({ value: c.id.toString(), label: c.x_name })))
-    ).catch(console.error);
+    getCurriculums()
+      .then((data: Options[]) =>
+        setCurriculums(
+          data.map((c) => ({ value: c.id.toString(), label: c.x_name }))
+        )
+      )
+      .catch(console.error);
   }, []);
 
   const onSubmit = async (data: FormValues) => {
@@ -109,11 +138,14 @@ const TutorForm: React.FC = () => {
       formData.append("otherLanguage", data.otherLanguage);
 
       if (data.country) formData.append("countryId", data.country.value);
-      if (data.tutoringType) formData.append("tutoringType", data.tutoringType.value);
+      if (data.tutoringType)
+        formData.append("tutoringType", data.tutoringType.value);
 
-      data.subjects.forEach(s => formData.append("subjectIds[]", s.value));
-      data.grades.forEach(g => formData.append("gradeIds[]", g.value));
-      data.curriculums.forEach(c => formData.append("curriculumIds[]", c.value));
+      data.subjects.forEach((s) => formData.append("subjectIds[]", s.value));
+      data.grades.forEach((g) => formData.append("gradeIds[]", g.value));
+      data.curriculums.forEach((c) =>
+        formData.append("curriculumIds[]", c.value)
+      );
 
       formData.append("gender", data.gender);
       formData.append("drivingLicense", data.emirateLicense);
@@ -128,11 +160,14 @@ const TutorForm: React.FC = () => {
           ...(refParam ? { ref: refParam } : {}), // ✅ يرسل ref فقط لو موجود
         },
       });
-
+      reset();
       toast.success(t("messsage.success"));
       console.log("✅ Success:", response.data);
     } catch (err: unknown) {
-      const error = err as AxiosError<{ message?: string; errors?: { msg: string }[] }>;
+      const error = err as AxiosError<{
+        message?: string;
+        errors?: { msg: string }[];
+      }>;
       if (error.response?.data) {
         const { message, errors } = error.response.data;
         if (errors && errors.length > 0) {
@@ -152,129 +187,320 @@ const TutorForm: React.FC = () => {
     }
   };
   return (
-        <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mt-6 p-4">
-          <div className="flex flex-col gap-4">
-            <CustomField required label="Name" type="text" icon={<></>} placeholder="Enter your name" {...register("name", { required: true })} />
-            {errors.name && <p className="text-red-500 text-sm">This field is required</p>}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mt-6 p-4"
+    >
+      <div className="flex flex-col gap-4">
+        <CustomField
+          required
+          label="Name"
+          type="text"
+          icon={<></>}
+          placeholder="Enter your name"
+          {...register("name", { required: true })}
+        />
+        {errors.name && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <CustomField required label="Your Email" type="email" icon={<></>} placeholder="Enter your email" {...register("email",  {
-    required: "Email is required",
-    pattern: {
-      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // regex للتحقق من الايميل
-      message: "Please enter a valid email address",
-    },})} />
-            {errors.email && <p className="text-red-500 text-sm">This field is required</p>}
+        <CustomField
+          required
+          label="Your Email"
+          type="email"
+          icon={<></>}
+          placeholder="Enter your email"
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // regex للتحقق من الايميل
+              message: "Please enter a valid email address",
+            },
+          })}
+        />
+        {errors.email && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <CustomField required label="Phone Number" type="text" icon={<></>} placeholder="+31" {...register("phone", { required: true })} />
-            {errors.phone && <p className="text-red-500 text-sm">This field is required</p>}
+        <CustomField
+          required
+          label="Phone Number"
+          type="text"
+          icon={<></>}
+          placeholder="+31"
+          {...register("phone", { required: true })}
+        />
+        {errors.phone && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <CustomField required label="Nationality" type="text" icon={<></>} placeholder="Enter nationality" {...register("nationality", { required: true })} />
-            {errors.nationality && <p className="text-red-500 text-sm">This field is required</p>}
+        <CustomField
+          required
+          label="Nationality"
+          type="text"
+          icon={<></>}
+          placeholder="Enter nationality"
+          {...register("nationality", { required: true })}
+        />
+        {errors.nationality && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-<Controller
-  name="country"
-  control={control}
-  rules={{ required: true }}
-  render={({ field }) => (
-    <SelectField
-      required label="Country"
-      name={field.name}       // ✅ هنا
-      placeholder="Select country"
-      options={countries}
-      value={field.value}
-      onChange={field.onChange}
-      
-    />
-  )}
-/>
-            {errors.country && <p className="text-red-500 text-sm">This field is required</p>}
-
-            <CustomField required label="Where do you live (City)" type="text" icon={<></>} placeholder="Enter city" {...register("city", { required: true })} />
-            {errors.city && <p className="text-red-500 text-sm">This field is required</p>}
-
-            <CustomField required label="First Language" type="text" icon={<></>} placeholder="Enter first language" {...register("firstLanguage", { required: true })} />
-            {errors.firstLanguage && <p className="text-red-500 text-sm">This field is required</p>}
-
-            <CustomField label="Other Language" type="text" icon={<></>} placeholder="Enter other languages" {...register("otherLanguage", )} />
-            {errors.otherLanguage && <p className="text-red-500 text-sm">This field is required</p>}
-
-            <CustomField required label="CV" type="file" icon={<></>} placeholder="Upload your CV" {...register("cv", { required: true })} />
-            {errors.cv && <p className="text-red-500 text-sm">This field is required</p>}
-          </div>
-
-          {/* العمود الثاني */}
-          <div className="flex flex-col gap-4">
-            <Controller
-              name="gender"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <RadioGroup required label="Gender" name={field.name} value={field.value} onChange={field.onChange}   options={[{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }]} />}
+        <Controller
+          name="country"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              label="Country"
+              name={field.name} // ✅ هنا
+              placeholder="Select country"
+              options={countries}
+              value={field.value}
+              onChange={field.onChange}
             />
-            {errors.gender && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.country && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="tutoringType"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <SelectField required label="Tutoring Type" placeholder="Select tutoring type" name={field.name} options={tutoringTypes} value={field.value} onChange={field.onChange}  />}
+        <CustomField
+          required
+          label="Where do you live (City)"
+          type="text"
+          icon={<></>}
+          placeholder="Enter city"
+          {...register("city", { required: true })}
+        />
+        {errors.city && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
+
+        <CustomField
+          required
+          label="First Language"
+          type="text"
+          icon={<></>}
+          placeholder="Enter first language"
+          {...register("firstLanguage", { required: true })}
+        />
+        {errors.firstLanguage && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
+
+        <CustomField
+          label="Other Language"
+          type="text"
+          icon={<></>}
+          placeholder="Enter other languages"
+          {...register("otherLanguage")}
+        />
+        {errors.otherLanguage && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
+
+        <CustomField
+          required
+          label="CV"
+          type="file"
+          icon={<></>}
+          placeholder="Upload your CV"
+          {...register("cv", { required: true })}
+        />
+        {errors.cv && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
+      </div>
+
+      {/* العمود الثاني */}
+      <div className="flex flex-col gap-4">
+        <Controller
+          name="gender"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <RadioGroup
+              required
+              label="Gender"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              options={[
+                { value: "Male", label: "Male" },
+                { value: "Female", label: "Female" },
+              ]}
             />
-            {errors.tutoringType && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.gender && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="subjects"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <SelectField required label="Subjects" placeholder="Select subjects" name={field.name} options={subjects} isMulti value={field.value} onChange={field.onChange}  />}
+        <Controller
+          name="tutoringType"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              label="Tutoring Type"
+              placeholder="Select tutoring type"
+              name={field.name}
+              options={tutoringTypes}
+              value={field.value}
+              onChange={field.onChange}
             />
-            {errors.subjects && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.tutoringType && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="grades"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <SelectField required label="Grades" placeholder="Select grades" name={field.name} options={grades} isMulti value={field.value} onChange={field.onChange}  />}
+        <Controller
+          name="subjects"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              label="Subjects"
+              placeholder="Select subjects"
+              name={field.name}
+              options={subjects}
+              isMulti
+              value={field.value}
+              onChange={field.onChange}
             />
-            {errors.grades && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.subjects && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="curriculums"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <SelectField required label="Curriculums" placeholder="Select curriculums" name={field.name} options={curriculums} isMulti value={field.value} onChange={field.onChange}  />}
+        <Controller
+          name="grades"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              label="Grades"
+              placeholder="Select grades"
+              name={field.name}
+              options={grades}
+              isMulti
+              value={field.value}
+              onChange={field.onChange}
             />
-            {errors.curriculums && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.grades && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="emirateLicense"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <RadioGroup label="Emirate driving license" name={field.name} value={field.value} onChange={field.onChange} required  options={[{ value: "Yes", label: "Yes" }, { value: "No", label: "No" }]} />}
+        <Controller
+          name="curriculums"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <SelectField
+              required
+              label="Curriculums"
+              placeholder="Select curriculums"
+              name={field.name}
+              options={curriculums}
+              isMulti
+              value={field.value}
+              onChange={field.onChange}
             />
-            {errors.emirateLicense && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.curriculums && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="privateCar"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <RadioGroup label="Private Car" name={field.name} value={field.value} onChange={field.onChange} required  options={[{ value: "Yes", label: "Yes" }, { value: "No", label: "No" }]} />}
+        <Controller
+          name="emirateLicense"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <RadioGroup
+              label="Emirate driving license"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              required
+              options={[
+                { value: "Yes", label: "Yes" },
+                { value: "No", label: "No" },
+              ]}
             />
-            {errors.privateCar && <p className="text-red-500 text-sm">This field is required</p>}
+          )}
+        />
+        {errors.emirateLicense && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-            <Controller
-              name="committedOtherJob"
-              control={control}
-              rules={{ required: true }}
-              render={({ field }) => <RadioGroup label="Committed To Other Job" name={field.name} value={field.value} onChange={field.onChange} required  options={[{ value: "Yes", label: "Yes" }, { value: "No", label: "No" }]} />}
+        <Controller
+          name="privateCar"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <RadioGroup
+              label="Private Car"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              required
+              options={[
+                { value: "Yes", label: "Yes" },
+                { value: "No", label: "No" },
+              ]}
             />
-            {errors.committedOtherJob && <p className="text-red-500 text-sm">This field is required</p>}
-          </div>
+          )}
+        />
+        {errors.privateCar && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
 
-          {/* زر الإرسال */}
-          <div className="md:col-span-2">
-            <CustomButton label={isLoading ? "Sending ..." :"Submit"} bgColor="bg-primary" textColor="text-white" hoverBg="bg-primary/70" type="submit"  disabled={isLoading}/>
-          </div>
-        </form>
+        <Controller
+          name="committedOtherJob"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <RadioGroup
+              label="Committed To Other Job"
+              name={field.name}
+              value={field.value}
+              onChange={field.onChange}
+              required
+              options={[
+                { value: "Yes", label: "Yes" },
+                { value: "No", label: "No" },
+              ]}
+            />
+          )}
+        />
+        {errors.committedOtherJob && (
+          <p className="text-red-500 text-sm">This field is required</p>
+        )}
+      </div>
+
+      {/* زر الإرسال */}
+      <div className="md:col-span-2">
+        <CustomButton
+          label={isLoading ? "Sending ..." : "Submit"}
+          bgColor="bg-primary"
+          textColor="text-white"
+          hoverBg="bg-primary/70"
+          type="submit"
+          disabled={isLoading}
+        />
+      </div>
+    </form>
   );
-}
+};
 
-export default TutorForm
+export default TutorForm;
