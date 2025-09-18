@@ -5,6 +5,7 @@ interface TeamCardProps {
   title: string;
   titleColor?: boolean;
   objectPosition?: "top" | "center" | "bottom"; // ✅ إضافة الخاصية
+  extra?: string;
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({
@@ -12,19 +13,18 @@ const TeamCard: React.FC<TeamCardProps> = ({
   title,
   titleColor,
   objectPosition = "top", // ✅ القيمة الافتراضية top
+  extra,
 }) => {
   return (
-    <a
-      className="flex flex-col items-center group transform transition-transform duration-300 hover:-translate-y-2"
-    >
+    <a className="flex flex-col items-center group transform transition-transform duration-300 hover:-translate-y-2">
       {/* Image */}
-      <div className="relative w-[280px] h-[300px]">
+      <div className="relative  w-[280px] h-[300px] rounded-[40px] overflow-hidden ">
         {image && (
           <>
             <img
               src={image}
               alt={title}
-              className={`rounded-[40px] overflow-hidden border w-full h-[300px] object-cover object-${objectPosition}`}
+              className={` border w-full h-[300px] object-cover object-${objectPosition} ${extra}`}
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/20 rounded-[40px] opacity-100 group-hover:opacity-50 transition-opacity duration-300" />
           </>
