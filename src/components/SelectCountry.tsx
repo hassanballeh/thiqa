@@ -28,10 +28,10 @@ const SelectCountry = () => {
       return;
     }
 
-     fetch("https://ipapi.co/json/")
+    fetch("https://ipapi.co/json/")
       .then((res) => res.json())
       .then((data) => {
-const countryCode = data.country_code?.toLowerCase();
+        const countryCode = data.country_code?.toLowerCase();
         if (countryCode === "ae" || countryCode === "sa") {
           setSelectedCountry(countryCode);
           sessionStorage.setItem("country", countryCode);
@@ -69,16 +69,18 @@ const countryCode = data.country_code?.toLowerCase();
   // };
 
   const handleSelect = (code: string) => {
-  setSelectedCountry(code);
-  sessionStorage.setItem("country", code);
+    setSelectedCountry(code);
+    sessionStorage.setItem("country", code);
 
-  // 🔥 إطلاق حدث مخصص لإخبار باقي المكونات أنّ الدولة تغيّرت
-  window.dispatchEvent(new Event("country-changed"));
+    // 🔥 إطلاق حدث مخصص لإخبار باقي المكونات أنّ الدولة تغيّرت
+    window.dispatchEvent(new Event("country-changed"));
 
-  setIsOpen(false);
-};
+    setIsOpen(false);
+  };
 
-  const selected = countries.find((country) => country.code === selectedCountry);
+  const selected = countries.find(
+    (country) => country.code === selectedCountry
+  );
 
   if (!selectedCountry) return null; // ما نعرض شيء حتى يتم تحديد الدولة
 
@@ -95,7 +97,7 @@ const countryCode = data.country_code?.toLowerCase();
 
       {/* القائمة المنسدلة */}
       {isOpen && (
-        <div className="absolute top-12 left-0 bg-white rounded-xl shadow-md p-2 space-y-2 min-w-[150px] z-50">
+        <div className="absolute top-12 left-[-10px] bg-white rounded-xl shadow-md p-2 space-y-2 min-w-[150px] z-50">
           {countries.map((country) => (
             <div
               key={country.code}
@@ -107,7 +109,11 @@ const countryCode = data.country_code?.toLowerCase();
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                 )}
               </div>
-              <img src={country.flag} alt="flag" className="w-5 h-5 rounded-full" />
+              <img
+                src={country.flag}
+                alt="flag"
+                className="w-5 h-5 rounded-full"
+              />
               <span className="text-sm font-medium text-gray-700">
                 {country.name}
               </span>

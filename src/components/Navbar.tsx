@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SelectLanguage from "./SelectLanguage";
@@ -21,7 +21,7 @@ const navigation = [
     ],
   },
   { name: "Blog", href: "/blog" },
-  { name: "Contact US", href: "/contact" },
+  { name: "Contact Us", href: "/contact" },
   {
     name: "Become a Tutor",
     href: "/become-1",
@@ -64,7 +64,6 @@ export default function Navbar() {
   };
 
   const handleMouseLeave = (name: string) => {
-    // ننتظر 200ms قبل الإغلاق
     timeoutRef.current = setTimeout(() => {
       setDropdownOpen((prev) => ({ ...prev, [name]: false }));
     }, 200);
@@ -78,7 +77,7 @@ export default function Navbar() {
     >
       <nav
         aria-label="Global"
-        className="flex mx-auto w-full items-center justify-between px-20"
+        className="flex mx-auto w-full items-center justify-between px-4 sm:px-6 lg:px-20"
       >
         {/* Logo */}
         <div className="flex lg:flex-1">
@@ -92,7 +91,7 @@ export default function Navbar() {
         </div>
 
         {/* Burger Menu Button */}
-        <div className="flex lg:hidden">
+        <div className="flex xl:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -100,12 +99,12 @@ export default function Navbar() {
               scrolled ? "text-gray-700" : "text-gray1"
             }`}
           >
-            <Bars3Icon aria-hidden="true" className="size-6" />
+            <Bars3Icon aria-hidden="true" className="size-8" />
           </button>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex lg:gap-x-4 2xl:gap-x-8 items-center">
+        <div className="hidden xl:flex lg:gap-x-4 2xl:gap-x-8 items-center">
           {navigation.map((item) => {
             const isDropdown = !!item.children;
             return (
@@ -175,16 +174,16 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Buttons */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-2">
+        <div className="hidden xl:flex lg:flex-1 lg:justify-end items-center gap-2">
           <Link
-            href="contact_us"
-            className="rounded-3xl px-2 md:px-5 text-xs lg:text-sm font-semibold py-1 border border-primary text-primary hover:text-white hover:bg-primary/70"
+            href="/contact"
+            className="rounded-3xl px-2 2xl:px-5 text-xs lg:text-sm font-semibold py-1 border border-primary text-primary hover:text-white hover:bg-primary/70"
           >
             Sign Up
           </Link>
           <Link
-            href="contact_us"
-            className="bg-primary rounded-3xl px-2 md:px-5 text-xs lg:text-sm font-semibold py-1 text-white hover:bg-primary/70"
+            href="/contact"
+            className="bg-primary rounded-3xl px-2 2xl:px-5 text-xs lg:text-sm font-semibold py-1 text-white hover:bg-primary/70"
           >
             Log In
           </Link>
@@ -199,9 +198,9 @@ export default function Navbar() {
           <Dialog
             open={mobileMenuOpen}
             onClose={setMobileMenuOpen}
-            className="lg:hidden"
+            className="xl:hidden"
           >
-            {/* خلفية شفافة */}
+            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -210,14 +209,14 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             />
 
-            {/* الحاوية الرئيسية */}
-            <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm bg-white shadow-lg">
+            {/* Panel */}
+            <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm bg-white shadow-lg">
               <motion.div
                 initial={{ x: "100%" }}
                 animate={{ x: 0 }}
                 exit={{ x: "100%" }}
                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
-                className="h-full px-6 py-6 flex flex-col"
+                className="h-full px-6 py-6 flex flex-col overflow-y-auto"
               >
                 {/* Header */}
                 <div className="flex items-center justify-between">
@@ -237,39 +236,55 @@ export default function Navbar() {
                 </div>
 
                 {/* Navigation */}
-                <div className="mt-6 flex-1 overflow-y-auto">
+                <div className="mt-6 flex-1">
                   <div className="space-y-2 py-6">
-                    {navigation
-                      .flatMap((item) =>
-                        item.children ? item.children : [item]
-                      )
-                      .map((item) => (
+                    {navigation.map((item) => (
+                      <div key={item.name}>
                         <Link
-                          key={item.name}
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`block rounded-lg px-3 py-2 text-xs transition ${
-                            pathname === item.href
+                          className={`block rounded-lg px-3 py-2 text-xs font-medium transition ${
+                            isActive(item.href, item.children)
                               ? "text-primary bg-gray-100"
                               : "text-gray1 hover:bg-gray-50"
                           }`}
                         >
                           {item.name}
                         </Link>
-                      ))}
+                        {/* Show children in mobile */}
+                        {item.children && (
+                          <div className="ml-4 mt-1 space-y-1">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.name}
+                                href={child.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`block rounded-lg px-3 py-1 text-xs transition ${
+                                  pathname === child.href
+                                    ? "text-primary bg-gray-100"
+                                    : "text-gray1 hover:bg-gray-50"
+                                }`}
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
 
                   {/* Actions */}
                   <div className="py-6 flex flex-col gap-4">
                     <Link
-                      href="contact_us"
+                      href="/contact"
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-32 rounded-lg px-2 md:px-5 text-sm font-semibold py-2 border border-primary text-primary hover:text-white hover:bg-primary/70"
                     >
                       Sign Up
                     </Link>
                     <Link
-                      href="contact_us"
+                      href="/contact"
                       onClick={() => setMobileMenuOpen(false)}
                       className="bg-primary w-32 rounded-lg px-2 md:px-5 text-sm font-semibold py-2 text-white hover:bg-primary/70"
                     >
@@ -280,7 +295,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </motion.div>
-            </DialogPanel>
+            </Dialog.Panel>
           </Dialog>
         )}
       </AnimatePresence>
