@@ -71,7 +71,7 @@ const MeetTeam = () => {
         objectPosition: "top",
         extra:
           "absolute inset-0 translate-x-[15px] translate-y-[35px] border-none",
-        image: "/employee/walaa.jpg",
+        image: "/employee/walaa-portrait.jpg",
       },
       {
         title: t("about.23-stc-2"),
