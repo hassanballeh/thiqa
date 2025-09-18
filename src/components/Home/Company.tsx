@@ -93,12 +93,10 @@ const Company = () => {
           </div>
         </div>
 
-        <div className="relative" dir={i18n.language === "ar" ? "rtl" : "ltr"}>
+        <div className="relative" dir="ltr">
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
-            className={`hidden md:block absolute bottom-0 ${
-              i18n.language === "ar" ? "" : "right-0"
-            } z-0`}
+            className={`hidden md:block absolute bottom-0 right-0 z-0`}
             style={{
               backgroundImage: "url('/bg-blue.jpg')",
               backgroundRepeat: "no-repeat",
@@ -125,21 +123,15 @@ const Company = () => {
           {/* النجوم */}
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 bottom-[20%] z-50 ${
-              i18n.language === "ar" ? "right-44" : "left-[30%]"
-            }`}
+            className={`hidden md:block absolute h-14 bottom-[20%] z-50 left-[30%]`}
           />
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 -top-[9%] z-50 ${
-              i18n.language === "ar" ? "left-48" : "left-[55%]"
-            }`}
+            className={`hidden md:block absolute h-14 -top-[9%] z-50 left-[55%] `}
           />
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 top-0 z-50 ${
-              i18n.language === "ar" ? "left-36" : "left-[60%]"
-            }`}
+            className={`hidden md:block absolute h-14 top-0 z-50 left-[60%]`}
           />
         </div>
       </section>

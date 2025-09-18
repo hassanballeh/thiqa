@@ -63,7 +63,7 @@ const SelectLanguage = () => {
   const selected = languages.find((lang) => lang.code === selectedLanguage);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative hidden" ref={dropdownRef}>
       {/* الزر الأساسي */}
       <button
         onClick={() => setIsOpen(!isOpen)}

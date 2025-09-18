@@ -1,3 +1,4 @@
+// "use-client";
 // import AboutSection from "@/components/Home/AboutSection";
 // import AddedText from "@/components/Home/AddedText";
 // import CrossTeamSection from "@/components/Home/CrossTeamSection";

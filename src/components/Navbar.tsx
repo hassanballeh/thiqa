@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-// import SelectLanguage from "./SelectLanguage";
+import SelectLanguage from "./SelectLanguage";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import SelectCountry from "./SelectCountry";
@@ -188,7 +188,7 @@ export default function Navbar() {
             Log In
           </Link>
           <SelectCountry />
-          {/* <SelectLanguage /> */}
+          <SelectLanguage />
         </div>
       </nav>
 
@@ -291,7 +291,7 @@ export default function Navbar() {
                       Log In
                     </Link>
                     <SelectCountry />
-                    {/* <SelectLanguage /> */}
+                    <SelectLanguage />
                   </div>
                 </div>
               </motion.div>
