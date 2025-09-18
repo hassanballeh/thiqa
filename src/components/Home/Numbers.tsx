@@ -174,7 +174,7 @@ const Numbers = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl text-center relative">
           {/* العمود الأول */}
           <div className="flex flex-col justify-center items-center gap-4 relative ">
-            <h3 className="text-5xl  font-bold text-primary">
+            <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={50000} duration={1} separator="," />
             </h3>
             <p className="text-gray1 text-[20px]   max-w-32 mx-auto ">
@@ -187,7 +187,7 @@ const Numbers = () => {
 
           {/* العمود الثاني */}
           <div className="flex flex-col justify-center items-center gap-4 ">
-            <h3 className="text-5xl  font-bold text-primary">
+            <h3 className="lg:text-5xl text-3xl  font-bold text-primary">
               +<CountUp end={200} duration={1} />
             </h3>
             <p className="text-gray1 text-[20px]  max-w-52 mx-auto ">
@@ -200,7 +200,7 @@ const Numbers = () => {
 
           {/* العمود الثالث (بدون خط) */}
           <div className="flex flex-col justify-center items-center gap-4 ">
-            <h3 className="text-5xl  font-bold text-primary">
+            <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={5} duration={1} />
             </h3>
             <p className="text-gray1 text-[20px]   max-w-52 mx-auto ">
@@ -259,7 +259,7 @@ const Numbers = () => {
           </div>
 
           {/* Description */}
-          <p className="text-[18px] text-gray-600 max-w-sm">
+          <p className="lg:text-[18px] text-[15px] text-gray-600 max-w-sm">
             {activeTab === "messages" && t("home.30-heading2")}
             {activeTab === "voice" && t("home.39-heading2")}
             {activeTab === "video" && t("home.44-heading2")}

@@ -23,7 +23,7 @@ import TextWithPicture from "@/components/Home/TextWithPicture";
 export default function Home() {
   return (
     <>
-      <section className="overflow-hidden">
+      <section className="">
         <HeroSection />
       </section>
       <section className=" overflow-hidden" id="about">

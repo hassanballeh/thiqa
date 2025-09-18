@@ -12,14 +12,14 @@ const TextWithPicture = () => {
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         <div className="flex-1 px-4 text-center md:text-start flex flex-col justify-center items-center md:items-start max-w-md">
           <div className="">
-            <h2 className="text-3xl font-bold text-white leading-relaxed">
+            <h2 className="lg:text-3xl text-2xl font-bold text-white leading-relaxed">
               {t("home.26-heading1")}
             </h2>
           </div>
-          <p className="text-[18px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
+          <p className="lg:text-[18px] text-[15px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
             {t("home.26-heading2")}
           </p>
-          <div className="relative flex items-centers my-4 md:my-6 text-[16px]">
+          <div className="relative flex items-centers my-4 md:my-6 lg:text-[16px] text-[14px]">
             <CustomButton
               label={t("home.26-icons1")}
               bgColor="bg-gold"
@@ -62,7 +62,7 @@ const TextWithPicture = () => {
             <img
               src="/image.png"
               alt="Student"
-              className="object-contain z-10 relative transition-transform duration-500 ease-out  "
+              className="object-contain z-10 relative transition-transform duration-500 ease-out lg:max-w-xl max-w-sm  "
             />
             <img
               src="/Layer_1 (3).svg"

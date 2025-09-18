@@ -38,17 +38,16 @@ export default function HeroSlide({
   changePos,
 }: HeroSlideProps) {
   return (
-    <section className="container mx-auto  sm:px-6 px-20 flex flex-col lg:flex-row w-full h-full items-center">
+    <section className=" mx-auto  sm:px-6 px-20 flex flex-col lg:flex-row w-full h-full items-center">
       {/* Left Content Section */}
       <div
-        className={`w-1/3 flex flex-col ${"justify-start"}  order-2 lg:order-1 mt-8 lg:mt-0 h-[400px]`}
+        className={`w-1/3 flex flex-col "justify-start"  order-2 lg:order-1 mt-8 lg:mt-0 h-[400px]`}
       >
         {/* Title */}
         <div className=" ">
           <h1
-            className={`${
-              changePos ? "text-[55px]" : "text-[55px]"
-            } font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
+            className={`xl:text-[55px] text-[45px]
+             font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {title}
           </h1>
@@ -57,9 +56,7 @@ export default function HeroSlide({
         {/* Subtitle */}
         <div className="mb-2">
           <h2
-            className={`${
-              changePos ? "text-[55px]" : "text-[55px]"
-            } font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
+            className={`xl:text-[55px] text-[45px] font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {subtitle}
           </h2>
@@ -99,7 +96,7 @@ export default function HeroSlide({
           <img
             src={image}
             alt="Student"
-            className=" h-[600px]  z-10 relative"
+            className=" w-full max-w-xl lg:max-w-2xl xl:h-[600px] h-auto  z-10 relative"
           />
         </div>
 
