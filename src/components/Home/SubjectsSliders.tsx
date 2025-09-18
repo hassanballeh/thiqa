@@ -67,7 +67,7 @@ const SubjectsSliders = () => {
     ],
   };
 
-  const scrollSpeed = 1;
+  const scrollSpeed = 1.7;
 
   const startScroll = (direction: "next" | "prev") => {
     const scrollContainer = scrollRef.current;

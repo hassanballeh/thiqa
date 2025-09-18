@@ -11,11 +11,11 @@ const BetweenTrend: React.FC = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
         {/* النص */}
         <div className="flex flex-col justify-center text-center md:text-start mx-auto md:mx-0 py-16">
-<div className="text-3xl md:text-6xl font-roboto  max-w-xl ">
+          <div className="text-3xl md:text-6xl font-roboto  max-w-xl ">
             <h2 className=" font-bold text-white leading-tight">
-            {t("blog.7-heading1")}
-          </h2>
-</div>
+              {t("blog.7-heading1")}
+            </h2>
+          </div>
           <p className="text-[1rem] text-white font-extralight mt-4  max-w-lg ">
             {t("blog.7-heading2")}
           </p>
@@ -31,7 +31,7 @@ const BetweenTrend: React.FC = () => {
               <img
                 src="/arrow2.svg"
                 alt="Arrow"
-                className="absolute -right-14 md:-right-20 bottom-6 w-12 h-12"
+                className="absolute right-[-40%] top-[-100%] w-12 h-12"
               />
             </div>
           </div>

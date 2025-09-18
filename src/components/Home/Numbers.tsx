@@ -52,10 +52,10 @@ const Numbers = () => {
   ];
 
   const voices = [
-    { link: "/youtube/1.m4a" },
-    { link: "/youtube/2.m4a" },
-    { link: "/youtube/3.m4a" },
-    { link: "/youtube/4.m4a" },
+    { link: "/youtube/1.m4a", name: "Um Safa" },
+    { link: "/youtube/2.m4a", name: "Um Metha" },
+    { link: "/youtube/3.m4a", name: "Um Hosah" },
+    { link: "/youtube/4.m4a", name: "Um Shams" },
   ];
 
   const videos = [
@@ -370,7 +370,7 @@ const Numbers = () => {
                       setIsPlaying(true);
                     }
                   }}
-                  className="relative w-full max-w-md bg-white p-4 rounded-full shadow flex items-center gap-4 hover:shadow-lg transition-shadow"
+                  className="relative w-full max-w-md bg-white p-4 rounded-full shadow flex items-center gap-4 hover:shadow-lg transition-shadow mt-[80px]"
                 >
                   <div className="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center">
                     {isPlaying ? (
@@ -405,6 +405,12 @@ const Numbers = () => {
                     </p>
                   </div>
                 </button>
+                <div className="flex items-center justify-start gap-2 mt-[40px] ml-[10px]">
+                  <img src="/circle12.svg" alt="" />
+                  <p className="text-[18px] text-[#FFFFFF]">
+                    {voices[current]?.name}
+                  </p>
+                </div>
 
                 <audio
                   ref={audioRef}
