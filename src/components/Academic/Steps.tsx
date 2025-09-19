@@ -47,11 +47,11 @@ const Steps = () => {
               {t("academic.22-heading1")}
             </h2>
 
-            <p className="text-[15px] text-white  font-light max-w-full md:max-w-80">
+            <p className="text-sm md:text-[15px] md:leading-normal text-white font-light max-w-full md:max-w-80">
               {t("academic.22-heading2")}
             </p>
 
-            <div className="relative flex items-center justify-center md:justify-start mt-4">
+            <div className="relative flex items-center justify-center md:justify-start md:mt-4">
               <CustomButton
                 label={t("academic.1-icon1")}
                 bgColor="bg-gold"
@@ -69,38 +69,37 @@ const Steps = () => {
           </div>
         </div>
 
-        <div className="md:col-span-2 flex flex-wrap lg:flex-nowrap gap-4  justify-center ">
-          {[0, 1].map((colIdx) => (
-            <div key={colIdx} className="flex flex-col gap-4 items-start">
-              {stepsData
-                .filter((_, i) => i % 2 === colIdx)
-                .map((step) => (
-                  <div
-                    key={step.number}
-                    className="
+        <div className="md:col-span-2 flex  gap-4  justify-center md:justify-start ">
+          {/*lg:flex-nowrap */}
+          {/*.filter((_, i) => i % 2 === colIdx) */}
+
+          <div className="flex flex-col md:flex-row flex-wrap gap-4 items-start">
+            {stepsData.map((step) => (
+              <div
+                key={step.number}
+                className={`
               bg-primaryDark p-4 md:py-8 rounded-3xl min-h-48
               flex flex-col md:flex-row items-center md:gap-4
               transition-transform duration-300 ease-in-out
               hover:scale-105 hover:shadow-xl 
-              w-auto
-            "
-                  >
-                    <span className="text-3xl md:text-6xl font-medium text-gold min-w-[60px] md:min-w-[80px] text-center tabular-nums">
-                      {String(step.number).padStart(2, "0")}
-                    </span>
+              w-auto md:basis-[calc(50%-1rem)]
+            `}
+              >
+                <span className="text-3xl md:text-6xl font-medium text-gold min-w-[60px] md:min-w-[80px] text-center tabular-nums">
+                  {String(step.number).padStart(2, "0")}
+                </span>
 
-                    <div className="text-center md:text-left mt-2 md:mt-0 max-w-72 self-start">
-                      <h4 className="text-sm md:text-[16px]  font-semibold text-white leading-snug">
-                        {step.title}
-                      </h4>
-                      <p className="text-xs md:text-xs font-extralight text-white mt-2 md:mt-3 ">
-                        <span className="leading-relaxed">{step.desc}</span>
-                      </p>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          ))}
+                <div className="text-center md:text-left mt-2 md:mt-0 max-w-72 self-start">
+                  <h4 className="text-sm md:text-[16px]  font-semibold text-white leading-snug">
+                    {step.title}
+                  </h4>
+                  <p className="text-xs md:text-xs font-extralight text-white mt-2 md:mt-3 ">
+                    <span className="leading-relaxed">{step.desc}</span>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

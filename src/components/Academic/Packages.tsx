@@ -77,16 +77,16 @@ const Packages = () => {
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
         <div className="text-center mb-8 mx-auto">
           <div className="inline-block relative max-w-2xl mx-auto">
-            <h3 className="text-3xl lg:text-5xl font-extrabold text-primary leading-snug">
+            <h3 className="text-[28px] lg:text-5xl font-extrabold text-primary leading-snug">
               {t("academic.18-heading1")}
             </h3>
             <img
               src="/line-comp.svg"
               alt="line"
-              className="w-full h-[16px] object-cover  mx-auto"
+              className="w-[90%] md:w-full md:h-[16px] object-cover  mx-auto"
             />
           </div>
-          <span className="text-gray1 text-[15px] font-light block max-w-lg mx-auto mt-6">
+          <span className="text-gray1 text-sm md:text-[15px] md:leading-normal font-light block max-w-lg mx-auto mt-4 md:mt-6">
             {t("academic.18-heading2")}{" "}
           </span>
         </div>
@@ -95,9 +95,9 @@ const Packages = () => {
             <div
               key={idx}
               className="flex flex-col gap-4 p-6 mx-auto max-w-lg text-center text-gray1 bg-white 
-  rounded-[40px] border border-gray-100 shadow 
-  transition-all duration-300 ease-in-out 
-  hover:scale-105 hover:shadow-xl hover:-translate-y-2 min-h-[500px]"
+              rounded-[40px] border border-gray-100 shadow 
+              transition-all duration-300 ease-in-out 
+              hover:scale-[1.03] md:hover:scale-105 hover:shadow-xl hover:-translate-y-2 min-h-[500px]"
             >
               <h3 className="text-primary mt-6 text-xl font-bold">
                 {plan.title}

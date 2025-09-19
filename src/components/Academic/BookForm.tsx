@@ -111,8 +111,8 @@ const BookForm: React.FC = () => {
   return (
     <div className="bg-white py-16 px-4">
       <section className="container mx-auto ">
-        <div className=" flex-1 md:px-4 text-center md:text-start flex flex-col justify-center max-w-2xl">
-          <h2 className="text-6xl font-bold text-primary leading-tight font-roboto">
+        <div className=" flex-1 md:px-4 text-start flex flex-col justify-center max-w-2xl">
+          <h2 className="text-3xl md:text-6xl font-bold text-primary leading-tight font-roboto">
             {t("academic.26-heading1-1")}
             <span className="relative inline-block">
               {t("academic.26-heading1-2")}
@@ -124,14 +124,14 @@ const BookForm: React.FC = () => {
             </span>
           </h2>
 
-          <p className="max-w-[430px] md:max-w-lg text-[15px] text-gray1 font-light mt-4 hyphens-auto ">
+          <p className="max-w-[430px] md:max-w-lg text-sm md:text-[15px] md:leading-normal text-gray1 font-light mt-4 hyphens-auto ">
             {t("academic.26-heading2")}
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mt-10 p-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full mt-6 md:mt-10 p-4"
         >
           {/* العمود الأول */}
           <div className="flex flex-col gap-4">

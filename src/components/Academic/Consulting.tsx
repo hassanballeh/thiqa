@@ -27,10 +27,10 @@ const Consulting = () => {
         }`}
       >
         {/* ✅ النصوص */}
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-start md:items-center">
           <div
-            className={`md:px-4 flex flex-col justify-center relative ${
-              isRTL ? "text-center md:text-right" : "text-center md:text-left"
+            className={`md:px-4 flex flex-col items-start justify-center relative ${
+              isRTL ? "text-right" : "text-left"
             }`}
           >
             <h2 className="relative text-3xl md:text-6xl text-primary font-roboto font-extrabold leading-snug">
@@ -39,7 +39,7 @@ const Consulting = () => {
                 <img
                   src="/under-line-cons.svg"
                   alt="underline"
-                  className={`absolute -bottom-4 w-full h-[15px] ${
+                  className={`absolute -bottom-1 md:-bottom-4 w-full h-[15px] ${
                     isRTL ? "right-0" : "left-0"
                   }`}
                 />
@@ -56,18 +56,18 @@ const Consulting = () => {
               </span>
             </h2>
 
-            <p className="text-sm md:text-[15px] font-light text-gray1  md:mt-10 max-w-sm lg:max-w-[450px]">
+            <p className="text-sm md:text-[15px] md:leading-normal font-light text-gray1 mt-4 md:mt-10 max-w-sm lg:max-w-[450px]">
               {t("academic.11-heading2")}
             </p>
           </div>
         </div>
 
         {/* ✅ الكروت */}
-        <div className="relative flex gap-4">
+        <div className="relative flex gap-2 md:gap-4">
           {founders.map((item, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-[40px] cursor-pointer hover:transition-shadow hover:duration-500 ease-in-out"
+              className="relative overflow-hidden rounded-[40px] cursor-pointer hover:transition-shadow hover:duration-500 ease-in-out basis-[calc(50%-8px)] md:basis-auto"
             >
               <div className="relative w-full md:w-72 h-full bg-primary overflow-hidden">
                 {/* الصورة */}
@@ -89,8 +89,8 @@ const Consulting = () => {
                     : "left-2 md:left-7 text-left"
                 }`}
               >
-                <h3 className="text-2xl font-bold">{item.title}</h3>
-                <p className="text-sm md:max-w-52 mt-2 leading-relaxed">
+                <h3 className="text-lg md:text-2xl font-bold">{item.title}</h3>
+                <p className="text-xs md:text-sm md:max-w-52 mt-2 md:leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -110,8 +110,8 @@ const Consulting = () => {
           <img
             src="/col.svg"
             alt="icon2"
-            className={`hidden md:block absolute top-10 z-10 ${
-              isRTL ? "left-0 2xl:left-32" : "right-0 2xl:right-32"
+            className={`md:block absolute md:top-10 z-10 ${
+              isRTL ? "-left-[13px] 2xl:left-32" : "-right-[13px] 2xl:right-32"
             }`}
           />
         </div>
