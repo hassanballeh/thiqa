@@ -1,9 +1,9 @@
-"use client"
-import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion';
-import { IoMdArrowBack, IoMdArrowForward } from 'react-icons/io';
-import { FaStar } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next';
+"use client";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Grades = () => {
   const { t } = useTranslation();
@@ -19,16 +19,7 @@ const Grades = () => {
       initial: "Z",
       text: t("shadow.19-number2-2"),
     },
-    {
-      name: t("shadow.19-number2-1"),
-      initial: "Z",
-      text: t("shadow.19-number2-2"),
-    },
-    {
-      name: t("shadow.19-number2-1"),
-      initial: "Z",
-      text: t("shadow.19-number2-2"),
-    },
+
     {
       name: t("shadow.19-number3-1"),
       initial: "Z",
@@ -67,7 +58,10 @@ const Grades = () => {
     }
   };
 
-  const visibleTestimonials = testimonials.slice(startIndex, startIndex + cardsToShow);
+  const visibleTestimonials = testimonials.slice(
+    startIndex,
+    startIndex + cardsToShow
+  );
 
   return (
     <motion.div
@@ -81,7 +75,7 @@ const Grades = () => {
         <div className="text-center mb-16 mx-auto">
           <div className="inline-block relative max-w-2xl mx-auto">
             <h3 className="text-2xl lg:text-3xl font-bold text-primary leading-relaxed">
-              {t('shadow.19-heading1-1')} {t("shadow.19-heading1-2")}
+              {t("shadow.19-heading1-1")} {t("shadow.19-heading1-2")}
             </h3>
           </div>
         </div>
@@ -96,65 +90,74 @@ const Grades = () => {
           </button>
 
           {/* الحاوية مع AnimatePresence */}
-<div className="flex gap-6 px-6 md:px-16 justify-center">
-  <AnimatePresence mode="wait" initial={false}>
-    {visibleTestimonials.map((testimonial, index) => {
-      const isFirstCard = index === 0; // أول كارد ظاهر
-      const isLastCard = index === visibleTestimonials.length - 1; // آخر كارد ظاهر
+          <div className="flex gap-6 px-6 md:px-16 justify-center">
+            <AnimatePresence mode="wait" initial={false}>
+              {visibleTestimonials.map((testimonial, index) => {
+                const isFirstCard = index === 0; // أول كارد ظاهر
+                const isLastCard = index === visibleTestimonials.length - 1; // آخر كارد ظاهر
 
-      return (
-        <motion.div
-          key={startIndex + index}
-          initial={{ x: direction === 1 ? 100 : -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: direction === 1 ? -100 : 100, opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="w-full max-w-[280px] bg-[#F0F5F9] shadow-sm rounded-[40px] text-gray1 px-6 pt-12 pb-6 flex flex-col justify-between relative min-h-[300px]"
-        >
-          {/* left image always on first card */}
-          {isFirstCard && (
-            <div className="absolute z-20 -top-10 -left-12 w-24">
-              <img src="/gif/istolcro-unscreen.gif" alt="Left decoration" />
-            </div>
-          )}
+                return (
+                  <motion.div
+                    key={startIndex + index}
+                    initial={{ x: direction === 1 ? 100 : -100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: direction === 1 ? -100 : 100, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full max-w-[280px] bg-[#F0F5F9] shadow-sm rounded-[40px] text-gray1 px-6 pt-12 pb-6 flex flex-col justify-between relative min-h-[300px]"
+                  >
+                    {/* left image always on first card */}
+                    {isFirstCard && (
+                      <div className="absolute z-20 -top-10 -left-12 w-24">
+                        <img
+                          src="/gif/istolcro-unscreen.gif"
+                          alt="Left decoration"
+                        />
+                      </div>
+                    )}
 
-          {/* right image always on last card */}
-          {isLastCard && (
-            <div className="absolute -top-10 -right-6 w-20">
-              <img src="/gif/istolha-unscreen.gif" alt="Right decoration" />
-            </div>
-          )}
+                    {/* right image always on last card */}
+                    {isLastCard && (
+                      <div className="absolute -top-10 -right-6 w-20">
+                        <img
+                          src="/gif/istolha-unscreen.gif"
+                          alt="Right decoration"
+                        />
+                      </div>
+                    )}
 
-          <img
-            src="/qoute.svg"
-            alt="Quote"
-            className="absolute -top-4 left-6 w-10 h-10"
-          />
+                    <img
+                      src="/qoute.svg"
+                      alt="Quote"
+                      className="absolute -top-4 left-6 w-10 h-10"
+                    />
 
-          <p className="text-sm font-light max-w-sm leading-relaxed">
-            {testimonial.text}
-          </p>
+                    <p className="text-sm font-light max-w-sm leading-relaxed">
+                      {testimonial.text}
+                    </p>
 
-          <div className="flex items-start gap-3 mt-8">
-            <div className="w-10 h-10 rounded-full bg-[#D9D9D9] flex items-center justify-center">
-              <span className="text-primary font-bold">{testimonial.initial}</span>
-            </div>
+                    <div className="flex items-start gap-3 mt-8">
+                      <div className="w-10 h-10 rounded-full bg-[#D9D9D9] flex items-center justify-center">
+                        <span className="text-primary font-bold">
+                          {testimonial.initial}
+                        </span>
+                      </div>
 
-            <div className="space-y-1">
-              <h4 className="font-light text-xs">{testimonial.name}</h4>
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-gold" />
-                ))}
-              </div>
-            </div>
+                      <div className="space-y-1">
+                        <h4 className="font-light text-xs">
+                          {testimonial.name}
+                        </h4>
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <FaStar key={i} className="text-gold" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
-        </motion.div>
-      );
-    })}
-  </AnimatePresence>
-</div>
-
 
           <button
             onClick={nextSlide}
@@ -166,7 +169,7 @@ const Grades = () => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
 export default Grades;

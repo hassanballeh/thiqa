@@ -41,7 +41,7 @@ const Question = () => {
           <h2 className="font-bold text-primary leading-relaxed whitespace-pre-line">
             {t("academic.36-heading1")}
           </h2>
-          <p className="text-sm font-light mt-4 leading-relaxed md:max-w-[80%] ">
+          <p className="text-sm md:text-[15px] md:leading-normal font-light mt-4  md:max-w-[85%] ">
             {t("academic.36-heading2")}{" "}
           </p>
         </div>

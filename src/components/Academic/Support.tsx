@@ -11,24 +11,24 @@ const Support = () => {
   const testimonials = [
     {
       name: t("become.41-feedback1-name"),
-      initial: "أ",
+      initial: t("become.41-feedback1-name").trim().charAt(0),
       text: t("become.41-feedback1"),
       leftIcon: true,
     },
     {
       name: t("become.41-feedback2-name"),
-      initial: "س",
+      initial: t("become.41-feedback2-name").trim().charAt(0),
       text: t("become.41-feedback2"),
     },
     {
       name: t("become.41-feedback3-name"),
-      initial: "س",
+      initial: t("become.41-feedback3-name").trim().charAt(0),
       text: t("become.41-feedback3"),
       rightIcon: true,
     },
     {
       name: t("become.41-feedback4-name"),
-      initial: "م",
+      initial: t("become.41-feedback4-name").trim().charAt(0),
       text: t("become.41-feedback4"),
     },
   ];
@@ -96,7 +96,7 @@ const Support = () => {
         <div className="w-full relative">
           <button
             onClick={prevSlide}
-            className="absolute -left-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
+            className="absolute left-0 md:-left-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
             disabled={startIndex === 0}
           >
             <IoMdArrowBack size={20} />
@@ -173,7 +173,7 @@ const Support = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute -right-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
+            className="absolute right-0 md:-right-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
             disabled={startIndex + cardsToShow >= testimonials.length}
           >
             <IoMdArrowForward size={20} />
