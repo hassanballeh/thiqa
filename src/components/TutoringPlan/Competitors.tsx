@@ -78,9 +78,9 @@ const Competitors = () => {
       className="relative w-full py-10 bg-white px-2"
     >
       <div className="container mx-auto">
-        <div className="text-center mx-auto">
-          <div className="inline-block relative max-w-80 md:max-w-xl mx-auto">
-            <h3 className="text-3xl lg:text-4xl font-extrabold text-primary leading-snug mb-2">
+        <div className="md:text-center text-left mx-auto">
+          <div className="inline-block relative  md:max-w-xl mx-auto">
+            <h3 className="xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px]  font-extrabold text-primary leading-snug mb-2">
               {t("tutoring.19-heading1")}
             </h3>
             <img
@@ -94,7 +94,7 @@ const Competitors = () => {
               className="hidden md:block w-64 max-w-lg mx-auto"
             />
           </div>
-          <span className="text-xs md:text-[18px] leading-6 text-gray1 mt-2 block max-w-60 md:max-w-md mx-auto">
+          <span className="xl:text-[18px] sm:text-[16px] text-[14px] md:text-center text-left leading-6 text-gray1 mt-2 block md:max-w-md md:mx-auto ">
             {t("tutoring.19-heading2")}
           </span>
         </div>
@@ -115,7 +115,9 @@ const Competitors = () => {
               />
 
               {/* Title */}
-              <h3 className={`text-3xl max-w-52 mb-10 ${card.titleColor}`}>
+              <h3
+                className={`md:text-3xl sm:text-2xl text-xl md:max-w-52 md:mb-10 mb-5 ${card.titleColor}`}
+              >
                 {card.title}
               </h3>
 

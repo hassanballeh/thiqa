@@ -48,7 +48,7 @@ const Gallery = () => {
         },
         {
           date: { day: "5", month: "Sep" },
-          title: "Ma'an” Certificate",
+          title: " Ma'an Certificate",
           description: t("gallery.6"),
           image: "/gallery/Mask group (6).png",
         },
@@ -59,12 +59,6 @@ const Gallery = () => {
           image: "/gallery/Mask group (7).png",
         },
         {
-          date: { day: "20", month: "June" },
-          title: "LEAP Festival (Saudi Arabia)",
-          description: t("gallery.8"),
-          image: "/gallery/Mask group (7).png",
-        },
-        {
           date: { day: "23", month: "May" },
           title: "One Dirham Makes a Difference' Initiative",
           description: t("gallery.9"),
@@ -72,7 +66,7 @@ const Gallery = () => {
         },
         {
           date: { day: "6", month: "March" },
-          title: "Bipin  Program Investment",
+          title: " Bibin Program Investment",
           description: t("gallery.10"),
           image: "/gallery/Mask group (9).png",
         },
@@ -85,19 +79,7 @@ const Gallery = () => {
         {
           date: { day: "16", month: "Feb" },
           title: "Top 16 UAE EdTech Startups",
-          description: t("gallery.12"),
-          image: "/gallery/Mask group (11).png",
-        },
-        {
-          date: { day: "10", month: "Feb" },
-          title: "Bett (UK)",
           description: t("gallery.13"),
-          image: "/gallery/Mask group (11).png",
-        },
-        {
-          date: { day: "27", month: "Jan" },
-          title: "Top 16 UAE EdTech Startups",
-          description: t("gallery.14"),
           image: "/gallery/Mask group (11).png",
         },
       ],

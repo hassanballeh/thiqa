@@ -10,14 +10,14 @@ const SuccessStories = () => {
     <div className="py-16">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full gap-6">
         {/* Text Side */}
-        <div className="flex-1 md:px-4 text-center md:text-start flex flex-col justify-center max-w-lg">
-          <div className="text-3xl md:text-6xl">
+        <div className="flex-1 md:px-4 text-start flex flex-col justify-center max-w-lg">
+          <div className="xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px] ">
             <h2 className="font-bold text-primary leading-tight font-roboto">
               {t("tutoring.16-heading1")}
             </h2>
           </div>
 
-          <p className="max-w-xs md:max-w-lg mx-auto text-[15px] text-gray1 font-light mt-4">
+          <p className="max-w-xs md:max-w-lg  xl:text-[18px] sm:text-[16px] text-[14px] text-left  text-gray1 font-light mt-4">
             {t("tutoring.16-heading2")}
           </p>
 

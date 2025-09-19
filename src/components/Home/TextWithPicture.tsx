@@ -8,18 +8,18 @@ const TextWithPicture = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-primary py-10 md:py-0">
-      <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
-        <div className="flex-1 px-4 text-center md:text-start flex flex-col justify-center items-center md:items-start max-w-md">
+    <div className="bg-primary py-8 md:py-0">
+      <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  md:place-items-stretch w-full">
+        <div className="flex-1 px-10 text-start flex flex-col justify-center items-center md:items-start max-w-md">
           <div className="">
-            <h2 className="lg:text-3xl text-2xl font-bold text-white leading-relaxed">
+            <h2 className="md:text-3xl text-2xl font-bold text-white leading-relaxed">
               {t("home.26-heading1")}
             </h2>
           </div>
-          <p className="lg:text-[18px] text-[15px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
             {t("home.26-heading2")}
           </p>
-          <div className="relative flex items-centers my-4 md:my-6 lg:text-[16px] text-[14px]">
+          <div className="relative flex items-centers my-4 md:my-6 lg:text-[16px] text-[14px] text-left md:w-fit w-full">
             <CustomButton
               label={t("home.26-icons1")}
               bgColor="bg-gold"
@@ -30,13 +30,13 @@ const TextWithPicture = () => {
             <img
               src="/arrow-private.svg"
               alt="Arrow"
-              className="absolute left-[110%] top-[40%] -translate-y-1/2   "
+              className="hidden md:block absolute left-[110%] top-[40%] -translate-y-1/2   "
             />
           </div>
 
           <Link
             href="/under-develop"
-            className="flex items-center text-white underline font-medium hover:text-gray-200 text-[18px]"
+            className="flex md:items-center items-start text-white underline font-medium hover:text-gray-200 xl:text-[18px] sm:text-[16px] text-[14px] w-full"
           >
             <span> {t("home.26-icons2")}</span>
             {/* السهم على اليمين */}
@@ -57,7 +57,7 @@ const TextWithPicture = () => {
           </Link>
         </div>
 
-        <section className="flex-1 relative flex justify-center md:justify-end items-center py-4 md:py-12 ">
+        <section className="flex-1 relative md:flex hidden justify-center md:justify-end items-center py-4 md:py-12 ">
           <div className="relative z-10 group">
             <img
               src="/image.png"

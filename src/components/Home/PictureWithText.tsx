@@ -7,7 +7,7 @@ const PictureWithText = () => {
 
   return (
     <div className="bg-white pb-8 md:pb-0">
-      <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full  ">
+      <section className="md:container px-10 md:px-0 mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center md:place-items-stretch w-full lg:py-0 py-10  ">
         <section className="hidden  flex-1 relative lg:flex justify-center items-center py-4 overflow-hidden pb-11">
           <div className="relative z-10 ">
             <img
@@ -20,7 +20,7 @@ const PictureWithText = () => {
           <img
             src="/gif/ishine-unscreen.gif"
             alt="Star"
-            className="absolute top-[33%] right-[14%] md:right-[16%] w-16 md:w-28 object-contain z-0"
+            className="absolute top-[33%] right-[14%] md:right-[16%] w-16 md:w-28 object-contain z-0 hidden md:flex"
           />
 
           <img
@@ -30,9 +30,9 @@ const PictureWithText = () => {
           />
         </section>
 
-        <div className="flex-1 md:ps-20  flex flex-col justify-center  md:max-w-md">
-          <div className="inline-block font-roboto text-4xl">
-            <h2 className=" font-bold text-primary leading-tight  max-w-52 mx-auto md:mx-0 md:max-w-[400px]">
+        <div className="flex-1   flex flex-col justify-center w-full  lg:max-w-md">
+          <div className="inline-block font-roboto xl:text-4xl lg:text-3xl text-2xl">
+            <h2 className=" font-bold text-primary leading-tight  mx-auto md:mx-0 lg:max-w-[400px]">
               {t("home.68-heading1-1")} <br />
               {t("home.68-heading1-2")}
               <span className="ms-2 relative inline-block">
@@ -40,20 +40,20 @@ const PictureWithText = () => {
                 <img
                   src="/line-income.svg"
                   alt="underline"
-                  className="absolute -bottom-[15%] left-[-20%]  "
+                  className="hidden lg:block absolute -bottom-[15%] left-[-20%]  "
                 />
               </span>
             </h2>
           </div>
 
           <div className="mt-4 flex items-start justify-between">
-            <p className="text-xs md:text-[15px] leading-relaxed text-gray1 font-light md:max-w-[350px]">
+            <p className="text-xs md:text-[15px] leading-relaxed text-gray1 font-light lg:max-w-[350px]">
               {t("home.68-heading2")}{" "}
             </p>
           </div>
 
           <div className="relative flex items-centers my-4">
-            <div className="flex items-center mx-auto md:mx-0 gap-2">
+            <div className="flex items-center  md:mx-0 gap-2">
               {/* زر رئيسي */}
               <a
                 href="/form/tutor"
@@ -74,7 +74,7 @@ const PictureWithText = () => {
             <img
               src="/arrow-passion.svg"
               alt="Arrow"
-              className="hidden md:block absolute  -right-4 top-0 -translate-y-1/2 w-16 h-16"
+              className="hidden lg:block absolute  -right-4 top-0 -translate-y-1/2 w-16 h-16"
             />
           </div>
         </div>

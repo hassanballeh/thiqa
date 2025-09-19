@@ -127,7 +127,7 @@ export default function HeroSection() {
   }, [slides.length]);
 
   return (
-    <div className="relative min-h-[100vh] lg:min-h-[90vh] 2xl:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+    <div className="relative min-h-[100vh] lg:min-h-[90vh] 2xl:min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white ">
       {/* Slides */}
       {slides.map((slide, i) => (
         <div

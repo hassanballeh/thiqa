@@ -26,9 +26,9 @@ const MapSection = () => {
 
   return (
     <div className="bg-primary py-10 md:py-0">
-      <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
+      <section className="md:container px-10 md:px-0 md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         {/* النصوص */}
-        <div className="text-xl md:text-3xl flex-1 px-4 text-center md:text-start flex flex-col justify-center max-w-[462px]">
+        <div className="text-xl md:text-3xl flex-1  text-start flex flex-col justify-center md:max-w-[462px]">
           <h2 className=" font-bold text-white leading-relaxed max-w-md">
             {selectedCountry === "UAE"
               ? t("home.62-heading1")
@@ -44,14 +44,14 @@ const MapSection = () => {
           <div className="flex gap-4 mt-4 md:mt-10 mx-auto md:mx-0 items-center">
             <Link
               href="/tutoring-plan#book-form"
-              className="bg-gold text-base  rounded-3xl px-4 font-semibold py-1.5 text-white hover:bg-gold"
+              className="bg-gold md:text-base text-sm rounded-3xl lg:px-4 px-2 font-semibold py-1.5 text-white hover:bg-gold"
             >
               <span>{t("tutoring.1-icon")}</span>
             </Link>
             <div className="relative flex items-center">
               <Link
                 href="/under-develop"
-                className="text-base rounded-3xl px-4 font-semibold py-1.5 border border-white text-white hover:text-white hover:bg-primary/60"
+                className="md:text-base text-sm rounded-3xl lg:px-4 px-2 font-semibold py-1.5 border border-white text-white hover:text-white hover:bg-primary/60"
               >
                 <span>Log in as a parent </span>
               </Link>

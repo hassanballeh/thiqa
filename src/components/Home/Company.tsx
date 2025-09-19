@@ -46,7 +46,7 @@ const Company = () => {
       </div>
 
       <section className=" mx-auto mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
-        <div className="flex flex-col justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  text-center md:text-start max-w-lg relative">
+        <div className="flex flex-col px-10 md:px-0 md:mb-0 mb-10 md:justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  md:text-center md:text-start max-w-lg relative">
           <h2 className="text-3xl font-bold text-primary leading-relaxed">
             Ready?
           </h2>
@@ -93,7 +93,7 @@ const Company = () => {
           </div>
         </div>
 
-        <div className="relative" dir="ltr">
+        <div className="relative hidden md:block" dir="ltr">
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
             className={`hidden md:block absolute bottom-0 right-0 z-0`}

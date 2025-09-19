@@ -16,7 +16,9 @@ export const LocationLabel = ({
       className="absolute flex flex-col items-center"
       style={{ top, left, transform: "translate(-50%, -100%)" }}
     >
-      <span className="text-xs md:text-sm font-medium text-white mb-1">{label}</span>
+      <span className="text-xs md:text-sm font-medium text-white mb-1">
+        {label}
+      </span>
 
       <motion.div
         className="w-[1px] bg-[#F8B21F]"

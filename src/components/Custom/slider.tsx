@@ -38,15 +38,15 @@ export default function HeroSlide({
   changePos,
 }: HeroSlideProps) {
   return (
-    <section className=" mx-auto  sm:px-6 px-20 flex flex-col lg:flex-row w-full h-full items-center">
+    <section className=" mx-auto   flex flex-col gap-24 lg:flex-row w-full h-full lg:items-center items-start px-10">
       {/* Left Content Section */}
       <div
-        className={`w-1/3 flex flex-col "justify-start"  order-2 lg:order-1 mt-8 lg:mt-0 h-[400px]`}
+        className={`lg:w-1/3 w-full flex flex-col "justify-start"   lg:order-1 mt-8 lg:mt-0 lg:h-[400px] relative`}
       >
         {/* Title */}
         <div className=" ">
           <h1
-            className={`xl:text-[55px] text-[45px]
+            className={`xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px]
              font-bold text-primary font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {title}
@@ -56,7 +56,7 @@ export default function HeroSlide({
         {/* Subtitle */}
         <div className="mb-2">
           <h2
-            className={`xl:text-[55px] text-[45px] font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
+            className={`xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px] font-bold text-[#4D4D4D] font-roboto leading-tight line-clamp-2 overflow-hidden`}
           >
             {subtitle}
           </h2>
@@ -64,22 +64,22 @@ export default function HeroSlide({
 
         {/* Description */}
         <div className="">
-          <p className="text-[18px] text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
             {description}
           </p>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute top-[75%]">
+        <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute lg:top-[85%] top-[100%]">
           <Link
             href={link1}
-            className="inline-flex items-center justify-center bg-primary text-white text-base font-semibold px-6  py-1.5  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center bg-primary text-white text-base font-semibold lg:px-6 sm:px-4 px-2  py-1.5  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon1}
           </Link>
           <Link
             href="/under-develop"
-            className="inline-flex items-center justify-center border-2 border-primary text-primary text-base font-semibold px-6 py-1.5  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center border-2 border-primary text-primary text-base font-semibold lg:px-6 sm:px-4 px-2 py-1.5  rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             {icon2}
           </Link>
@@ -89,14 +89,14 @@ export default function HeroSlide({
       <div
         className={`relative ${
           changePos ? "top-[-32px]" : ""
-        } w-full lg:w-3/5 xl:w-2/3  flex justify-center items-center order-1 lg:order-2`}
+        } w-full lg:w-3/5 xl:w-2/3  flex justify-center items-center flex-col order-1 lg:order-2`}
       >
         {/* Main Image */}
         <div className="relative z-10">
           <img
             src={image}
             alt="Student"
-            className=" w-full max-w-xl lg:max-w-2xl xl:h-[600px] h-auto  z-10 relative"
+            className="lg:w-full lg:h-[600px]    z-10 relative"
           />
         </div>
 
@@ -115,14 +115,6 @@ export default function HeroSlide({
             {/* Layer GIFs */}
             {testimonial.layerGif && testimonial.layerPosition && (
               <>
-                {/* Mobile version - positioned around the image like in Figma */}
-                {idx === 1 && (
-                  <img
-                    src={testimonial.layerGif}
-                    alt={`${testimonial.name} decoration mobile`}
-                    className="absolute right-4 top-16 sm:right-8 sm:top-20 w-16 h-16 sm:w-20 sm:h-20 z-20 lg:hidden"
-                  />
-                )}
                 {/* Desktop version */}
                 <img
                   src={testimonial.layerGif}
@@ -135,9 +127,9 @@ export default function HeroSlide({
             {/* Desktop Testimonial Cards */}
             <div
               className={`
-                hidden lg:flex flex-col justify-around  absolute ${
+                flex flex-col justify-around  lg:absolute ${
                   testimonial.position
-                } ${changePos ? "" : ""}
+                } 
                 
                 ${testimonial.bgColor ?? "bg-white"}
                 rounded-2xl xl:rounded-3xl shadow-lg p-[1rem] z-20 
@@ -175,62 +167,6 @@ export default function HeroSlide({
               >
                 {testimonial.text}
               </p>
-            </div>
-
-            {/* Mobile Testimonial Cards - Positioned like Figma design */}
-            <div
-              className={`lg:hidden absolute z-20 ${
-                idx === 0
-                  ? "top-[15%] left-2 sm:left-4"
-                  : idx === 1
-                  ? "top-[5%] right-2 sm:right-4"
-                  : "bottom-[15%] right-2 sm:right-4"
-              }`}
-            >
-              <div
-                className={`
-                  w-[140px] sm:w-[160px] min-h-[100px] sm:min-h-[110px]
-                  ${testimonial.bgColor ?? "bg-white"}
-                  rounded-2xl shadow-lg p-3 sm:p-4
-                  backdrop-blur-sm border border-white/20
-                  ${testimonial.bgColor === "bg-gold" ? "text-white" : ""}
-                `}
-              >
-                {/* Avatar and Name */}
-                <div className="flex items-start gap-2 mb-2">
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#D9D9D9] rounded-full overflow-hidden flex-shrink-0"></div>
-                  <div className="flex flex-col">
-                    <span
-                      className={`font-semibold text-xs ${
-                        testimonial.textColor ?? "text-gray-800"
-                      } line-clamp-1`}
-                    >
-                      {testimonial.name}
-                    </span>
-                    <div
-                      className={`flex items-center ${
-                        testimonial.textColor === "text-white"
-                          ? "text-yellow-300"
-                          : "text-gold"
-                      } text-[10px] mt-1`}
-                    >
-                      {Array(5)
-                        .fill(0)
-                        .map((_, i) => (
-                          <FaStar key={i} />
-                        ))}
-                    </div>
-                  </div>
-                </div>
-                {/* Testimonial Text */}
-                <p
-                  className={`text-[10px] sm:text-xs leading-relaxed font-light ${
-                    testimonial.textColor ?? "text-gray-600"
-                  } line-clamp-3`}
-                >
-                  {testimonial.text}
-                </p>
-              </div>
             </div>
           </React.Fragment>
         ))}

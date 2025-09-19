@@ -10,7 +10,7 @@ const Gallery = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 bg-primary" dir="rtl">
       {/* Image 1 */}
       <GalleryItem
-        src="/gallery/image1.jpg"
+        src="/gallery/image11.JPG"
         alt="Image 1"
         text={t("home.gallery-1")}
       />
@@ -61,7 +61,7 @@ const Gallery = () => {
       </div>
       {/* Image 7 */}
       <GalleryItem
-        src="/gallery/Mask group (9).png"
+        src="/gallery/image7.webp"
         alt="Image 7"
         text={t("home.gallery-7")}
       />

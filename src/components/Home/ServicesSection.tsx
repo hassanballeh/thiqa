@@ -30,7 +30,7 @@ const ServiceCard = ({
                 hover:border-white/10`}
     >
       {highlight && (
-        <div className="absolute bottom-[95%] left-[8%]  z-20 flex items-center gap-2">
+        <div className="absolute bottom-[95%] md:left-[8%] left-[15%]  z-20 flex items-center gap-2">
           {/* Arrow image - adjust top/left positioning */}
           <img
             src="/arrow-30.svg"
@@ -253,19 +253,19 @@ const ServicesSection = () => {
       className="relative w-full py-10"
     >
       <div className="mx-auto max-w-6xl ">
-        <div className="text-center mb-10 max-w-sm md:max-w-md mx-auto">
+        <div className="md:text-center text-left mb-10 max-w-sm md:max-w-md md:mx-auto px-10 md:px-0">
           <div className="inline-block relative">
-            <h3 className="text-3xl lg:text-3xl font-bold text-primary leading-tight">
+            <h3 className="xl:text-3xl text-2xl  font-bold text-primary leading-tight">
               {t("home.20-heading1")}
             </h3>
             <img
               src="/line.svg"
               alt="Vector line"
-              className="w-[75%] mx-auto mt-2"
+              className="w-[75%] md:mx-auto mt-2"
             />
           </div>
 
-          <span className="text-gray1 text-[18px] mt-6 block  mx-auto">
+          <span className="text-gray1 xl:text-[18px] sm:text-[16px] text-[14px] mt-6 block  mx-auto">
             {t("home.20-heading2")}{" "}
           </span>
         </div>

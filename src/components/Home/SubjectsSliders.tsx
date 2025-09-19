@@ -105,7 +105,7 @@ const SubjectsSliders = () => {
   return (
     <div className="relative w-full py-10 md:py-20 bg-white">
       <div className="container mx-auto space-y-6 md:space-y-12">
-        <div className="text-center mb-8 md:mb-16 flex flex-col items-center justify-center">
+        <div className="md:text-center mb-8 md:mb-16 flex flex-col md:items-center justify-center">
           <div>
             <h3 className="font-bold text-primary text-2xl md:text-3xl mb-2">
               {t("home.55-heading1")}
@@ -153,11 +153,11 @@ const SubjectsSliders = () => {
         {/* Desktop */}
         {selected === "icon4" ? (
           // Static row for icon4
-          <div className="hidden lg:flex justify-center gap-4">
+          <div className="flex justify-center sm:flex-row flex-col items-center gap-4">
             {dataSets.icon4.map((item, index) => (
               <div
                 key={index}
-                className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0"
+                className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0 md:w-[200px] w-[150px] "
                 style={{ minWidth: "20%" }}
               >
                 <img
@@ -173,7 +173,7 @@ const SubjectsSliders = () => {
           </div>
         ) : (
           // Carousel for other icons
-          <div className="hidden lg:flex items-center justify-center relative">
+          <div className="flex items-center justify-center relative">
             <button
               onMouseEnter={() => startScroll("prev")}
               onMouseLeave={stopScroll}
@@ -189,7 +189,7 @@ const SubjectsSliders = () => {
               {dataSets[selected].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0"
+                  className="bg-[#EEF1F8] shadow-md rounded-xl py-8 px-4 text-center flex flex-col items-center justify-center flex-shrink-0 md:w-[200px] w-[150px]"
                   style={{ minWidth: "20%" }}
                 >
                   <img

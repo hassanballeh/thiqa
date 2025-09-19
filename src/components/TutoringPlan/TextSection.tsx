@@ -14,19 +14,19 @@ const TextSection = () => {
     <section className="2xl:container 2xl:mx-auto w-full relative bg-primary">
       <div className="md:container md:mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
         {/* النص */}
-        <div className="flex flex-col justify-center text-center md:text-start max-w-lg mx-auto md:mx-0 px-4 py-16">
-          <h2 className="text-xl md:text-6xl font-bold text-white leading-tight mb-4">
+        <div className="flex flex-col justify-center text-start max-w-lg mx-auto md:mx-0 px-4 py-16">
+          <h2 className="xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px]  font-bold text-white leading-tight mb-4">
             {t("tutoring.7-heading1")}
           </h2>
-          <p className="text-xs text-white font-extralight md:text-base mb-6">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] text-white font-extralight  mb-6">
             {t("tutoring.7-heading2")}
           </p>
 
-          <div className="flex gap-4 items-center justify-center md:justify-start">
+          <div className="flex gap-4 items-center justify-start">
             <div className="relative flex items-center">
               <button
                 onClick={() => setShowStartNow(true)}
-                className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-sm sm:text-base"
+                className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold xl:text-[18px] sm:text-[16px] text-[14px]"
               >
                 <span>{t("tutoring.7-icon")}</span>
               </button>

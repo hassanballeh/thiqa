@@ -55,11 +55,11 @@ const AccordionHome = () => {
     <div className="max-w-6xl mx-auto px-4 py-20">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-gray1">
         {/* Text Section */}
-        <div className="text-2xl md:text-4xl  max-w-md flex flex-col justify-center text-center md:text-start">
+        <div className="xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px]   max-w-md flex flex-col justify-center md:text-center md:text-start">
           <h2 className="font-bold text-primary leading-relaxed ">
             {t("home.81-heading1")}
           </h2>
-          <p className="text-sm font-light mt-4 leading-relaxed ">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] font-light mt-4 leading-relaxed ">
             {t("home.81-heading2")}
           </p>
         </div>

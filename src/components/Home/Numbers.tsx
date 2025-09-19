@@ -52,6 +52,7 @@ const Numbers = () => {
   ];
 
   const voices = [
+    { link: "/youtube/5.m4a", name: "Um Alya" },
     { link: "/youtube/1.m4a", name: "Um Safa" },
     { link: "/youtube/2.m4a", name: "Um Metha" },
     { link: "/youtube/3.m4a", name: "Um Hosah" },
@@ -171,13 +172,13 @@ const Numbers = () => {
   return (
     <div className="bg-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl text-center relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl md:text-center text-left relative mb-8">
           {/* العمود الأول */}
-          <div className="flex flex-col justify-center items-center gap-4 relative ">
+          <div className="flex flex-col justify-center md:items-center items-start gap-4 relative w-full ">
             <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={50000} duration={1} separator="," />
             </h3>
-            <p className="text-gray1 text-[20px]   max-w-32 mx-auto ">
+            <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px]   md:max-w-52 md:mx-auto ">
               {t("home.29-number1")}
             </p>
 
@@ -186,11 +187,11 @@ const Numbers = () => {
           </div>
 
           {/* العمود الثاني */}
-          <div className="flex flex-col justify-center items-center gap-4 ">
+          <div className="flex flex-col justify-center md:items-center items-start gap-4  ">
             <h3 className="lg:text-5xl text-3xl  font-bold text-primary">
               +<CountUp end={200} duration={1} />
             </h3>
-            <p className="text-gray1 text-[20px]  max-w-52 mx-auto ">
+            <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px]  md:max-w-52 md:mx-auto ">
               {t("home.29-number2")}
             </p>
 
@@ -199,11 +200,11 @@ const Numbers = () => {
           </div>
 
           {/* العمود الثالث (بدون خط) */}
-          <div className="flex flex-col justify-center items-center gap-4 ">
+          <div className="flex flex-col justify-center md:items-center items-start gap-4 ">
             <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={5} duration={1} />
             </h3>
-            <p className="text-gray1 text-[20px]   max-w-52 mx-auto ">
+            <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px] text-left   md:max-w-52 md:mx-auto ">
               {t("home.29-number3")}
             </p>
           </div>
