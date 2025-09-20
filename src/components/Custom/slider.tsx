@@ -127,7 +127,7 @@ export default function HeroSlide({
             {/* Desktop Testimonial Cards */}
             <div
               className={`
-                flex flex-col justify-around  lg:absolute ${
+                md:flex hidden flex-col justify-around  lg:absolute ${
                   testimonial.position
                 } 
                 
