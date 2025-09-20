@@ -22,7 +22,7 @@ const Consulting = () => {
   return (
     <div className="bg-white">
       <section
-        className={`container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 px-6 py-12 ${
+        className={`container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 px-6 py-12 ${
           isRTL ? "direction-rtl" : "direction-ltr"
         }`}
       >
@@ -30,10 +30,10 @@ const Consulting = () => {
         <div className="flex flex-col justify-center items-start md:items-center">
           <div
             className={`md:px-4 flex flex-col items-start justify-center relative ${
-              isRTL ? "text-right" : "text-left"
+              isRTL ? "text-right" : "text-left md:text-center lg:text-left"
             }`}
           >
-            <h2 className="relative text-3xl md:text-6xl text-primary font-roboto font-extrabold leading-snug">
+            <h2 className="relative text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary font-roboto font-extrabold leading-snug md:mx-auto lg:mx-0">
               <span className=" inline-block">
                 {t("academic.11-heading1-1")}
                 <img
@@ -49,7 +49,7 @@ const Consulting = () => {
                 <img
                   src="/arrow-consulting.svg"
                   alt="arrow"
-                  className={`hidden md:block  absolute mt-2 w-28 ${
+                  className={`hidden lg:block  absolute lg:-mt-2 xl:mt-2 w-28 ${
                     isRTL ? "-end-24 top-8" : "start-24 2xl:start-32 top-8 "
                   }`}
                 />
@@ -63,7 +63,7 @@ const Consulting = () => {
         </div>
 
         {/* ✅ الكروت */}
-        <div className="relative flex gap-2 md:gap-4">
+        <div className="relative flex gap-2 md:gap-4  md:justify-center ">
           {founders.map((item, index) => (
             <div
               key={index}
@@ -74,7 +74,9 @@ const Consulting = () => {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${
+                    index === 1 && "lg:-translate-x-[37px] xl:translate-x-0"
+                  }`}
                 />
 
                 {/* طبقة الظل */}

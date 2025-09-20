@@ -40,10 +40,10 @@ const Steps = () => {
 
   return (
     <div className="py-12 bg-primary">
-      <section className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 px-6 py-12">
-        <div className="md:col-span-1 flex flex-col justify-center items-center px-4 md:px-0">
-          <div className="text-white text-center md:text-start flex flex-col gap-4 justify-center max-w-[350px] w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold leading-relaxed">
+      <section className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 px-6 py-12">
+        <div className="lg:col-span-1 flex flex-col justify-center items-center px-4 md:px-0">
+          <div className="text-white text-center lg:text-start flex flex-col gap-4 justify-center max-w-[350px] w-full">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold leading-relaxed">
               {t("academic.22-heading1")}
             </h2>
 
@@ -51,7 +51,7 @@ const Steps = () => {
               {t("academic.22-heading2")}
             </p>
 
-            <div className="relative flex items-center justify-center md:justify-start md:mt-4">
+            <div className="relative flex items-center justify-center md:justify-start md:mt-4 mx-auto lg:mx-0">
               <CustomButton
                 label={t("academic.1-icon1")}
                 bgColor="bg-gold"
@@ -63,7 +63,7 @@ const Steps = () => {
               <img
                 src="/arrow2.svg"
                 alt="Arrow"
-                className="absolute right-6 md:right-24 -top-2 -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 animate-wiggle"
+                className="hidden md:block md:absolute right-6 md:-right-10 lg:right-16 xl:right-24 -top-2 md:-top-10  -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 animate-wiggle"
               />
             </div>
           </div>

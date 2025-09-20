@@ -86,18 +86,18 @@ const Packages = () => {
               className="w-[90%] md:w-full md:h-[16px] object-cover  mx-auto"
             />
           </div>
-          <span className="text-gray1 text-sm md:text-[15px] md:leading-normal font-light block max-w-lg mx-auto mt-4 md:mt-6">
+          <span className="text-gray1 text-sm md:text-[15px] md:leading-normal font-light block max-w-md md:max-w-lg mx-auto mt-4 md:mt-6">
             {t("academic.18-heading2")}{" "}
           </span>
         </div>
-        <div className="space-y-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 lg:space-y-0 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:items-stretch">
           {pricingPlans.map((plan, idx) => (
             <div
               key={idx}
               className="flex flex-col gap-4 p-6 mx-auto max-w-lg text-center text-gray1 bg-white 
               rounded-[40px] border border-gray-100 shadow 
               transition-all duration-300 ease-in-out 
-              hover:scale-[1.03] md:hover:scale-105 hover:shadow-xl hover:-translate-y-2 min-h-[500px]"
+              hover:scale-[1.03] md:hover:scale-105 hover:shadow-xl hover:-translate-y-2 lg:min-h-[500px]"
             >
               <h3 className="text-primary mt-6 text-xl font-bold">
                 {plan.title}
@@ -147,8 +147,15 @@ const Packages = () => {
                     </span>
                     <span
                       className={`text-sm text-gray1 text-start max-h-[100px] tracking-tight hyphens-auto ${
-                        idx != 0 && i == 2 ? "lg:h-[80px]" : "lg:h-auto"
-                      }  `}
+                        idx !== 0 && i === 2
+                          ? " md:h-[80px] lg:h-[100px] xl:h-[80px] "
+                          : idx !== 0 && i === 3
+                          ? " lg:h-[40px]"
+                          : (idx !== 2 && i === 4) || (idx !== 3 && i === 5)
+                          ? "lg:h-[60px] xl:h-auto"
+                          : "xl:h-auto lg:h-auto"
+                      } 
+                          `}
                     >
                       {feature.text}
                     </span>

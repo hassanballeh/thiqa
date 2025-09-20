@@ -96,7 +96,7 @@ const Support = () => {
         <div className="w-full relative">
           <button
             onClick={prevSlide}
-            className="absolute left-0 md:-left-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
+            className="absolute left-0 sm:-left-4 md:-left-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
             disabled={startIndex === 0}
           >
             <IoMdArrowBack size={20} />
@@ -173,7 +173,7 @@ const Support = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 md:-right-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
+            className="absolute right-0 sm:-right-4 md:-right-6 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full z-10 shadow-md"
             disabled={startIndex + cardsToShow >= testimonials.length}
           >
             <IoMdArrowForward size={20} />

@@ -25,8 +25,8 @@ const Hero = () => {
   ];
   return (
     <div className="relative w-full">
-      <div className="h-[80vh]  md:px-4 ">
-        <section className="container mx-auto h-full flex items-start  md:pt-4 lg:pt-16">
+      <div className="lg:h-[80vh]  md:px-4 ">
+        <section className="container mx-auto h-full flex items-start  pb-10 lg:pb-0 md:pt-4 lg:pt-16">
           <div className=" flex flex-col justify-start items-start  gap-4 w-full md:max-w-2xl">
             <h2 className=" text-[28px] md:text-5xl font-bold text-primary leading-tight whitespace-pre-line ">
               {t("academic.1-heading1")}{" "}
@@ -76,11 +76,11 @@ const Hero = () => {
         </section>
       </div>
 
-      <div className="bg-white h-[40vh] md:h-[80vh]   "></div>
+      <div className="hidden lg:block bg-white h-[40vh] md:h-[80vh]   "></div>
 
       <div
         id="our-cons"
-        className="absolute -bottom-96 md:-bottom-36 h-fit left-1/2 -translate-y-1/2 translate-x-[-50%] w-full md:w-[90%] 2xl:w-[1400px] bg-white rounded-3xl shadow-lg px-6 py-12 md:px-20 md:py-16 z-10 mx-auto"
+        className=" lg:absolute -bottom-96 lg:-bottom-44 xl:-bottom-36 h-fit left-1/2 lg:-translate-y-1/2 lg:translate-x-[-50%] w-[90%] 2xl:w-[1400px] bg-white rounded-3xl shadow-lg px-6 py-10 sm:py-12 md:px-20 md:py-16 z-10 mx-auto"
       >
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 md:gap-7 flex-wrap">
           <div className="text-start  flex flex-col justify-center md:justify-start max-w-lg w-full lg:">
