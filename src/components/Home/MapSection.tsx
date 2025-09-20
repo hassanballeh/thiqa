@@ -26,7 +26,7 @@ const MapSection = () => {
 
   return (
     <div className="bg-primary py-10 md:py-0">
-      <section className="md:container px-10 md:px-0 md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
+      <section className="md:container px-4 md:px-0 md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         {/* النصوص */}
         <div className="text-xl md:text-3xl flex-1  text-start flex flex-col justify-center md:max-w-[462px]">
           <h2 className=" font-bold text-white leading-relaxed max-w-md">

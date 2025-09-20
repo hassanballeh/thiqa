@@ -7,7 +7,7 @@ const PictureWithText = () => {
 
   return (
     <div className="bg-white pb-8 md:pb-0">
-      <section className="md:container px-10 md:px-0 mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center md:place-items-stretch w-full lg:py-0 py-10  ">
+      <section className="md:container px-4 md:px-0 mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center md:place-items-stretch w-full lg:py-0 py-10  ">
         <section className="hidden  flex-1 relative lg:flex justify-center items-center py-4 overflow-hidden pb-11">
           <div className="relative z-10 ">
             <img

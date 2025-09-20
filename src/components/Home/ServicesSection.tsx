@@ -253,7 +253,7 @@ const ServicesSection = () => {
       className="relative w-full py-10"
     >
       <div className="mx-auto max-w-6xl ">
-        <div className="md:text-center text-left mb-10 max-w-sm md:max-w-md md:mx-auto px-10 md:px-0">
+        <div className="md:text-center text-left mb-10 max-w-sm md:max-w-md md:mx-auto px-4 md:px-0">
           <div className="inline-block relative">
             <h3 className="xl:text-3xl text-2xl  font-bold text-primary leading-tight">
               {t("home.20-heading1")}

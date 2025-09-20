@@ -10,7 +10,7 @@ const TextWithPicture = () => {
   return (
     <div className="bg-primary py-8 md:py-0">
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  md:place-items-stretch w-full">
-        <div className="flex-1 px-10 text-start flex flex-col justify-center items-center md:items-start max-w-md">
+        <div className="flex-1 px-4 text-start flex flex-col justify-center items-center md:items-start max-w-md">
           <div className="">
             <h2 className="md:text-3xl text-2xl font-bold text-white leading-relaxed">
               {t("home.26-heading1")}

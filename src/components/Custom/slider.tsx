@@ -38,7 +38,7 @@ export default function HeroSlide({
   changePos,
 }: HeroSlideProps) {
   return (
-    <section className=" mx-auto   flex flex-col gap-24 lg:flex-row w-full h-full lg:items-center items-start px-10">
+    <section className=" mx-auto   flex flex-col gap-24 lg:flex-row w-full h-full lg:items-center items-start px-4">
       {/* Left Content Section */}
       <div
         className={`lg:w-1/3 w-full flex flex-col "justify-start"   lg:order-1 mt-8 lg:mt-0 lg:h-[400px] relative`}

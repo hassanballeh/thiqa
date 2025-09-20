@@ -15,7 +15,7 @@ const LampSection = () => {
     <div className=" md:pb-0">
       <section className="flex flex-col md:flex-row w-full md:items-center">
         {/* النصوص */}
-        <div className="text-2xl md:text-4xl container md:mx-auto px-10 flex flex-col justify-center text-start  md:max-w-md z-10 mt-6 md:mt-0">
+        <div className="text-2xl md:text-4xl container md:mx-auto px-4 flex flex-col justify-center text-start  md:max-w-md z-10 mt-6 md:mt-0">
           <h2 className=" font-bold text-primary leading-tight relative inline-block">
             {t("home.49-heading1-1")}
             <br />
