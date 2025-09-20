@@ -8,14 +8,14 @@ const Gallery = () => {
   const isRTL = i18n.language === "ar"; // ✅ لو اللغة عربي نعتبرها RTL
 
   return (
-    <div className="py-12 bg-white">
+    <div className="md:py-12 bg-white">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 px-6 py-12">
         <div className="col-span-1 flex flex-col justify-center items-center">
           <div className="flex-1 md:px-4 text-center md:text-start flex flex-col items-center md:items-start justify-center max-w-sm md:-mt-8">
-            <h2 className="text-4xl font-bold text-primary leading-tight">
+            <h2 className="text-[28px] md:text-4xl font-bold text-primary leading-tight">
               {t("become.6-heading1")}{" "}
             </h2>
-            <p className="text-[16px] text-gray1 font-light mt-4 max-w-sm">
+            <p className="text-sm md:text-[15px] md:leading-normal text-gray1 font-light mt-4 max-w-sm">
               {t("become.6-heading2")}{" "}
             </p>
             <div className="flex flex-col gap-4 mt-4 mx-auto md:mx-0 items-start">
@@ -50,25 +50,24 @@ const Gallery = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
           {/* الشبكة الصغيرة */}
-          <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 row-span-2">
             {[
               { num: 33, text: t("become.6-feautre1") },
               { num: 22, text: t("become.6-feautre2") },
             ].map((item, i) => (
               <div
                 key={i}
-                className="relative group overflow-hidden rounded-[20px] sm:rounded-[40px]"
+                className="relative  group overflow-hidden rounded-[20px] sm:rounded-[40px] row-span-1"
               >
                 <img
                   src={`/gallery/${item.num}.png`}
                   alt={`صورة ${i + 1}`}
-                  className="w-full h-[160px] sm:h-full object-cover transform transition duration-300 group-hover:scale-105"
+                  className="w-full  h-full object-cover transform transition duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/20 transition duration-300 group-hover:bg-black/50" />
-                <span className="absolute top-4 sm:top-5 left-3 sm:left-4 max-w-[100%] px-2 py-1 rounded-md text-white font-semibold text-base sm:text-lg md:whitespace-pre-line z-10">
-          
+                <span className="absolute top-4 sm:top-5 left-1 sm:left-4 max-w-[100%] px-1 sm:px-2 py-1 rounded-md text-white font-semibold text-sm sm:text-lg md:whitespace-pre-line z-10">
                   {item.text}
                 </span>
               </div>
@@ -80,11 +79,10 @@ const Gallery = () => {
             <img
               src="/gallery/11.png"
               alt="صورة طويلة"
-              className="w-full h-[200px] sm:h-full object-cover transform transition duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transform transition duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/20 transition duration-300 group-hover:bg-black/50" />
-            <span className="absolute top-4 sm:top-5 left-3 sm:left-4 max-w-full px-2 py-1 rounded-md text-white font-semibold text-base sm:text-lg md:whitespace-pre-line z-10">
-         
+            <span className="absolute top-4 sm:top-5 left-1 sm:left-4 max-w-full px-1 md:px-2 py-1 rounded-md text-white font-semibold text-sm sm:text-lg whitespace-pre-line z-10">
               {t("become.6-feautre3")}
             </span>
           </div>
