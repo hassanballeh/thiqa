@@ -54,7 +54,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       {/* Content */}
       <div className="ps-2 mt-4 w-full text-gray1 text-start flex flex-col h-full">
         <h4
-          className={`font-bold text-xl mb-2   line-clamp-1 ${
+          className={`font-bold md:text-xl text-base mb-2   line-clamp-1 ${
             titleColor ? "text-primary" : "text-gray1"
           }`}
         >

@@ -90,10 +90,12 @@ const Gallery = () => {
       <div className="container mx-auto">
         <div className=" flex flex-col md:flex-row justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-primary leading-tight">
+            <h2 className="md:text-3xl text-2xl font-bold text-primary leading-tight">
               Our Events Gallery
             </h2>
-            <p className="text-xs  font-light mt-4">{t("gallery.heading2")}</p>
+            <p className="xl:text-[20px] sm:text-[18px] text-[16px]  font-light mt-4">
+              {t("gallery.heading2")}
+            </p>
           </div>
         </div>
         <motion.div
@@ -116,7 +118,7 @@ const Gallery = () => {
                   className="grid grid-cols-1 sm:grid-cols-[70px_1fr] md:grid-cols-[80px_1fr_300px] gap-4 md:gap-6 items-start md:items-center mb-8"
                 >
                   {/* التاريخ */}
-                  <div className="text-center text-base md:text-lg font-medium ">
+                  <div className="text-center text-base md:text-lg font-medium flex sm:flex-col flex-row sm:gap-0 gap-1 items-center sm:pl-0 pl-6 ">
                     <div>{event.date.day}</div>
                     <div className="uppercase text-sm ">{event.date.month}</div>
                   </div>

@@ -9,26 +9,26 @@ const Shadow = () => {
   return (
     <div className="py-20 bg-white">
       <section className="container mx-auto flex flex-col  gap-8 w-full">
-        <div className="flex justify-between px-2  text-center md:text-start mx-auto md:mx-0">
-          <div>
-            <h2 className="text-[40px] mb-2  font-bold text-primary leading-tight relative inline-block">
+        <div className="flex justify-between md:flex-row flex-col  px-2 md:gap-0 gap-3  text-start items-start mx-auto md:mx-0">
+          <div className="">
+            <h2 className="md:text-[40px] text-2xl mb-2   font-bold text-primary leading-tight relative inline-block">
               {t("shadow.8-heading1")}
             </h2>
             <br />
-            <h2 className="text-[40px] font-bold text-primary leading-tight relative inline-block">
+            <h2 className="md:text-[40px] text-2xl font-bold text-primary leading-tight relative inline-block">
               {t("shadow.8-heading2")}
             </h2>
 
-            <p className="text-sm md:text-[15px] max-w-full md:max-w-[330px] mt-3 text-gray1 font-light leading-relaxed">
+            <p className=" sm:text-[18px] text-[16px] max-w-full md:max-w-[500px] mt-3 text-gray1 font-light leading-relaxed">
               {t("shadow.8-heading3")}
             </p>
           </div>
 
-          <div className="flex flex-col gap-4  mx-auto md:mx-0 items-center md:items-start">
+          <div className="flex flex-col gap-4  md:mx-0 items-start">
             <div className="relative w-fit mx-auto md:mx-0">
               <img
                 src="/choose.svg"
-                className="absolute -top-3 -left-6 md:-top-4 md:-left-8 "
+                className="absolute -top-3 md:-top-4 -left-8 "
               />
               <Link
                 href="/shadow-teacher#shadow-form"
@@ -40,7 +40,7 @@ const Shadow = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
           {[
             {
               icon: "/disability 1.svg",
@@ -91,7 +91,7 @@ const Shadow = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className=""
             >
-              <div className="flex items-center gap-6">
+              <div className="flex md:flex-row flex-col items-center gap-6">
                 <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#E7F1FF]">
                   <img
                     src={item.icon}
@@ -100,10 +100,10 @@ const Shadow = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="text-xl font-bold text-gray1 font-roboto">
+                  <h3 className="text-xl font-bold text-gray1 font-roboto text-center md:text-left">
                     {item.title}
                   </h3>
-                  <p className="text-sm max-w-sm text-gray1 font-light leading-relaxed">
+                  <p className="text-sm max-w-sm text-gray1 font-light leading-relaxed text-center md:text-left">
                     {item.desc}
                   </p>
                 </div>

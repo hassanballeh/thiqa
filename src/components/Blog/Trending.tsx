@@ -61,7 +61,7 @@ const Trending = () => {
 
   return (
     <div className="bg-white pb-14">
-      <h2 className="mb-10 container mx-auto text-3xl font-bold text-primary leading-tight">
+      <h2 className="mb-10 container mx-auto md:text-3xl text-2xl font-bold text-primary leading-tight">
         {t("blog.trending-article")}
       </h2>
 
