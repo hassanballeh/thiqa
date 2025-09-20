@@ -12,16 +12,16 @@ const Gallery = () => {
       year: "2025",
       items: [
         {
-          date: { day: "6", month: "May" },
-          title: "Majra Sustainable Impact Challenge",
-          description: t("gallery.1"),
-          image: "/gallery/Mask group (1).png",
-        },
-        {
           date: { day: "28", month: "June" },
           title: "Top 50 Future Companies",
           description: t("gallery.2"),
           image: "/gallery/Mask group (2).png",
+        },
+        {
+          date: { day: "6", month: "May" },
+          title: "Majra Sustainable Impact Challenge",
+          description: t("gallery.1"),
+          image: "/gallery/Mask group (1).png",
         },
       ],
     },
@@ -53,10 +53,16 @@ const Gallery = () => {
           image: "/gallery/Mask group (6).png",
         },
         {
-          date: { day: "6", month: "March " },
-          title: "LEAP Festival (Saudi Arabia)",
-          description: t("gallery.7"),
-          image: "/gallery/Mask group (7).png",
+          date: { day: "20", month: "June" },
+          title: " Sharjah Entrepreneurship Festival",
+          description: t("gallery.10"),
+          image: "/gallery/Mask group (9).png",
+        },
+        {
+          date: { day: "23", month: "May" },
+          title: "UAE Hackathon",
+          description: t("gallery.16"),
+          image: "/gallery/image7.webp",
         },
         {
           date: { day: "10", month: "April" },
@@ -65,18 +71,11 @@ const Gallery = () => {
           image: "/gallery/Mask group (14).png",
         },
         {
-          date: { day: "20", month: "June" },
-          title: " Sharjah Entrepreneurship Festival",
-          description: t("gallery.10"),
-          image: "/gallery/Mask group (9).png",
+          date: { day: "6", month: "March" },
+          title: "LEAP Festival (Saudi Arabia)",
+          description: t("gallery.7"),
+          image: "/gallery/Mask group (7).png",
         },
-        {
-          date: { day: "24", month: "January" },
-          title: "Bett UK",
-          description: t("gallery.11"),
-          image: "/gallery/Mask group (10).png",
-        },
-
         {
           date: { day: "16", month: "Feb" },
           title: "Bibin Program Investment",
@@ -84,14 +83,15 @@ const Gallery = () => {
           image: "/gallery/بيبان.jpeg",
         },
         {
-          date: { day: "16", month: "Feb" },
-          title: "Bibin Program Investment",
-          description: t("gallery.15"),
-          image: "/gallery/image7.webp",
+          date: { day: "24", month: "January" },
+          title: "Bett UK",
+          description: t("gallery.11"),
+          image: "/gallery/Mask group (10).png",
         },
       ],
     },
   ];
+
   return (
     <div className="py-12 bg-white text-gray1 ">
       <div className="container mx-auto">

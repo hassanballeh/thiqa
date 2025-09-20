@@ -30,7 +30,7 @@ const Company = () => {
         ].map((img, i) => (
           <div
             key={i}
-            className="scale-[0.55] sm:scale-[0.65] md:scale-[0.75]"
+            className="scale-[0.55] sm:scale-[0.65] md:scale-[0.75] relative z-50"
             style={{
               width: `${img.w}px`,
               height: `${img.h}px`,

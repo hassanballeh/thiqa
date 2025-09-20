@@ -131,7 +131,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 80000);
+    }, 8000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -154,7 +154,7 @@ export default function HeroSection() {
       ))}
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+      <div className="absolute bottom-[4px] md:bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
         {slides.map((_, i) => (
           <button
             key={i}

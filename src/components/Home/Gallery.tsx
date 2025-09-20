@@ -42,7 +42,7 @@ const Gallery = () => {
 
       {/* Image 5 */}
       <GalleryItem
-        src="/gallery/Mask group (7).png"
+        src="/gallery/Mask group (8).webp"
         alt="Image 5"
         title="LEAP Festival (Saudi Arabia)"
         text={t("home.gallery-5")}

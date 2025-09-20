@@ -38,7 +38,7 @@ export default function HeroSlide({
   changePos,
 }: HeroSlideProps) {
   return (
-    <section className=" mx-auto   flex flex-col gap-24 lg:flex-row w-full h-full lg:items-center items-start px-4">
+    <section className=" mx-auto   flex flex-col gap-24 justify-between lg:flex-row w-full h-full lg:items-center items-start px-4">
       {/* Left Content Section */}
       <div
         className={`lg:w-1/3 w-full flex flex-col "justify-start"   lg:order-1 mt-8 lg:mt-0 lg:h-[400px] relative`}
@@ -70,7 +70,7 @@ export default function HeroSlide({
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute lg:top-[85%] top-[100%]">
+        <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 flex-shrink-0 absolute lg:top-[85%] top-[110%]">
           <Link
             href={link1}
             className="inline-flex items-center justify-center bg-primary text-white text-base font-semibold lg:px-6 sm:px-4 px-2  py-1.5  rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -127,7 +127,7 @@ export default function HeroSlide({
             {/* Desktop Testimonial Cards */}
             <div
               className={`
-                md:flex  flex-col justify-around  absolute w-[190px] h-auto ${
+                md:flex hidden  flex-col justify-around  absolute w-[190px] h-auto ${
                   testimonial.position
                 } 
                 
