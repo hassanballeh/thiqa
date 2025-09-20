@@ -8,19 +8,19 @@ const Hero = () => {
   const isRTL = i18n.language === "ar"; // ✅ لو اللغة عربي نعتبرها RTL
 
   return (
-    <div className=" py-10 md:py-0">
+    <div className="py-0">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
-        <div className="flex-1 md:px-4 text-center md:text-start flex flex-col justify-center max-w-xl">
-          <div className="text-3xl md:text-5xl">
+        <div className="flex-1 md:px-4 text-start flex flex-col justify-center max-w-full md:max-w-xl">
+          <div className="text-[28px] md:text-5xl">
             <h2 className=" font-bold text-primary leading-tight">
               {t("become.1-heading1")}{" "}
             </h2>
           </div>
-          <p className="text-lg text-gray1 font-light mt-4 max-w-md">
+          <p className="text-sm md:text-[15px] md:leading-normal text-gray1 font-light mt-4 max-w-xs md:max-w-md">
             {t("become.1-heading2")}{" "}
           </p>
-          <div className="flex flex-col gap-4 mt-6 mx-auto md:mx-0 items-start">
-            <div className="flex gap-4 mx-auto md:mx-0 relative">
+          <div className="flex flex-col gap-4 mt-6 mx-0 items-start">
+            <div className="flex gap-4 mx-0 relative items-start">
               <Link
                 href="/under-develop"
                 className="bg-primary rounded-3xl px-10 font-semibold py-1.5 text-white hover:bg-gold"
@@ -30,7 +30,7 @@ const Hero = () => {
               <img
                 src="/arrow-lamp.svg"
                 alt="Arrow"
-                className={`hidden md:block absolute animate-bounce bottom-2 -translate-y-1/2 w-10 h-10 
+                className={`absolute animate-bounce bottom-4 md:bottom-2 -translate-y-1/2 w-10 h-10 
     ${isRTL ? "-right-10" : "-right-14"}`}
               />
             </div>
@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <section className="flex-1 relative flex justify-center items-center py-12 overflow-hidden">
+        <section className="flex-1 relative flex justify-center items-center pt-4 md:py-12 overflow-hidden">
           <div className="relative z-10">
             <img
               src="/image-become.svg"
