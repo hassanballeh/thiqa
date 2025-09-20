@@ -28,7 +28,7 @@ const Hero = () => {
     <div className="relative w-full">
       {/* Desktop Hero Section */}
       <div className="md:h-[80vh]  px-4  block container md:mx-auto ">
-        <section className="md:container md:mx-auto h-full flex items-start pt-20">
+        <section className="md:container md:mx-auto h-full flex items-start md:pt-20">
           <div className="xl:text-[55px] lg:text-[45px] sm:text-[35px] text-[30px] text-start flex flex-col justify-start max-w-2xl w-full">
             <h2 className="font-bold text-primary leading-tight font-roboto">
               {t("tutoring.1-heading1")}

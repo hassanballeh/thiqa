@@ -9,11 +9,11 @@ const Hero = () => {
 
   return (
     <div className="py-12 bg-white">
-      <h2 className="container mx-auto mt-4 text-5xl font-bold text-primary leading-tight">
+      <h2 className="container mx-auto mt-4 md:text-5xl sm:text-3xl text-2xl font-bold text-primary leading-tight">
         {t("blog.1-heading1")}{" "}
       </h2>
-      <p className="text-[18px] text-gray1 font-light mt-4 max-w- container mx-auto">
-        {t("blog.1-heading2")}{" "}
+      <p className=" md:text-[18px] text-[16px] text-gray1 font-light mt-4 max-w- container mx-auto">
+        {t("blog.1-heading2")}
       </p>
 
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
@@ -28,12 +28,12 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-black/30 transition duration-300 group-hover:bg-black/50" />
 
-              <div className="absolute bottom-12 left-0 right-0 px-10 flex items-center justify-between gap-2 z-10">
-                <span className="text-white font-semibold text-2xl max-w-lg">
+              <div className="absolute md:bottom-12 bottom-4 left-0 right-0 px-10 flex items-center md:flex-row flex-col justify-between gap-2 z-10">
+                <span className="text-white font-semibold md:text-2xl text-base max-w-lg">
                   {t("blog.1-blog1")}
                 </span>
 
-                <button className="flex items-center gap-2 underline text-white md:text-xl font-medium  py-2 rounded-full transition">
+                <button className="flex items-center gap-2 underline text-white md:text-xl text-sm font-medium  py-2 rounded-full transition">
                   {t("blog.read-more")}
                   <ArrowRight size={18} />
                 </button>
@@ -54,13 +54,13 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black/20 transition duration-300 group-hover:bg-black/50" />
 
             {/* Wrapper for span + button */}
-            <div className="absolute bottom-12 px-10 flex flex-col items-end gap-4 z-10">
-              <span className="text-white font-semibold text-2xl max-w-xl">
+            <div className="absolute bottom-12 px-10 flex flex-col md:items-end items-center gap-4 z-10">
+              <span className="text-white font-semibold md:text-2xl text-base max-w-xl">
                 Why Booking a Private Tutor for Your Child is the Best
                 Investment
               </span>
 
-              <button className="underline w-fit flex items-center gap-2 text-xl text-white  py-2 rounded-full font-medium  transition">
+              <button className="underline w-fit flex items-center gap-2 md:text-xl text-sm text-white  py-2 rounded-full font-medium  transition">
                 {t("blog.read-more")}
                 <ArrowRight size={18} />
               </button>

@@ -12,16 +12,16 @@ const Gallery = () => {
       year: "2025",
       items: [
         {
-          date: { day: "6", month: "May" },
-          title: "Majra Sustainable Impact Challenge",
-          description: t("gallery.1"),
-          image: "/gallery/Mask group (1).png",
-        },
-        {
           date: { day: "28", month: "June" },
           title: "Top 50 Future Companies",
           description: t("gallery.2"),
           image: "/gallery/Mask group (2).png",
+        },
+        {
+          date: { day: "6", month: "May" },
+          title: "Majra Sustainable Impact Challenge",
+          description: t("gallery.1"),
+          image: "/gallery/Mask group (1).png",
         },
       ],
     },
@@ -54,46 +54,55 @@ const Gallery = () => {
         },
         {
           date: { day: "20", month: "June" },
-          title: "LEAP Festival (Saudi Arabia)",
-          description: t("gallery.7"),
-          image: "/gallery/Mask group (7).png",
+          title: " Sharjah Entrepreneurship Festival",
+          description: t("gallery.10"),
+          image: "/gallery/Mask group (9).png",
         },
         {
           date: { day: "23", month: "May" },
+          title: "UAE Hackathon",
+          description: t("gallery.16"),
+          image: "/gallery/image7.webp",
+        },
+        {
+          date: { day: "10", month: "April" },
           title: "One Dirham Makes a Difference' Initiative",
           description: t("gallery.9"),
           image: "/gallery/Mask group (14).png",
         },
         {
           date: { day: "6", month: "March" },
-          title: " Bibin Program Investment",
-          description: t("gallery.10"),
-          image: "/gallery/Mask group (9).png",
-        },
-        {
-          date: { day: "10", month: "April" },
-          title: "Sharjah Entrepreneurship Festival",
-          description: t("gallery.11"),
-          image: "/gallery/Mask group (10).png",
+          title: "LEAP Festival (Saudi Arabia)",
+          description: t("gallery.7"),
+          image: "/gallery/Mask group (7).png",
         },
         {
           date: { day: "16", month: "Feb" },
-          title: "Top 16 UAE EdTech Startups",
-          description: t("gallery.13"),
-          image: "/gallery/Mask group (11).png",
+          title: "Bibin Program Investment",
+          description: t("gallery.15"),
+          image: "/gallery/بيبان.jpeg",
+        },
+        {
+          date: { day: "24", month: "January" },
+          title: "Bett UK",
+          description: t("gallery.11"),
+          image: "/gallery/Mask group (10).png",
         },
       ],
     },
   ];
+
   return (
     <div className="py-12 bg-white text-gray1 ">
       <div className="container mx-auto">
         <div className=" flex flex-col md:flex-row justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-primary leading-tight">
+            <h2 className="md:text-3xl text-2xl font-bold text-primary leading-tight">
               Our Events Gallery
             </h2>
-            <p className="text-xs  font-light mt-4">{t("gallery.heading2")}</p>
+            <p className="xl:text-[20px] sm:text-[18px] text-[16px]  font-light mt-4">
+              {t("gallery.heading2")}
+            </p>
           </div>
         </div>
         <motion.div
@@ -116,7 +125,7 @@ const Gallery = () => {
                   className="grid grid-cols-1 sm:grid-cols-[70px_1fr] md:grid-cols-[80px_1fr_300px] gap-4 md:gap-6 items-start md:items-center mb-8"
                 >
                   {/* التاريخ */}
-                  <div className="text-center text-base md:text-lg font-medium ">
+                  <div className="text-center text-base md:text-lg font-medium flex sm:flex-col flex-row sm:gap-0 gap-1 items-center sm:pl-0 pl-6 ">
                     <div>{event.date.day}</div>
                     <div className="uppercase text-sm ">{event.date.month}</div>
                   </div>
@@ -136,7 +145,7 @@ const Gallery = () => {
                       alt={event.title}
                       width={350}
                       height={300}
-                      className="rounded-lg w-full h-auto object-cover transform transition-transform duration-500 ease-in-out hover:scale-125"
+                      className="rounded-lg w-full h-[250px]  object-cover object-[50%_30%] transform transition-transform duration-500 ease-in-out hover:scale-125"
                     />
                   </div>
                 </div>

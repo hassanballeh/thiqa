@@ -1,16 +1,13 @@
-
 const GalleryItem = ({
   src,
   alt,
   text,
   title,
-
 }: {
   src?: string;
   alt: string;
   text?: string;
   title?: string;
-
 }) => {
   return (
     <div className="relative w-full h-full group overflow-hidden">
@@ -18,14 +15,12 @@ const GalleryItem = ({
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-cover"
+          className="w-full sm:h-full h-[500px] object-cover"
         />
       )}
 
       {!src && (
-        <div
-          className={`w-full h-full  flex items-center justify-center`}
-        >
+        <div className={`w-full h-full  flex items-center justify-center`}>
           {/* Leave empty — overlay comes below */}
         </div>
       )}
@@ -40,14 +35,13 @@ const GalleryItem = ({
       >
         <div>
           {title && (
-            <h2 className="font-bold text-3xl md:text-6xl mb-2">{title}</h2>
+            <h2 className="font-bold text-3xl md:text-4xl mb-2">{title}</h2>
           )}
           {text && (
             <p className="text-xs md:text-lg font-light leading-relaxed max-w-[260px] mx-auto">
               {text}
             </p>
           )}
-         
         </div>
       </div>
     </div>

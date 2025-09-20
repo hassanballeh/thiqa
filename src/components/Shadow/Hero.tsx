@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-white py-14 px-4">
+    <div className="bg-white md:py-14 py-8 px-4">
       <section className="container mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         <div className="flex-1 flex flex-col justify-center items-start gap-4">
           <CustomButton
@@ -16,9 +16,10 @@ const Hero = () => {
             textColor="text-white"
             hoverBg="bg-[#e19f1a]"
             href="/shadow-teacher#shadow-form"
+            fontSize="md:text-base text-sm"
           />
-          <div className="   text-center md:text-start  max-w-lg">
-            <h2 className="text-3xl font-bold text-primary leading-snug">
+          <div className=" text-start  max-w-lg">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary leading-snug">
               {t("shadow.1-heading1-1")} {t("shadow.1-heading1-2")}
             </h2>
             <p className="max-w-md text-[15px] text-gray1 font-light mt-4 leading-relaxed">
@@ -33,7 +34,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <section className="flex w-full gap-6 h-[550px]">
+        <section className="flex sm:flex-row flex-col w-full gap-6 sm:h-[550px] h-[1100px]">
           <div className="flex-1 flex flex-col gap-4">
             <div className="flex-[2] rounded-3xl  text-gray1 bg-blue_gray flex flex-col gap-6 items-start justify-center px-8 py-4">
               <div>

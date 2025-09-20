@@ -172,9 +172,9 @@ const Numbers = () => {
   return (
     <div className="bg-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl md:text-center text-left relative mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl md:text-center text-left relative mb-8 sm:gap-0 gap-4">
           {/* العمود الأول */}
-          <div className="flex flex-col justify-center md:items-center items-start gap-4 relative w-full ">
+          <div className="flex flex-col justify-center items-center  gap-4 relative w-full ">
             <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={50000} duration={1} separator="," />
             </h3>
@@ -184,10 +184,11 @@ const Numbers = () => {
 
             {/* الخط الفاصل */}
             <span className="hidden md:block absolute top-1/4 right-0 h-1/2 w-[1px] bg-gray-300"></span>
+            {/* <span className="block md:hidden absolute top-[100%] w-[34%]  h-[2%] bg-gray-300"></span> */}
           </div>
 
           {/* العمود الثاني */}
-          <div className="flex flex-col justify-center md:items-center items-start gap-4  ">
+          <div className="flex flex-col justify-center items-center  gap-4  ">
             <h3 className="lg:text-5xl text-3xl  font-bold text-primary">
               +<CountUp end={200} duration={1} />
             </h3>
@@ -197,10 +198,11 @@ const Numbers = () => {
 
             {/* الخط الفاصل */}
             <span className="hidden md:block absolute right-[30%] h-1/2 w-[1px] bg-gray-300"></span>
+            {/* <span className="block md:hidden absolute w-[60%] top-[66%]   h-[1%] bg-gray-300"></span> */}
           </div>
 
           {/* العمود الثالث (بدون خط) */}
-          <div className="flex flex-col justify-center md:items-center items-start gap-4 ">
+          <div className="flex flex-col justify-center items-center  gap-4 ">
             <h3 className="lg:text-5xl text-3xl font-bold text-primary">
               +<CountUp end={5} duration={1} />
             </h3>
@@ -250,10 +252,10 @@ const Numbers = () => {
           </div>
 
           {/* Title */}
-          <div className="text-2xl lg:text-4xl ">
+          <div className="text-3xl lg:text-4xl ">
             <h2 className="font-extrabold text-gray1 leading-snug">
               {t("home.30-heading1-1")} <br />{" "}
-              <span className="underline decoration-[#F8B21F]">
+              <span className="underline  decoration-[#F8B21F]">
                 {t("home.30-heading1-2")}
               </span>
             </h2>
@@ -284,7 +286,7 @@ const Numbers = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-20 md:bottom-4 left-6 flex gap-4">
+          <div className="absolute bottom-16 md:bottom-4 left-6 flex gap-4">
             <button
               onClick={prev}
               className="w-7 h-7 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"

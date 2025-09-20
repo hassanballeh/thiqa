@@ -73,7 +73,7 @@ const BlogDetails = () => {
 
         <section className="flex-1 relative flex justify-center items-center overflow-hidden">
           {blog.image && (
-            <div className="relative z-10 w-full max-w-md min-h-72">
+            <div className="relative z-10 w-full max-w-md md:min-h-72">
               <Image
                 src={getImageUrl(blog.image)}
                 alt={blog.title}
@@ -88,7 +88,7 @@ const BlogDetails = () => {
       </section>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto py-10 md:pb-20 sm:pe-8 text-center sm:text-start space-y-4">
+      <div className="max-w-6xl mx-auto py-10 md:pb-20 sm:pe-8 text-center sm:text-start space-y-4 text-left">
         {blog.content
           ?.split("\n")
           .filter((paragraph) => paragraph.trim() !== "")

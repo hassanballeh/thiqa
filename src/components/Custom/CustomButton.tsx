@@ -1,8 +1,8 @@
 // components/CustomButton.tsx
 
-import Link from 'next/link';
-import React from 'react';
-import clsx from 'clsx';
+import Link from "next/link";
+import React from "react";
+import clsx from "clsx";
 
 interface CustomButtonProps {
   href?: string;
@@ -13,30 +13,33 @@ interface CustomButtonProps {
   hoverBg?: string;
   hoverTextColor?: string;
   bold?: boolean;
+  fontSize?: string;
   onClick?: (e?: React.FormEvent) => void;
   type?: "button" | "submit";
-  disabled? : boolean;
+  disabled?: boolean;
 }
 
 const CustomButton = ({
   href,
   label,
-  bgColor = 'bg-transparent',
-  textColor = 'text-black',
-  borderColor = '',
-  hoverBg = '',
-  hoverTextColor = '',
+  bgColor = "bg-transparent",
+  textColor = "text-black",
+  borderColor = "",
+  hoverBg = "",
+  hoverTextColor = "",
+  fontSize = "text-base",
   bold,
   onClick,
   type,
-  disabled
+  disabled,
 }: CustomButtonProps) => {
   const baseClasses = clsx(
-    'rounded-3xl px-6 py-1.5 transition-all duration-300',
+    "rounded-3xl px-6 py-1.5 transition-all duration-300",
     bgColor,
+    fontSize,
     textColor,
-    borderColor ? `border ${borderColor}` : '',
-    bold ? 'font-semibold' : 'font-medium',
+    borderColor ? `border ${borderColor}` : "",
+    bold ? "font-semibold" : "font-medium",
     hoverBg && `hover:${hoverBg}`,
     hoverTextColor && `hover:${hoverTextColor}`
   );
@@ -49,17 +52,16 @@ const CustomButton = ({
     );
   }
 
-return (
-  <button
-    type={type || "button"} // ✅ افتراضي button عشان ما يعمل refresh
-    className={baseClasses}
-    onClick={onClick}
-    disabled = {disabled}
-  >
-    {label}
-  </button>
-);
-
+  return (
+    <button
+      type={type || "button"} // ✅ افتراضي button عشان ما يعمل refresh
+      className={baseClasses}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {label}
+    </button>
+  );
 };
 
 export default CustomButton;
