@@ -26,9 +26,9 @@ const MapSection = () => {
 
   return (
     <div className="bg-primary py-10 md:py-0">
-      <section className="md:container px-4 md:px-0 md:mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
+      <section className="md:container px-4 md:px-0 md:mx-auto  grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         {/* النصوص */}
-        <div className="text-xl md:text-3xl flex-1  text-start flex flex-col justify-center md:max-w-[462px]">
+        <div className="text-xl md:text-3xl flex-1 md:mx-auto  text-start flex flex-col justify-center md:max-w-[462px]">
           <h2 className=" font-bold text-white leading-relaxed max-w-md">
             {selectedCountry === "UAE"
               ? t("home.62-heading1")
@@ -41,17 +41,19 @@ const MapSection = () => {
                 : t("home.65-heading2")}
             </p>
           </div>
-          <div className="flex gap-4 mt-4 md:mt-10 mx-auto md:mx-0 items-center">
-            <Link
-              href="/tutoring-plan#book-form"
-              className="bg-gold md:text-base text-sm rounded-3xl lg:px-4 px-2 font-semibold py-1.5 text-white hover:bg-gold"
-            >
-              <span>{t("tutoring.1-icon")}</span>
-            </Link>
+          <div className="flex sm:flex-row flex-col gap-4 mt-4 md:mt-10  md:mx-0 sm:items-center">
+            <div className="relative flex items-center">
+              <Link
+                href="/tutoring-plan#book-form"
+                className="bg-gold md:text-base text-sm rounded-3xl sm:px-10 px-8 font-semibold py-1.5 text-white hover:bg-gold"
+              >
+                <span>{t("tutoring.1-icon")}</span>
+              </Link>
+            </div>
             <div className="relative flex items-center">
               <Link
                 href="/under-develop"
-                className="md:text-base text-sm rounded-3xl lg:px-4 px-2 font-semibold py-1.5 border border-white text-white hover:text-white hover:bg-primary/60"
+                className="md:text-base text-sm rounded-3xl sm:px-10 px-7 font-semibold py-1.5 border border-white text-white hover:text-white hover:bg-primary/60"
               >
                 <span>Log in as a parent </span>
               </Link>

@@ -15,7 +15,7 @@ const LampSection = () => {
     <div className=" md:pb-0">
       <section className="flex flex-col md:flex-row w-full md:items-center">
         {/* النصوص */}
-        <div className="text-2xl md:text-4xl container md:mx-auto px-4 flex flex-col justify-center text-start  md:max-w-md z-10 mt-6 md:mt-0">
+        <div className="text-4xl container md:mx-auto px-4 flex flex-col justify-center text-start  md:max-w-md z-10 mt-6 md:mt-0">
           <h2 className=" font-bold text-primary leading-tight relative inline-block">
             {t("home.49-heading1-1")}
             <br />
@@ -27,7 +27,7 @@ const LampSection = () => {
             />
           </h2>
 
-          <div className="relative flex justify-start items-center mt-10">
+          <div className="relative flex justify-start items-center md:mt-10 mt-4">
             <button
               onClick={() => setShowStartNow(true)}
               className="bg-gold rounded-3xl px-8 sm:px-10 font-semibold py-1.5 text-white hover:bg-gold text-base"
@@ -47,7 +47,7 @@ const LampSection = () => {
           <img
             src="/image-lamp.png"
             alt="Student"
-            className="w-3/4 sm:w-4/5 md:w-full h-auto object-contain"
+            className="w-full h-auto object-contain"
           />
 
           <img

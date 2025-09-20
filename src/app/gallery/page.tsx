@@ -53,34 +53,41 @@ const Gallery = () => {
           image: "/gallery/Mask group (6).png",
         },
         {
-          date: { day: "20", month: "June" },
+          date: { day: "6", month: "March " },
           title: "LEAP Festival (Saudi Arabia)",
           description: t("gallery.7"),
           image: "/gallery/Mask group (7).png",
         },
         {
-          date: { day: "23", month: "May" },
+          date: { day: "10", month: "April" },
           title: "One Dirham Makes a Difference' Initiative",
           description: t("gallery.9"),
           image: "/gallery/Mask group (14).png",
         },
         {
-          date: { day: "6", month: "March" },
-          title: " Bibin Program Investment",
+          date: { day: "20", month: "June" },
+          title: " Sharjah Entrepreneurship Festival",
           description: t("gallery.10"),
           image: "/gallery/Mask group (9).png",
         },
         {
-          date: { day: "10", month: "April" },
-          title: "Sharjah Entrepreneurship Festival",
+          date: { day: "24", month: "January" },
+          title: "Bett UK",
           description: t("gallery.11"),
           image: "/gallery/Mask group (10).png",
         },
+
         {
           date: { day: "16", month: "Feb" },
-          title: "Top 16 UAE EdTech Startups",
-          description: t("gallery.13"),
-          image: "/gallery/Mask group (11).png",
+          title: "Bibin Program Investment",
+          description: t("gallery.15"),
+          image: "/gallery/بيبان.jpeg",
+        },
+        {
+          date: { day: "16", month: "Feb" },
+          title: "Bibin Program Investment",
+          description: t("gallery.15"),
+          image: "/gallery/image7.webp",
         },
       ],
     },
@@ -138,7 +145,7 @@ const Gallery = () => {
                       alt={event.title}
                       width={350}
                       height={300}
-                      className="rounded-lg w-full h-auto object-cover transform transition-transform duration-500 ease-in-out hover:scale-125"
+                      className="rounded-lg w-full h-[250px]  object-cover object-[50%_30%] transform transition-transform duration-500 ease-in-out hover:scale-125"
                     />
                   </div>
                 </div>

@@ -67,7 +67,7 @@ const SubjectsSliders = () => {
     ],
   };
 
-  const scrollSpeed = 1.7;
+  const scrollSpeed = 2;
 
   const startScroll = (direction: "next" | "prev") => {
     const scrollContainer = scrollRef.current;
@@ -106,23 +106,36 @@ const SubjectsSliders = () => {
     <div className="relative w-full py-10 md:py-20 bg-white">
       <div className="container mx-auto space-y-6 md:space-y-12">
         <div className="md:text-center mb-8 md:mb-16 flex flex-col md:items-center justify-center">
-          <div>
-            <h3 className="font-bold text-primary text-2xl md:text-3xl mb-2">
+          <div className="sm:block hidden">
+            <h3 className="font-bold text-primary text-3xl mb-2">
               {t("home.55-heading1")}
             </h3>
-            <h3 className="font-bold text-primary text-2xl md:text-3xl">
+            <h3 className="font-bold text-primary text-3xl">
               {t("home.55-heading2")}
             </h3>
           </div>
-          <div>
-            <img src="/Lines22.svg" alt="" className="w-[500px]" />
+          <div className="sm:hidden block">
+            <h3 className="font-bold text-primary text-4xl mb-2">
+              {t("home.55-heading1")}
+              {t("home.55-heading2")}
+            </h3>
           </div>
-          <p className="text-gray1 text-[18px] mt-2 block">
-            {t("home.55-heading3")}
-          </p>
-          <p className="text-gray1 text-[18px] mt-2 block">
-            {t("home.55-heading4")}
-          </p>
+          <div className="sm:block hidden">
+            <div>
+              <img src="/Lines22.svg" alt="" className="w-[500px]" />
+            </div>
+            <p className="text-gray1 text-[18px] mt-2 block">
+              {t("home.55-heading3")}
+            </p>
+            <p className="text-gray1 text-[18px] mt-2 block">
+              {t("home.55-heading4")}
+            </p>
+          </div>
+          <div className="sm:hidden block mt-4">
+            <p className="text-gray1 text-[18px] mt-2 block">
+              {t("home.55-heading3")} {t("home.55-heading4")}
+            </p>
+          </div>
         </div>
 
         {/* Icon Tabs */}
@@ -137,7 +150,7 @@ const SubjectsSliders = () => {
                 <button
                   key={idx}
                   onClick={() => setSelected(key)}
-                  className={`w-60 md:w-52 px-4 md:px-2 py-1.5 text-xs md:text-sm rounded-full border transition-colors duration-300 ${
+                  className={`w-full md:w-52 px-4 md:px-2 md:py-1.5 py-3  text-sm rounded-full border transition-colors duration-300 ${
                     selected === key
                       ? "bg-primary text-white"
                       : "bg-transparent text-primary border-primary hover:bg-primary/70 hover:text-white"

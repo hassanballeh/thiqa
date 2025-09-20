@@ -14,7 +14,7 @@ const Company = () => {
       </h2>
       <div
         dir="rtl"
-        className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 justify-items-center place-items-center"
+        className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-items-center place-items-center"
       >
         {[
           { src: "/gallery/1.svg", w: 150.72, h: 109.82 },
@@ -46,8 +46,8 @@ const Company = () => {
       </div>
 
       <section className=" mx-auto mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
-        <div className="flex flex-col px-10 md:px-0 md:mb-0 mb-10 md:justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  md:text-center md:text-start max-w-lg relative">
-          <h2 className="text-3xl font-bold text-primary leading-relaxed">
+        <div className="flex flex-col px-4 md:px-0 md:mb-0 mb-10 md:justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  md:text-center md:text-start max-w-lg relative">
+          <h2 className="text-4xl font-bold text-primary leading-relaxed">
             Ready?
           </h2>
 
@@ -64,7 +64,7 @@ const Company = () => {
 
           <div className="hidden md:block w-4/5 h-1 bg-gold rounded-sm" />
 
-          <div className="relative mt-4 md:mt-8 text-xs md:text-[16px]">
+          <div className="relative mt-4 md:mt-8 md:text-[18px] text-[16px]">
             <p className=" text-gray1 font-light max-w-[500px] md:leading-relaxed">
               {t("home.79-heading2")}
             </p>
@@ -76,7 +76,7 @@ const Company = () => {
 
           <div className="flex gap- mt-6 flex-col">
             <h3 className="font-semibold text-gray1">Download ON:</h3>
-            <div className="flex items-center gap-2 mt-4">
+            <div className="flex sm:flex-row flex-col sm:items-center gap-2 mt-4">
               <Link href="https://play.google.com/store/apps/details?id=com.thiqaeducation.tutoringapp&hl=en">
                 <img
                   src="/google-play-black.svg"
@@ -87,13 +87,13 @@ const Company = () => {
               <img
                 src="/app-store-black.svg"
                 alt="App Store"
-                className="w-48"
+                className="w-48 cursor-pointer"
               />
             </div>
           </div>
         </div>
 
-        <div className="relative hidden md:block" dir="ltr">
+        <div className="relative  md:block" dir="ltr">
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
             className={`hidden md:block absolute bottom-0 right-0 z-0`}

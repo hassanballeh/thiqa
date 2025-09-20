@@ -12,14 +12,14 @@ const TextWithPicture = () => {
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  md:place-items-stretch w-full">
         <div className="flex-1 px-4 text-start flex flex-col justify-center items-center md:items-start max-w-md">
           <div className="">
-            <h2 className="md:text-3xl text-2xl font-bold text-white leading-relaxed">
+            <h2 className="text-4xl  font-bold text-white leading-relaxed">
               {t("home.26-heading1")}
             </h2>
           </div>
-          <p className="xl:text-[18px] sm:text-[16px] text-[14px] text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] md:mb-4 text-white font-extralight mt-2 md:mt-4 max-w-[400px]">
             {t("home.26-heading2")}
           </p>
-          <div className="relative flex items-centers my-4 md:my-6 lg:text-[16px] text-[14px] text-left md:w-fit w-full">
+          <div className="relative flex items-centers my-4 md:my-6 text-[16px]  text-left md:w-fit w-full">
             <CustomButton
               label={t("home.26-icons1")}
               bgColor="bg-gold"
@@ -30,7 +30,7 @@ const TextWithPicture = () => {
             <img
               src="/arrow-private.svg"
               alt="Arrow"
-              className="hidden md:block absolute left-[110%] top-[40%] -translate-y-1/2   "
+              className=" md:block absolute sm:left-[110%] left-[50%] top-[0%] -translate-y-1/2   "
             />
           </div>
 
@@ -57,7 +57,7 @@ const TextWithPicture = () => {
           </Link>
         </div>
 
-        <section className="flex-1 relative md:flex hidden justify-center md:justify-end items-center py-4 md:py-12 ">
+        <section className="flex-1 relative md:flex  justify-center md:justify-end items-center py-4 md:py-12  px-4 ">
           <div className="relative z-10 group">
             <img
               src="/image.png"
@@ -72,7 +72,7 @@ const TextWithPicture = () => {
             <img
               src="/Layer_1 (1).svg"
               alt="Zaina small"
-              className="absolute top-[-1%] -right-[4%] w-10 h-10 z-10 "
+              className="absolute top-[-1%] sm:-right-[4%] right-[2%] w-10 h-10 z-10 "
             />
           </div>
         </section>

@@ -7,11 +7,12 @@ import { useTranslation } from "react-i18next";
 const Gallery = () => {
   const { t } = useTranslation();
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 bg-primary" dir="rtl">
+    <div className="grid grid-cols-1 md:grid-cols-4 bg-primary" dir="rtl">
       {/* Image 1 */}
       <GalleryItem
-        src="/gallery/image11.JPG"
+        src="/gallery/future 50.webp"
         alt="Image 1"
+        title="Top 50 Future Companies"
         text={t("home.gallery-1")}
       />
 
@@ -19,6 +20,7 @@ const Gallery = () => {
       <GalleryItem
         src="/gallery/image2.jpg"
         alt="Image 2"
+        title="Majra Sustainable Impact Challenge"
         text={t("home.gallery-2")}
       />
 
@@ -26,6 +28,7 @@ const Gallery = () => {
       <GalleryItem
         src="/gallery/image3.jpg"
         alt="Image 3"
+        title="Bett UK"
         text={t("home.gallery-3")}
       />
 
@@ -41,6 +44,7 @@ const Gallery = () => {
       <GalleryItem
         src="/gallery/Mask group (7).png"
         alt="Image 5"
+        title="LEAP Festival (Saudi Arabia)"
         text={t("home.gallery-5")}
       />
 
@@ -63,13 +67,15 @@ const Gallery = () => {
       <GalleryItem
         src="/gallery/image7.webp"
         alt="Image 7"
+        title="UAE Hackathon"
         text={t("home.gallery-7")}
       />
 
       {/* Image 8 */}
       <GalleryItem
-        src="/gallery/image8.png"
+        src="/gallery/image33.jpeg"
         alt="Image 8"
+        title=" Zayed University Job Fair"
         text={t("home.gallery-8")}
       />
     </div>

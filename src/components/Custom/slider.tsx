@@ -64,7 +64,7 @@ export default function HeroSlide({
 
         {/* Description */}
         <div className="">
-          <p className="xl:text-[18px] sm:text-[16px] text-[14px] text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
+          <p className="xl:text-[18px] sm:text-[16px] text-[14px] sm: text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
             {description}
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function HeroSlide({
           <img
             src={image}
             alt="Student"
-            className="lg:w-full lg:h-[600px]    z-10 relative"
+            className="lg:w-full lg:h-[600px]     z-10 relative"
           />
         </div>
 
@@ -127,7 +127,7 @@ export default function HeroSlide({
             {/* Desktop Testimonial Cards */}
             <div
               className={`
-                md:flex hidden flex-col justify-around  lg:absolute ${
+                md:flex  flex-col justify-around  absolute w-[190px] h-auto ${
                   testimonial.position
                 } 
                 

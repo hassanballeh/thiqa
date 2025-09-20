@@ -30,7 +30,7 @@ const ServiceCard = ({
                 hover:border-white/10`}
     >
       {highlight && (
-        <div className="absolute bottom-[95%] md:left-[8%] left-[15%]  z-20 flex items-center gap-2">
+        <div className="absolute md:bottom-[95%] bottom-[85%] md:left-[8%] left-[15%]  z-20 flex items-center gap-2">
           {/* Arrow image - adjust top/left positioning */}
           <img
             src="/arrow-30.svg"
@@ -255,22 +255,27 @@ const ServicesSection = () => {
       <div className="mx-auto max-w-6xl ">
         <div className="md:text-center text-left mb-10 max-w-sm md:max-w-md md:mx-auto px-4 md:px-0">
           <div className="inline-block relative">
-            <h3 className="xl:text-3xl text-2xl  font-bold text-primary leading-tight">
+            <h3 className="text-3xl   font-bold text-primary leading-tight">
               {t("home.20-heading1")}
             </h3>
             <img
               src="/line.svg"
               alt="Vector line"
-              className="w-[75%] md:mx-auto mt-2"
+              className="md:w-[75%] w-1/2 sm:block hidden md:mx-auto mt-2"
+            />
+            <img
+              src="/line90.svg"
+              alt="Vector line"
+              className="md:w-[75%] w-1/2 sm:hidden  md:mx-auto mt-2"
             />
           </div>
 
-          <span className="text-gray1 xl:text-[18px] sm:text-[16px] text-[14px] mt-6 block  mx-auto">
+          <span className="text-gray1 xl:text-[18px] text-[16px]  mt-4 block  mx-auto">
             {t("home.20-heading2")}{" "}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-5  ">
           {services.map((service, index) => (
             <ServiceCard
               HoverIcon={service.HoverIcon}

@@ -20,7 +20,8 @@ export default function HeroSection() {
         {
           name: t("home.1-feedback1-name"),
           text: t("home.1-feedback1"),
-          position: "bottom-[37%] left-[12%] w-[262px] h-[196px]",
+          position:
+            "sm:bottom-[37%] sm:left-[12%] bottom-[50%] left-[0%] sm:w-[262px] sm:h-[196px]",
           avatar: "/gif/isto-unscreen.gif",
           layerImage: "/Layer_1 (3).svg",
           layerPosition: "bottom-[35%] left-[10%]",
@@ -28,7 +29,8 @@ export default function HeroSection() {
         {
           name: t("home.1-feedback2-name"),
           text: t("home.1-feedback2"),
-          position: "top-[13%] right-[11%] w-[262px] h-[165px]",
+          position:
+            "sm:top-[13%] sm:right-[11%] top-[-9%] right-[-2%] sm:w-[262px] sm:h-[165px]",
           avatar: "/Layer_1 (3).svg",
           layerGif: "/gif/isto-unscreen.gif",
           layerPosition: "top-[6%] right-[6%]",
@@ -36,7 +38,8 @@ export default function HeroSection() {
         {
           name: t("home.1-feedback3-name"),
           text: t("home.1-feedback3"),
-          position: "bottom-[9%] right-[11%] w-[223px] h-[196px]",
+          position:
+            "sm:bottom-[9%] sm:right-[11%] bottom-[33%] right-[0%] sm:w-[223px] sm:h-[196px]",
           avatar: "/student3-avatar.svg",
           bgColor: "bg-gold",
           textColor: "text-white",
@@ -56,7 +59,8 @@ export default function HeroSection() {
         {
           name: t("home.8-feedback1-name"),
           text: t("home.8-feedback1"),
-          position: "bottom-[33%] left-[12%] w-[262px] h-[196px]",
+          position:
+            "sm:bottom-[33%] sm:left-[12%] bottom-[50%] left-[0%] sm:w-[262px] sm:h-[196px]",
           avatar: "/gif/isto-unscreen.gif",
           layerImage: "/Layer_1 (3).svg",
           layerPosition: "bottom-[30%] left-[10%]",
@@ -64,7 +68,8 @@ export default function HeroSection() {
         {
           name: t("home.8-feedback2-name"),
           text: t("home.8-feedback2"),
-          position: "top-[18%] right-[11%] w-[262px] h-[165px]",
+          position:
+            "sm:top-[18%] sm:right-[11%] top-[-9%] right-[-2%] sm:w-[262px] sm:h-[165px]",
           avatar: "/Layer_1 (3).svg",
           layerGif: "/gif/isto-unscreen.gif",
           layerPosition: "top-[11%] right-[6%]",
@@ -72,7 +77,8 @@ export default function HeroSection() {
         {
           name: t("home.8-feedback3-name"),
           text: t("home.8-feedback3"),
-          position: "bottom-[4%] right-[11%] w-[223px] h-[196px]",
+          position:
+            "sm:bottom-[4%] sm:right-[11%] bottom-[33%] right-[0%] sm:w-[223px] sm:h-[196px]",
           avatar: "/student3-avatar.svg",
           bgColor: "bg-gold",
           textColor: "text-white",
@@ -92,7 +98,8 @@ export default function HeroSection() {
         {
           name: t("home.14-feedback1-name"),
           text: t("home.14-feedback1"),
-          position: "bottom-[33%] left-[12%] w-[262px] h-[196px]",
+          position:
+            "sm:bottom-[33%] sm:left-[12%] bottom-[50%] left-[0%] sm:w-[262px] sm:h-[196px]",
           avatar: "/gif/isto-unscreen.gif",
           layerImage: "/Layer_1 (3).svg",
           layerPosition: "bottom-[30%] left-[10%]",
@@ -100,7 +107,8 @@ export default function HeroSection() {
         {
           name: t("home.14-feedback2-name"),
           text: t("home.14-feedback2"),
-          position: "top-[18%] right-[11%] w-[262px] h-[165px]",
+          position:
+            "sm:top-[18%] sm:right-[11%] top-[-9%] right-[-2%] sm:w-[262px] sm:h-[165px]",
           avatar: "/Layer_1 (3).svg",
           layerGif: "/gif/isto-unscreen.gif",
           layerPosition: "top-[11%] right-[6%]",
@@ -108,7 +116,8 @@ export default function HeroSection() {
         {
           name: t("home.14-feedback3-name"),
           text: t("home.14-feedback3"),
-          position: "bottom-[4%] right-[11%] w-[223px] h-[196px]",
+          position:
+            "sm:bottom-[4%] sm:right-[11%] bottom-[33%] right-[0%] sm:w-[223px] sm:h-[196px]",
           avatar: "/student3-avatar.svg",
           bgColor: "bg-gold",
           textColor: "text-white",
@@ -122,7 +131,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 8000);
+    }, 80000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
