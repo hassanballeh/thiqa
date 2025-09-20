@@ -10,8 +10,8 @@ const Hero = () => {
   return (
     <div className="py-0">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
-        <div className="flex-1 md:px-4 text-start flex flex-col justify-center max-w-full md:max-w-xl">
-          <div className="text-[28px] md:text-5xl">
+        <div className="flex-1 md:px-4 text-start flex flex-col justify-center max-w-full md:max-w-xl w-full md:w-auto">
+          <div className="text-[28px] md:text-3xl lg:text-5xl sm:max-w-md md:max-w-none">
             <h2 className=" font-bold text-primary leading-tight">
               {t("become.1-heading1")}{" "}
             </h2>

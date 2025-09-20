@@ -39,17 +39,17 @@ const Steps = () => {
   ];
   return (
     <div className="py-12 bg-primary">
-      <section className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 px-6 md:py-12">
-        <div className="md:col-span-1 flex flex-col justify-center items-center">
-          <div className="text-white md:px-4 text-center md:text-start flex flex-col justify-center max-w-sm">
-            <h2 className="text-2xl md:text-3xl font-semibold leading-relaxed md:whitespace-pre-line">
+      <section className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-4 px-6 md:py-12">
+        <div className="lg:col-span-1 flex flex-col justify-center items-center">
+          <div className="text-white md:px-4 text-center lg:text-start flex flex-col justify-center max-w-sm md:max-w-md lg:max-w-sm">
+            <h2 className="text-2xl lg:text-3xl font-semibold leading-relaxed md:whitespace-pre-line">
               {t("become.17-heading1")}
             </h2>
-            <p className="text-sm md:text-[15px] font-light md:leading-relaxed mt-4 md:mt-1 max-w-sm">
+            <p className="text-sm md:text-[15px] font-light md:leading-relaxed mt-4 md:mt-1 max-w-sm mx-auto lg:mx-0">
               {t("become.17-heading2")}{" "}
             </p>
 
-            <div className="flex flex-col gap-4 mt-4 md:mt-6 mx-auto md:mx-0 items-start w-full md:w-auto">
+            <div className="flex flex-col gap-4 mt-4 md:mt-6 mx-auto lg:mx-0 items-start w-full md:w-auto">
               <div className="flex gap-4 mx-auto md:mx-0">
                 <Link
                   href="/under-develop"
