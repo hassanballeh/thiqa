@@ -22,13 +22,14 @@ const ServiceCard = ({
   return (
     <div
       className={`relative  shadow-md bg-white rounded-3xl p-4 md:p-6
-                flex flex-col items-center justify-center text-center gap-1 md:gap-4 group 
+                flex flex-col items-center  text-center gap-1 md:gap-4 group 
                 transition-all duration-500 ease-in-out
                 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)]
                 hover:bg-primary hover:scale-[1.02]
                 cursor-pointer
                 hover:border-white/10`}
     >
+      {/*Highlight Is Here */}
       {highlight && (
         <div className="absolute md:bottom-[95%] bottom-[85%] md:left-[8%] left-[15%]  z-20 flex items-center gap-2">
           {/* Arrow image - adjust top/left positioning */}
@@ -65,8 +66,17 @@ const ServiceCard = ({
           >
             {Icon}
           </div> */}
-          <div className="flex group-hover:hidden   justify-center items-center ">
-            {DefaultIcon}
+          <div className="flex group-hover:hidden justify-center items-center ">
+            {/* {DefaultIcon} */}
+            {title.trim() == "Consultations" ? (
+              <img
+                src="/lamp-blue.svg"
+                alt=""
+                className="w-[60px] h-[60px] object-contain relative bottom-[4px] md:bottom-[7px]"
+              />
+            ) : (
+              DefaultIcon
+            )}
           </div>
 
           {/* Hover icon */}
@@ -78,7 +88,7 @@ const ServiceCard = ({
 
       <h3
         className={` text-xl font-bold text-gray1 relative ${
-          title.trim() == "Consultations" ? "bottom-[10px]" : ""
+          title.trim() == "Consultations" ? "" : ""
         } z-10 group-hover:text-white transition-colors duration-500`}
       >
         {title}
@@ -86,7 +96,7 @@ const ServiceCard = ({
 
       <p
         className={`text-gray1 text-sm leading-relaxed relative ${
-          title.trim() == "Consultations" ? "bottom-[10px]" : ""
+          title.trim() == "Consultations" ? "" : ""
         } z-10 group-hover:text-white/80 transition-colors duration-500`}
       >
         {description}
@@ -135,7 +145,7 @@ const ServicesSection = () => {
     },
     {
       HoverIcon: (
-        <img src="/people-white.svg" className="w-[50px] h-[50px]"></img>
+        <img src="/people-white.svg" className="w-[60px] h-[60px]"></img>
       ),
       DefaultIcon: (
         <svg
@@ -144,7 +154,7 @@ const ServicesSection = () => {
           viewBox="0 0 52 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[50px] h-[50px]"
+          className="w-[60px] h-[60px]"
         >
           <g clip-path="url(#clip0_206_207)">
             <path
@@ -177,7 +187,7 @@ const ServicesSection = () => {
     {
       HoverIcon: (
         <img
-          className="w-[50px] h-[50px] relative bottom-[15px]"
+          className="w-[60px] h-[60px] relative bottom-[4px] md:bottom-[7px]"
           src="/lamp-white.svg"
         ></img>
       ),
@@ -187,7 +197,7 @@ const ServicesSection = () => {
           height="52"
           viewBox="0 0 52 52"
           fill="none"
-          className="w-[50px] h-[50px] relative bottom-[15px]"
+          className="w-[52px] h-[52px] sm:w-[50px] sm:h-[50px] sm:relative sm:bottom-[15px]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g clip-path="url(#clip0_206_186)">
@@ -266,11 +276,11 @@ const ServicesSection = () => {
             <img
               src="/line90.svg"
               alt="Vector line"
-              className="md:w-[75%] w-1/2 sm:hidden  md:mx-auto mt-2"
+              className=" w-[37%] sm:hidden md:w-[75%] md:mx-auto mt-2"
             />
           </div>
 
-          <span className="text-gray1 xl:text-[18px] text-[16px]  mt-4 block  mx-auto">
+          <span className="text-gray1 max-w-[75%] md:max-w-none text-sm sm:text-[16px] xl:text-[18px] mt-4 block">
             {t("home.20-heading2")}{" "}
           </span>
         </div>

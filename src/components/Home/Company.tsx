@@ -47,7 +47,7 @@ const Company = () => {
 
       <section className=" mx-auto mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
         <div className="flex flex-col px-4 md:px-0 md:mb-0 mb-10 md:justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  md:text-center md:text-start max-w-lg relative">
-          <h2 className="text-4xl font-bold text-primary leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-relaxed">
             Ready?
           </h2>
 
@@ -64,8 +64,8 @@ const Company = () => {
 
           <div className="hidden md:block w-4/5 h-1 bg-gold rounded-sm" />
 
-          <div className="relative mt-4 md:mt-8 md:text-[18px] text-[16px]">
-            <p className=" text-gray1 font-light max-w-[500px] md:leading-relaxed">
+          <div className="relative mt-4 md:mt-8 md:text-[18px] text-sm">
+            <p className=" text-gray1 font-light max-w-[75%] sm:max-w-[500px] md:leading-relaxed">
               {t("home.79-heading2")}
             </p>
 
@@ -74,7 +74,7 @@ const Company = () => {
             </div>
           </div>
 
-          <div className="flex gap- mt-6 flex-col">
+          <div className="relative z-[12] sm:static flex gap- mt-6 flex-col">
             <h3 className="font-semibold text-gray1">Download ON:</h3>
             <div className="flex sm:flex-row flex-col sm:items-center gap-2 mt-4">
               <Link href="https://play.google.com/store/apps/details?id=com.thiqaeducation.tutoringapp&hl=en">
@@ -96,14 +96,13 @@ const Company = () => {
         <div className="relative  md:block" dir="ltr">
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
-            className={`hidden md:block absolute bottom-0 right-0 z-0`}
+            className={`block absolute  z-[9] sm:z-0 -bottom-[62%] sm:-bottom-[34%]`}
             style={{
               backgroundImage: "url('/bg-blue.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
               width: "1000px", // العرض كما هو
               height: "1000px", // 👈 زيادة الطول
-              bottom: "-34%",
               left: "-14%",
             }}
           />
@@ -123,15 +122,15 @@ const Company = () => {
           {/* النجوم */}
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 bottom-[20%] z-50 left-[30%]`}
+            className={`block absolute h-14 bottom-[16%] sm:bottom-[20%] z-50 left-[25%] sm:left-[30%]`}
           />
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 -top-[9%] z-50 left-[55%] `}
+            className={`block absolute h-14 -top-[14%] sm:-top-[9%] z-50 left-[52%] sm:left-[55%] `}
           />
           <img
             src="/gif/istolat-unscreen.gif"
-            className={`hidden md:block absolute h-14 top-0 z-50 left-[60%]`}
+            className={`block absolute h-14 top-0 z-50 left-[60%]`}
           />
         </div>
       </section>

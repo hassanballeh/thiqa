@@ -32,7 +32,7 @@ const PictureWithText = () => {
 
         <div className="flex-1   flex flex-col justify-center w-full  lg:max-w-md">
           <div className="inline-block font-roboto xl:text-4xl text-3xl">
-            <h2 className=" font-bold text-primary leading-tight  mx-auto md:mx-0 lg:max-w-[400px]">
+            <h2 className=" font-bold text-primary leading-tight mx-0 max-w-[80%] md:max-w-none lg:max-w-[400px]">
               {t("home.68-heading1-1")} <br />
               {t("home.68-heading1-2")}
               <span className="sm:ms-2 relative  inline-block">
@@ -46,8 +46,8 @@ const PictureWithText = () => {
             </h2>
           </div>
 
-          <div className="mt-4 flex items-start justify-between">
-            <p className="xl:text-[20px] sm:text-[18px] text-[16px] leading-relaxed text-gray1 font-light max-w-[350px]">
+          <div className="mt-2 sm:mt-4 flex items-start justify-between">
+            <p className="xl:text-[20px] sm:text-[18px] text-sm leading-relaxed text-gray1 font-light max-w-[75%] sm:max-w-[350px]">
               {t("home.68-heading2")}{" "}
             </p>
           </div>

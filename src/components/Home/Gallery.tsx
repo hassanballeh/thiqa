@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const Gallery = () => {
   const { t } = useTranslation();
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 bg-primary" dir="rtl">
+    <div className="grid grid-cols-2 md:grid-cols-4 bg-primary" dir="rtl">
       {/* Image 1 */}
       <GalleryItem
         src="/gallery/future 50.webp"

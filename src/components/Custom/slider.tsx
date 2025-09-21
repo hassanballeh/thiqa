@@ -64,7 +64,7 @@ export default function HeroSlide({
 
         {/* Description */}
         <div className="">
-          <p className="xl:text-[18px] sm:text-[16px] text-[14px] sm: text-[#0C1E4B] font-light leading-[30px] max-w-lg line-clamp-4 overflow-hidden">
+          <p className="xl:text-[18px] sm:text-[16px] text-sm sm: text-[#0C1E4B] font-light md:leading-[30px] max-w-[75%] sm:max-w-lg line-clamp-4 overflow-hidden  ">
             {description}
           </p>
         </div>

@@ -172,10 +172,10 @@ const Numbers = () => {
   return (
     <div className="bg-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-2xl md:text-center text-left relative mb-8 sm:gap-0 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 text-2xl md:text-center text-left relative mb-8 sm:gap-0 gap-4">
           {/* العمود الأول */}
-          <div className="flex flex-col justify-center items-center  gap-4 relative w-full ">
-            <h3 className="lg:text-5xl text-3xl font-bold text-primary">
+          <div className=" flex flex-col justify-center items-center  gap-1 sm:gap-4 relative w-full mb-4 sm:mb-0 ">
+            <h3 className="lg:text-5xl text-4xl font-bold text-primary">
               +<CountUp end={50000} duration={1} separator="," />
             </h3>
             <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px]   md:max-w-52 md:mx-auto ">
@@ -184,12 +184,12 @@ const Numbers = () => {
 
             {/* الخط الفاصل */}
             <span className="hidden md:block absolute top-1/4 right-0 h-1/2 w-[1px] bg-gray-300"></span>
-            {/* <span className="block md:hidden absolute top-[100%] w-[34%]  h-[2%] bg-gray-300"></span> */}
+            <span className="block md:hidden absolute top-[calc(100%+15px)] w-[34%]  h-[2px] bg-gray-300"></span>
           </div>
 
           {/* العمود الثاني */}
-          <div className="flex flex-col justify-center items-center  gap-4  ">
-            <h3 className="lg:text-5xl text-3xl  font-bold text-primary">
+          <div className="relative flex flex-col justify-center items-center gap-1 sm:gap-4  mb-4 sm:mb-0">
+            <h3 className="lg:text-5xl text-4xl  font-bold text-primary">
               +<CountUp end={200} duration={1} />
             </h3>
             <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px]  md:max-w-52 md:mx-auto ">
@@ -197,13 +197,15 @@ const Numbers = () => {
             </p>
 
             {/* الخط الفاصل */}
-            <span className="hidden md:block absolute right-[30%] h-1/2 w-[1px] bg-gray-300"></span>
-            {/* <span className="block md:hidden absolute w-[60%] top-[66%]   h-[1%] bg-gray-300"></span> */}
+            <span className="hidden md:block absolute right-0 h-1/2 w-[1px] bg-gray-300">
+              {" "}
+            </span>
+            <span className="block md:hidden absolute w-[60%] top-[calc(100%+15px)]  h-[2px] bg-gray-300"></span>
           </div>
 
           {/* العمود الثالث (بدون خط) */}
-          <div className="flex flex-col justify-center items-center  gap-4 ">
-            <h3 className="lg:text-5xl text-3xl font-bold text-primary">
+          <div className="flex flex-col justify-center items-center  gap-1 sm:gap-4 ">
+            <h3 className="lg:text-5xl text-4xl font-bold text-primary">
               +<CountUp end={5} duration={1} />
             </h3>
             <p className="text-gray1 xl:text-[20px] sm:text-[18px] text-[16px] text-left   md:max-w-52 md:mx-auto ">
@@ -255,7 +257,7 @@ const Numbers = () => {
           <div className="text-3xl lg:text-4xl ">
             <h2 className="font-extrabold text-gray1 leading-snug">
               {t("home.30-heading1-1")} <br />{" "}
-              <span className="underline  decoration-[#F8B21F]">
+              <span className="underline  decoration-[#F8B21F] decoration-[4px] md:[text-decoration-thickness:auto]">
                 {t("home.30-heading1-2")}
               </span>
             </h2>

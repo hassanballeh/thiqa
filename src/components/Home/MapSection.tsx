@@ -28,13 +28,13 @@ const MapSection = () => {
     <div className="bg-primary py-10 md:py-0">
       <section className="md:container px-4 md:px-0 md:mx-auto  grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
         {/* النصوص */}
-        <div className="text-xl md:text-3xl flex-1 md:mx-auto  text-start flex flex-col justify-center md:max-w-[462px]">
-          <h2 className=" font-bold text-white leading-relaxed max-w-md">
+        <div className="text-[24px] md:text-3xl flex-1 md:mx-auto  text-start flex flex-col justify-center md:max-w-[462px]">
+          <h2 className=" font-bold text-white leading-relaxed max-w-[80%] sm:max-w-md">
             {selectedCountry === "UAE"
               ? t("home.62-heading1")
               : t("home.65-heading1")}
           </h2>
-          <div className="text-xs md:text-[16px]">
+          <div className="text-sm md:text-[16px] max-w-[75%] sm:max-w-none ">
             <p className=" text-white font-light mt-4 leading-relaxed">
               {selectedCountry === "UAE"
                 ? t("home.62-heading2")

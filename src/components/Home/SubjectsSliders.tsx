@@ -67,7 +67,7 @@ const SubjectsSliders = () => {
     ],
   };
 
-  const scrollSpeed = 2;
+  const scrollSpeed = 3;
 
   const startScroll = (direction: "next" | "prev") => {
     const scrollContainer = scrollRef.current;
@@ -105,7 +105,7 @@ const SubjectsSliders = () => {
   return (
     <div className="relative w-full py-10 md:py-20 bg-white">
       <div className="container mx-auto space-y-6 md:space-y-12">
-        <div className="md:text-center mb-8 md:mb-16 flex flex-col md:items-center justify-center">
+        <div className="md:text-center mb-8 md:mb-16 flex flex-col items-start md:items-center justify-center">
           <div className="sm:block hidden">
             <h3 className="font-bold text-primary text-3xl mb-2">
               {t("home.55-heading1")}
@@ -115,7 +115,7 @@ const SubjectsSliders = () => {
             </h3>
           </div>
           <div className="sm:hidden block">
-            <h3 className="font-bold text-primary text-4xl mb-2">
+            <h3 className="font-bold text-primary text-[28px] md:text-4xl sm:mb-2 max-w-[80%] sm:max-w-none">
               {t("home.55-heading1")}
               {t("home.55-heading2")}
             </h3>
@@ -131,8 +131,8 @@ const SubjectsSliders = () => {
               {t("home.55-heading4")}
             </p>
           </div>
-          <div className="sm:hidden block mt-4">
-            <p className="text-gray1 text-[18px] mt-2 block">
+          <div className="sm:hidden block mt-2 sm:mt-4">
+            <p className="text-gray1 text-sm sm:text-[18px] max-w-[75%] sm:max-w-none sm:mt-2 block">
               {t("home.55-heading3")} {t("home.55-heading4")}
             </p>
           </div>
