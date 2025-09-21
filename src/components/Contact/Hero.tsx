@@ -2,9 +2,37 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-
+import { useState, useEffect } from "react";
 const Hero = () => {
   const { t } = useTranslation();
+  const [chatReady, setChatReady] = useState(false);
+  useEffect(() => {
+    const checkChatIcon = () => {
+      const shadowHost = Array.from(document.querySelectorAll("*")).find((el) =>
+        el.shadowRoot?.querySelector(".o-livechat-LivechatButton")
+      );
+      if (shadowHost) {
+        setChatReady(true); // ✅ Enable the button
+      } else {
+        setTimeout(checkChatIcon, 500); // 🔁 Retry every 500ms
+      }
+    };
+
+    checkChatIcon();
+  }, []);
+
+  const handleOpenChat = () => {
+    const shadowHost = Array.from(document.querySelectorAll("*")).find((el) =>
+      el.shadowRoot?.querySelector(".o-livechat-LivechatButton")
+    );
+    const chatButton = shadowHost?.shadowRoot?.querySelector(
+      ".o-livechat-LivechatButton"
+    ) as HTMLElement | null;
+
+    if (chatButton) {
+      chatButton.click();
+    }
+  };
   return (
     <div className="py-0">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
@@ -23,22 +51,30 @@ const Hero = () => {
             <br />
             {t("contact.1-heading2")}{" "}
           </p>
-          <div className="flex flex-col gap-4 my-4 md:mt-6 mx-auto md:mx-0 items-start">
-            <div className="flex flex-col gap-4 mt-6 mx-auto md:mx-0 items-start">
-              <div className="relative w-fit mx-auto md:mx-0">
+          <div className="flex flex-col gap-4 my-4 md:mt-6 mx-0 items-start">
+            <div className="flex flex-col gap-4 mt-4 sm:mt-6 mx-0 items-start">
+              <div className="relative w-fit mx-0">
                 <img
                   src="/arrow-contact.svg"
                   className="absolute bottom-1 -right-20 h-14"
                 />
-                <Link
+                {/* <Link
                   href=""
                   className="bg-primary rounded-3xl px-10 font-semibold py-1.5 text-white hover:bg-gold block"
                 >
                   <span>Start Live Chat</span>
-                </Link>
+                </Link> */}
+                <button
+                  className="bg-primary rounded-3xl px-10 font-semibold py-1.5 text-white hover:bg-gold block
+                   disabled:bg-gray-400 disabled:cursor-not-allowed duration-500"
+                  onClick={handleOpenChat}
+                  disabled={!chatReady}
+                >
+                  Start Live Chat
+                </button>
                 <img
                   src="/gif/istol-unscreen.gif"
-                  className="absolute -top-7 -left-16 h-24"
+                  className="absolute -top-[35%] sm:-top-7 -left-[40px] sm:-left-16  h-16 sm:h-24"
                 />
               </div>
             </div>
@@ -54,7 +90,7 @@ const Hero = () => {
             />
             <img
               src="/gif/isto-unscreen.gif"
-              className="absolute top-1/2 md:top-60 -right-6 sm:right-0 h-20 md:h-32"
+              className="absolute top-[42%] sm:top-[47%] md:top-[42%] lg:top-[38%] xl:top-[203px] -right-2  sm:right-[17px] md:-right-[2%] lg:-right-[22px] xl:-right-[10px] h-20 lg:h-32"
             />
           </div>
         </section>
