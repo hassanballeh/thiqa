@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 const Hero = () => {
@@ -12,9 +11,9 @@ const Hero = () => {
         el.shadowRoot?.querySelector(".o-livechat-LivechatButton")
       );
       if (shadowHost) {
-        setChatReady(true); // ✅ Enable the button
+        setChatReady(true);
       } else {
-        setTimeout(checkChatIcon, 500); // 🔁 Retry every 500ms
+        setTimeout(checkChatIcon, 500);
       }
     };
 
