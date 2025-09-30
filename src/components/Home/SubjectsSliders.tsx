@@ -4,7 +4,9 @@ import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
 const SubjectsSliders = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
   const [selected, setSelected] = useState<keyof typeof dataSets>("icon1");
   const [country, setCountry] = useState<string>("ae");
 
@@ -76,19 +78,14 @@ const SubjectsSliders = () => {
     const step = () => {
       if (!scrollContainer) return;
 
+      const scrollAmount = isRTL ? -scrollSpeed : scrollSpeed;
+
       if (direction === "next") {
-        if (
-          scrollContainer.scrollLeft + scrollContainer.clientWidth <
-          scrollContainer.scrollWidth
-        ) {
-          scrollContainer.scrollLeft += scrollSpeed;
-          animationRef.current = requestAnimationFrame(step);
-        }
+        scrollContainer.scrollLeft += scrollAmount;
+        animationRef.current = requestAnimationFrame(step);
       } else {
-        if (scrollContainer.scrollLeft > 0) {
-          scrollContainer.scrollLeft -= scrollSpeed;
-          animationRef.current = requestAnimationFrame(step);
-        }
+        scrollContainer.scrollLeft -= scrollAmount;
+        animationRef.current = requestAnimationFrame(step);
       }
     };
 
@@ -188,7 +185,7 @@ const SubjectsSliders = () => {
           // Carousel for other icons
           <div className="flex items-center justify-center relative">
             <button
-              onMouseEnter={() => startScroll("prev")}
+              onMouseEnter={() => startScroll(isRTL ? "next" : "prev")}
               onMouseLeave={stopScroll}
               className="absolute left-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
             >
@@ -218,7 +215,7 @@ const SubjectsSliders = () => {
             </div>
 
             <button
-              onMouseEnter={() => startScroll("next")}
+              onMouseEnter={() => startScroll(isRTL ? "prev" : "next")}
               onMouseLeave={stopScroll}
               className="absolute right-0 top-1/2 -translate-y-1/2 bg-primary text-white p-2 rounded-full z-10 hover:bg-blue-600 shadow-md"
             >

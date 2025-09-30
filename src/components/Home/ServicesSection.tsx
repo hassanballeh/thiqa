@@ -10,6 +10,7 @@ interface ServiceCardProps {
   description: string;
   highlight?: boolean;
   HoverIcon: ReactNode;
+  isRTL: boolean;
 }
 
 const ServiceCard = ({
@@ -18,6 +19,7 @@ const ServiceCard = ({
   description,
   highlight,
   HoverIcon,
+  isRTL,
 }: ServiceCardProps) => {
   return (
     <div
@@ -31,16 +33,18 @@ const ServiceCard = ({
     >
       {/*Highlight Is Here */}
       {highlight && (
-        <div className="absolute md:bottom-[95%] bottom-[85%] md:left-[8%] left-[15%]  z-20 flex items-center gap-2">
+       
+        <div className={`absolute md:bottom-[95%] bottom-[85%]${isRTL? "right-[15%] md:right-[8%] " : "left-[15%] md:left-[8%] "} z-20 flex items-center gap-2`}>
+           {/* */}
           {/* Arrow image - adjust top/left positioning */}
           <img
             src="/arrow-30.svg"
             alt="Discount"
-            className="w-10 h-10 drop-shadow-lg"
+            className={`${isRTL && "-scale-x-100"} w-10 h-10 drop-shadow-lg`}
           />
 
           {/* Container for 30% and "off" text - adjust positioning relative to arrow */}
-          <div className="absolute -top-4 -left-16 z-20 flex flex-col items-end space-y-2">
+          <div className={`absolute -top-4 ${isRTL? "-right-16":"-left-16"} z-20 flex flex-col items-end space-y-2`}>
             {/* 30% image */}
             <img
               src="/30per.svg"
@@ -106,8 +110,8 @@ const ServiceCard = ({
 };
 
 const ServicesSection = () => {
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+const isRTL = i18n.language === "ar";
   const services = [
     {
       HoverIcon: (
@@ -294,6 +298,7 @@ const ServicesSection = () => {
               title={service.title}
               description={service.description}
               highlight={service.highlight}
+              isRTL={isRTL}
             />
           ))}
         </div>

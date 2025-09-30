@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import LanguageProvider from "@/components/LanguageProvider";
 
 const SITE_URL = "https://www.thiqa.com";
 
@@ -168,7 +169,9 @@ export default function RootLayout({
       </head>
       <body className="font-poppins bg-blue_gray rtl:font-almarai  ">
         <Navbar />
+        <LanguageProvider>
         <main className="mt-24 pt-2 ">{children}</main>
+        </LanguageProvider>
         <Footer />
 
         <Toaster

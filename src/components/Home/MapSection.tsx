@@ -2,11 +2,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { LocationLabel } from "../Custom/LocationLabel";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 const MapSection = () => {
   const [selectedCountry, setSelectedCountry] = useState<"UAE" | "KSA">("UAE");
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   // Variants للنقاط
   const pointVariants = {
@@ -55,13 +57,20 @@ const MapSection = () => {
                 href="/under-develop"
                 className="md:text-base text-sm rounded-3xl sm:px-10 px-7 font-semibold py-1.5 border border-white text-white hover:text-white hover:bg-primary/60"
               >
-                <span>Log in as a parent </span>
+                <span>{t("home.62-icon2")} </span>
               </Link>
-              <img
-                src="/arrow-map.svg"
-                alt="Arrow"
-                className="hidden md:block absolute animate-wiggle -end-10 md:-end-14 bottom-4 -translate-y-1/2 w-12 h-12"
-              />
+              <div
+                className={`${
+                  isRTL &&
+                  "-scale-x-100 w-full -h-full absolute -left-[125%] top-1/2"
+                }`}
+              >
+                <img
+                  src="/arrow-map.svg"
+                  alt="Arrow"
+                  className="hidden md:block absolute animate-wiggle -end-10 md:-end-14 bottom-4 -translate-y-1/2 w-12 h-12"
+                />
+              </div>
             </div>
           </div>
         </div>

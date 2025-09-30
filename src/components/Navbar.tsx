@@ -8,31 +8,7 @@ import SelectLanguage from "./SelectLanguage";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import SelectCountry from "./SelectCountry";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Tutoring Plan", href: "/tutoring-plan" },
-  {
-    name: "Education Service",
-    href: "/academic",
-    children: [
-      { name: "Academic Consultation", href: "/academic" },
-      { name: "Shadow Teacher", href: "/shadow-teacher" },
-    ],
-  },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact" },
-  {
-    name: "Become a Tutor",
-    href: "/become-1",
-    children: [
-      { name: "How To", href: "/become-1" },
-      { name: "Benefits & Earnings", href: "/become-2" },
-      { name: "Sign Up", href: "/under-develop" },
-    ],
-  },
-  { name: "About Us", href: "/about" },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +18,32 @@ export default function Navbar() {
     {}
   );
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+  const navigation = [
+    { name: t("navbar.nav-item-1"), href: "/" },
+    { name: t("navbar.nav-item-2"), href: "/tutoring-plan" },
+    {
+      name: t("navbar.nav-item-3"),
+      href: "/academic",
+      children: [
+        { name: t("navbar.nav-item-3-1"), href: "/academic" },
+        { name: t("navbar.nav-item-3-2"), href: "/shadow-teacher" },
+      ],
+    },
+    { name: t("navbar.nav-item-4"), href: "/blog" },
+    { name: t("navbar.nav-item-5"), href: "/contact" },
+    {
+      name: t("navbar.nav-item-6"),
+      href: "/become-1",
+      children: [
+        { name: t("navbar.nav-item-6-1"), href: "/become-1" },
+        { name: t("navbar.nav-item-6-2"), href: "/become-2" },
+        { name: t("navbar.nav-item-6-3"), href: "/under-develop" },
+      ],
+    },
+    { name: t("navbar.nav-item-7"), href: "/about" },
+  ];
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
@@ -68,7 +69,15 @@ export default function Navbar() {
       setDropdownOpen((prev) => ({ ...prev, [name]: false }));
     }, 200);
   };
+  const [isReady, setIsReady] = useState(false);
+  useEffect(() => {
+    const lang = localStorage.getItem("lang") || "en";
+    i18n.changeLanguage(lang).then(() => {
+      setIsReady(true);
+    });
+  }, []);
 
+  if (!isReady) return null;
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
@@ -147,7 +156,7 @@ export default function Navbar() {
 
                 {isDropdown && dropdownOpen[item.name] && (
                   <div
-                    className="absolute top-full mt-1 px-2 -left-3 py-5 w-44 md:w-[calc(100%+3rem)] md:-left-4 md:pl-4 md:pr-0 space-y-3 bg-white shadow-md rounded-xl z-50 "
+                    className={`absolute top-full mt-1 px-2 -left-3 py-5 w-44 md:w-[calc(100%+3rem)] md:-left-4 ${isRTL? "md:pl-0 md:pr-4" : "md:pl-4 md:pr-0"}  space-y-3 bg-white shadow-md rounded-xl z-50 `}
                     onMouseEnter={() => handleMouseEnter(item.name)}
                     onMouseLeave={() => handleMouseLeave(item.name)}
                   >
@@ -179,13 +188,13 @@ export default function Navbar() {
             href="/contact"
             className="rounded-3xl px-2 2xl:px-5 text-xs lg:text-sm font-semibold py-1 border border-primary text-primary hover:text-white hover:bg-primary/70"
           >
-            Sign Up
+            {t("navbar.sign-up")}
           </Link>
           <Link
             href="/contact"
             className="bg-primary rounded-3xl px-2 2xl:px-5 text-xs lg:text-sm font-semibold py-1 text-white hover:bg-primary/70"
           >
-            Log In
+            {t("navbar.log-in")}
           </Link>
           <SelectCountry />
           <SelectLanguage />

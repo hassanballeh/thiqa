@@ -5,7 +5,7 @@ import CustomButton from "@/components/Custom/CustomButton";
 import { ENDPOINTS } from "@/app/api/api";
 import Axios from "@/app/api/axios";
 import { getCountries } from "@/services/get_all_select";
-import SelectField from "@/components/Custom/SelectField";
+import SelectField from "@/components/Custom/SelectFieldWrapper";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";

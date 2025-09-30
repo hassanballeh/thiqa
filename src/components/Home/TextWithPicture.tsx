@@ -5,8 +5,8 @@ import CustomButton from "../Custom/CustomButton";
 import { useTranslation } from "react-i18next";
 
 const TextWithPicture = () => {
-  const { t } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+const isRTL = i18n.language === "ar";
   return (
     <div className="bg-primary py-8 md:py-0">
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  md:place-items-stretch w-full">
@@ -30,7 +30,7 @@ const TextWithPicture = () => {
             <img
               src="/arrow-private.svg"
               alt="Arrow"
-              className=" md:block absolute w-6 sm:w-auto sm:left-[110%] left-[49%] top-[0%] -translate-y-1/2   "
+              className={`md:block absolute w-6 sm:w-auto ${isRTL? "right-[49%] sm:right-[140%] -rotate-12 -scale-x-100":"sm:left-[110%] left-[49%]"}  top-[0%] -translate-y-1/2`}
             />
           </div>
 
@@ -41,7 +41,7 @@ const TextWithPicture = () => {
             <span> {t("home.26-icons2")}</span>
             {/* السهم على اليمين */}
             <svg
-              className="w-4 h-4 ml-1"
+              className={`${isRTL && "rotate-180"} w-4 h-4 ml-1`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"

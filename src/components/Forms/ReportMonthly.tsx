@@ -10,7 +10,8 @@ import {
   getGrades,
   getSubjects,
 } from "@/services/get_all_select";
-import SelectField, { Option } from "@/components/Custom/SelectField";
+import SelectField from "@/components/Custom/SelectFieldWrapper";
+import { Option } from "@/components/Custom/SelectField";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";

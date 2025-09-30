@@ -56,14 +56,18 @@ const SelectLanguage = () => {
   }, []);
 
   const handleSelect = (code: string) => {
+  if (i18n.language !== code) {
+    i18n.changeLanguage(code);
+    localStorage.setItem("lang", code);
     setSelectedLanguage(code);
-    setIsOpen(false);
+  }
+  setIsOpen(false);
   };
 
   const selected = languages.find((lang) => lang.code === selectedLanguage);
 
   return (
-    <div className="relative hidden" ref={dropdownRef}>
+    <div className="relative " ref={dropdownRef}>
       {/* الزر الأساسي */}
       <button
         onClick={() => setIsOpen(!isOpen)}

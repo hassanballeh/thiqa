@@ -1,4 +1,20 @@
 {
+  "navbar": {
+    "nav-item-1": "Home",
+    "nav-item-2": "Tutoring Plan",
+    "nav-item-3": "Education Service",
+    "nav-item-3-1": "Academic Consultation",
+    "nav-item-3-2": "Shadow Teacher",
+    "nav-item-4": "Blog",
+    "nav-item-5": "Contact Us",
+    "nav-item-6": "Become a Tutor",
+    "nav-item-6-1": "How To",
+    "nav-item-6-2": "Benefits & Earnings",
+    "nav-item-6-3": "Sign Up",
+    "nav-item-7": "About Us",
+    "sign-up": "Sign Up",
+    "log-in": "Log In"
+  },
   "home": {
     "1-heading-primary": " Guiding your",
     "1-heading-black": "children's steps   to excellence",
@@ -75,7 +91,11 @@
 
     "39-heading2": "Parent’s feedback says it all. Let us share a few voice notes that reflect the real impact of their children’s educational journey.",
     "39-yellow-icon": " Voice Notes",
-
+    "39-voice-feedback1-name": "Um Alya",
+    "39-voice-feedback2-name": "Um Safa",
+    "39-voice-feedback3-name": "Um Metha",
+    "39-voice-feedback4-name": "Um Hosah",
+    "39-voice-feedback5-name": "Um Shams",
     "44-heading2": "Academic progress speaks for itself… Watch real moments from your children’s learning journey.",
     "44-yellow-icon": " Videos",
 

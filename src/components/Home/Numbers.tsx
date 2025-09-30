@@ -15,7 +15,9 @@ const variants = {
 };
 
 const Numbers = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const testimonials = [
@@ -23,40 +25,40 @@ const Numbers = () => {
       text: t("home.30-feedback1"),
       name: t("home.30-feedback1-name"),
       icon: "U",
-      initial: "U",
+      initial: t("home.30-feedback1-name").trim().charAt(0).toUpperCase(),
     },
     {
       text: t("home.30-feedback2"),
       name: t("home.30-feedback2-name"),
       icon: "A",
-      initial: "A",
+      initial: t("home.30-feedback2-name").trim().charAt(0).toUpperCase(),
     },
     {
       text: t("home.30-feedback3"),
       name: t("home.30-feedback3-name"),
       icon: "A",
-      initial: "A",
+      initial: t("home.30-feedback3-name").trim().charAt(0).toUpperCase(),
     },
     {
       text: t("home.30-feedback4"),
       name: t("home.30-feedback4-name"),
       icon: "A",
-      initial: "A",
+      initial: t("home.30-feedback4-name").trim().charAt(0).toUpperCase(),
     },
     {
       text: t("home.30-feedback5"),
       name: t("home.30-feedback5-name"),
       icon: "A",
-      initial: "A",
+      initial: t("home.30-feedback5-name").trim().charAt(0).toUpperCase(),
     },
   ];
 
   const voices = [
-    { link: "/youtube/5.m4a", name: "Um Alya" },
-    { link: "/youtube/1.m4a", name: "Um Safa" },
-    { link: "/youtube/2.m4a", name: "Um Metha" },
-    { link: "/youtube/3.m4a", name: "Um Hosah" },
-    { link: "/youtube/4.m4a", name: "Um Shams" },
+    { link: "/youtube/5.m4a", name: t("home.39-voice-feedback1-name") },
+    { link: "/youtube/1.m4a", name: t("home.39-voice-feedback2-name") },
+    { link: "/youtube/2.m4a", name: t("home.39-voice-feedback3-name") },
+    { link: "/youtube/3.m4a", name: t("home.39-voice-feedback4-name") },
+    { link: "/youtube/4.m4a", name: t("home.39-voice-feedback5-name") },
   ];
 
   const videos = [
@@ -288,15 +290,20 @@ const Numbers = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-16 md:bottom-4 left-6 flex gap-4">
+          <div
+            className={`${
+              isRTL ? "right-6" : " left-6"
+            } absolute bottom-16 md:bottom-4 flex gap-4`}
+            style={{ direction: isRTL ? "ltr" : "ltr" }}
+          >
             <button
-              onClick={prev}
+              onClick={isRTL ? next : prev}
               className="w-7 h-7 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
             >
               <ArrowLeft className="text-primary w-4 h-4" />
             </button>
             <button
-              onClick={next}
+              onClick={isRTL ? prev : next}
               className="w-7 h-7 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
             >
               <ArrowRight className="text-primary w-4 h-4" />

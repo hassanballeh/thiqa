@@ -11,7 +11,7 @@ import {
   getGrades,
   getSubjects,
 } from "@/services/get_all_select";
-import SelectField from "@/components/Custom/SelectField";
+import SelectField from "@/components/Custom/SelectFieldWrapper";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { useTranslation } from "react-i18next";

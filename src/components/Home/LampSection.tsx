@@ -5,7 +5,9 @@ import Step1 from "../StartNow/Step1";
 import { useTranslation } from "react-i18next";
 
 const LampSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
   const [showStartNow, setShowStartNow] = useState(false);
 
   if (showStartNow) {
@@ -37,7 +39,9 @@ const LampSection = () => {
             <img
               src="/arrow-lamp.svg"
               alt="Arrow"
-              className="hidden lg:block absolute  top-0  -translate-y-1/2 left-[42%] w-12 h-12"
+              className={`hidden lg:block absolute  top-0  -translate-y-1/2 left-[42%] ${
+                isRTL && "-rotate-12 -scale-x-100"
+              } w-12 h-12`}
             />
           </div>
         </div>
