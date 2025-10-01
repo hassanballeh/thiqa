@@ -27,7 +27,7 @@ const Rewards = () => {
     <div className=" py-8 bg-white">
       <section className=" flex flex-col md:flex-row  place-items-center md:place-items-stretch w-full">
         <div className="md:w-2/5 md:ms-20 relative md:px-4 items-center md:items-start text-center md:text-start flex flex-col justify-center itemc">
-          <div className="text-3xl md:text-4xl 2xl:text-5xl">
+          <div className="text-[28px] md:text-3xl lg:text-4xl 2xl:text-5xl">
             <h2 className="font-bold text-primary leading-snug ">
               {t("become.37-heading1-1")}{" "}
               <span className="relative inline-block">
@@ -37,11 +37,11 @@ const Rewards = () => {
             </h2>
           </div>
 
-          <p className="text-lg text-gray1 mt-4 max-w-md leading-relaxed">
+          <p className="text-sm md:text-lg text-gray1 mt-4 max-w-xs md:max-w-md leading-relaxed">
             {t("become.37-heading2")}
           </p>
 
-          <div className="flex flex-col gap-4 mt-10">
+          <div className="flex flex-col gap-4 mt-4  md:mt-10">
             <div className="relative w-fit self-center md:self-start">
               <img
                 src="/arrow-become-2.svg"
@@ -57,8 +57,8 @@ const Rewards = () => {
           </div>
         </div>
 
-        <section className="md:w-3/5 py-12 overflow-hidden">
-          <div className="ms-6 md:ms-32 flex flex-col gap-6 text-gray1 bg-primary rounded-l-[120px] py-16 px-4">
+        <section className="sm:w-full md:w-3/5 pt-10 py-0 md:py-12 overflow-hidden">
+          <div className="ms-6 md:ms-32 flex flex-col sm:items-center md:items-stretch gap-6 text-gray1 bg-primary rounded-l-[120px] py-16 px-4">
             {items.map((item, i) => (
               <motion.div
                 key={i}

@@ -9,17 +9,17 @@ const Steps = () => {
   return (
     <div className=" py-10 md:py-0 bg-white">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full">
-        <div className="relative md:px-4 text-center md:text-start items-center md:items-start flex flex-col justify-center">
+        <div className="relative md:px-4 text-start items-start flex flex-col justify-center w-full md:w-auto">
           <img
             src="/line-choose.svg"
             alt="decor"
-            className="hidden md:block absolute top-36 end-4 h-52 lg:h-60  w-60"
+            className="hidden lg:block lg:absolute top-36 end-4 h-52   w-60"
           />
 
-          <h2 className="text-5xl font-bold text-primary leading-tight max-w-sm">
+          <h2 className="text-[28px] md:text-5xl font-bold text-primary leading-tight max-w-xs sm:max-w-sm">
             {t("become.28-heading1")}
           </h2>
-          <p className="text-[16px] text-gray1 mt-4 max-w-sm leading-relaxed">
+          <p className="text-sm md:text-[16px] text-gray1 mt-4 max-w-xs md:max-w-sm md:leading-relaxed">
             {t("become.28-heading2")}{" "}
           </p>
 
@@ -39,7 +39,7 @@ const Steps = () => {
           </div>
         </div>
 
-        <section className="relative flex justify-start items-start py-12 overflow-">
+        <section className="relative flex justify-start items-start  pt-12 pb-0 md:py-12 overflow-">
           <div className="flex flex-col gap-8">
             {[
               {

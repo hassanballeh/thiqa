@@ -59,41 +59,41 @@ const Time = () => {
   };
 
   return (
-    <div className="py-16 pb-28">
+    <div className="py-10 md:py-16 pb-16 md:pb-28">
       <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center md:place-items-stretch w-full ">
-        <div className="flex-1  text-center md:text-start flex flex-col justify-center max-w-lg col-span-1">
-          <div className="text-3xl md:text-5xl">
+        <div className="flex-1  text-start flex flex-col justify-center max-w-lg col-span-1">
+          <div className="text-[28px] md:text-3xl lg:text-5xl">
             <h2 className=" font-bold text-primary leading-snug">
               {t("become.32-heading1")}
             </h2>
           </div>
-          <p className="text-[16px] font-light max-w-96">
+          <p className="text-sm md:text-[15px] font-light max-w-xs md:max-w-96 mt-4">
             {t("become.32-heading2")}
           </p>
         </div>
         <div className=" col-span-2">
-          <div className="flex items center justify-between mt-6">
+          <div className="flex flex-col lg:flex-row items center justify-between mt-6 gap-4 lg:gap-0">
             <div className="relative">
-              <h2 className="text-xl  font-bold text-primary leading-snug">
+              <h2 className="text-base md:text-xl  font-bold text-primary leading-snug">
                 {t("become.32-heading3")}
               </h2>
-              <p className="text-[16px] font-light max-w-96">
+              <p className="text-sm md:text-[16px] md:leading-normal font-light max-w-96">
                 {t("become.32-heading4")}
               </p>
               <img
                 src="/time-arrow.svg"
                 alt="icon"
-                className="w-16 h-16 absolute left-[calc(100%-20px)] top-[40px]"
+                className="w-16 h-16 hidden md:absolute left-[calc(100%-20px)] top-[40px]"
               />
             </div>
 
-            <div className="flex items-center justify-between gap-6 w-full max-w-md">
+            <div className="flex items-center justify-center md:justify-between gap-10 md:gap-6 w-full md:max-w-md mt-4 md:mt-0">
               {/* FROM box */}
-              <div className="flex-1">
+              <div className="md:flex-1 max-w-[34%] sm:max-w-none">
                 <p className="text-sm text-gray1 font-bold uppercase">
                   {t("become.32-from")}
                 </p>
-                <p className="text-xl font-bold text-primary mt-3">
+                <p className="text-base md:text-xl font-bold text-primary mt-3">
                   {currentFrom}{" "}
                   <span className="font-normal text-xs text-gray1">
                     UAE / MONTH
@@ -105,11 +105,11 @@ const Time = () => {
               <GoArrowRight className="text-primary text-2xl" />
 
               {/* TO box */}
-              <div className="flex-1">
+              <div className="md:flex-1 max-w-[34%] sm:max-w-none">
                 <p className="text-sm text-gray1 font-bold uppercase">
                   {t("become.32-to")}
                 </p>
-                <p className="text-xl font-bold text-primary mt-3">
+                <p className="text-base md:text-xl font-bold text-primary mt-3">
                   {currentTo}{" "}
                   <span className="font-normal text-xs text-gray1">
                     UAE / MONTH
@@ -123,8 +123,8 @@ const Time = () => {
       </section>
 
       {/* 🟢 الخط + الأرقام */}
-      <div className="relative w-full max-w-6xl 2xl:max-w-7xl px-16 mx-auto mt-10 shadow-md text-center bg-white pt-6 pb-12 rounded-3xl">
-        <h2 className="text-[1rem] font-semibold text-gray1 mb-16">
+      <div className="relative w-full max-w-6xl 2xl:max-w-7xl px-16 mx-auto mt-4 md:mt-10 shadow-md text-center bg-white pt-6 pb-12 rounded-3xl">
+        <h2 className="text-[1rem] w-[80%] md:w-full  mx-auto md:mx-0 font-semibold text-gray1 mb-16">
           {t("become.32-numbers-box")}
         </h2>
 
@@ -161,21 +161,27 @@ const Time = () => {
               </div>
 
               <div
-                className="w-0 h-0 
+                className={`w-0 h-0 
               border-l-[12px] border-l-transparent 
               border-r-[12px] border-r-transparent 
-              border-b-[12px] border-primary absolute -top-3 left-[50%] shadow-sm  duration-300 delay-100"
-                style={{
-                  transform: `${
-                    activePoint === 30
-                      ? "translateX(-50%)"
-                      : activePoint === 60
-                      ? "translateX(-36%)"
-                      : activePoint === 90
-                      ? "translateX(-57%)"
-                      : "translateX(-74%)"
-                  }`,
-                }}
+              border-b-[12px] border-primary absolute -top-3 left-[50%] shadow-sm ${
+                activePoint === 30
+                  ? "translate-x-[-33%] md:-translate-x-[50%]"
+                  : activePoint === 60
+                  ? "-translate-x-[36%]"
+                  : activePoint === 90
+                  ? "-translate-x-[57%]"
+                  : "-translate-x-[74%]"
+              }  duration-300 delay-100`}
+                // style={{
+                //   transform: `${
+                //     activePoint === 60
+                //       ? "translateX(-36%)"
+                //       : activePoint === 90
+                //       ? "translateX(-57%)"
+                //       : "translateX(-74%)"
+                //   }`,
+                // }}
               ></div>
             </div>
           )}
@@ -216,7 +222,7 @@ const Time = () => {
         <img
           src="/gif/istola-unscreen.gif"
           alt="Decoration"
-          className="absolute -right-8 -bottom-8 h-16"
+          className="hidden md:absolute -right-8 -bottom-8 h-16"
         />
       </div>
     </div>

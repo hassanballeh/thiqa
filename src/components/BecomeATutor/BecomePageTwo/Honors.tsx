@@ -29,28 +29,27 @@ const Honors = () => {
 
   return (
     <div className="pb-16 bg-primary ">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 container mx-auto">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8 container mx-auto">
         {/* Left Section */}
         <div className="flex flex-col justify-center items-start ">
-          <div className="text-white md:px-4 text-center md:text-start flex flex-col justify-center ">
-            <div className="text-3xl md:text-4xl 2xl:text-5xl max-w-2xl">
-              <h2 className="font-bold text- leading-snug ">
+          <div className="text-white md:px-4 text-start flex flex-col justify-center">
+            <div className="text-[28px] md:text-3xl lg:text-4xl 2xl:text-5xl max-w-2xl">
+              <h2 className="font-bold leading-snug ">
                 {t("become.48-heading1-1")}{" "}
                 <span className="inline-block">
                   {t("become.48-heading1-2")}
-
-                  <span className="block relative w-fit">
-                    {t("become.48-heading-1-3")}
-                    <span className="absolute -bottom-1 left-0 w-full h-1 bg-gold rounded-md"></span>
-                  </span>
+                </span>
+                <span className="block relative w-fit">
+                  {t("become.48-heading-1-3")}
+                  <span className="absolute -bottom-1 left-0 w-full h-1 bg-gold rounded-md"></span>
                 </span>
               </h2>
             </div>
-            <p className="max-w-md text-[16px] font-extralight leading-relaxed mt-5 ">
+            <p className="max-w-xs md:max-w-md text-sm md:text-[16px] font-extralight leading-relaxed mt-5 ">
               {t("become.48-heading2")}{" "}
             </p>
 
-            <div className="relative w-fit mx-auto md:mx-0 mt-10">
+            <div className="relative w-fit mx-0 mt-10">
               <img
                 src="/arrow-become-2.svg"
                 className="absolute bottom-5 -right-14 h-10 animate-wiggle"
@@ -66,7 +65,7 @@ const Honors = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col gap-4 text-gray1">
+        <div className="flex flex-col gap-4 text-gray1 items-center lg:items-start">
           {items.map((item, idx) => (
             <motion.div
               key={idx}
@@ -75,7 +74,7 @@ const Honors = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group shadow-sm flex flex-col md:flex-row items-stretch gap-6 bg-primaryDark w-full md:w-fit py-8 ps-6 pe-4 md:py-10  rounded-[35px] transition-all duration-300 hover:shadow-2xl cursor-pointer"
+              className="group shadow-sm flex flex-col md:flex-row items-center md:items-stretch gap-6 bg-primaryDark w-full md:w-fit py-8 ps-6 pe-4 md:py-10  rounded-[35px] transition-all duration-300 hover:shadow-2xl cursor-pointer"
             >
               {/* icon */}
               <motion.div
