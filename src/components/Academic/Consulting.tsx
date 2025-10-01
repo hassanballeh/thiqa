@@ -8,7 +8,7 @@ const Consulting = () => {
 
   const founders = [
     {
-      img: "/employee/walaa-portrait.jpg",
+      img: "/employee/walaa.jpg",
       title: t("academic.11-feedback1-name"),
       text: t("academic.11-feedback1"),
     },

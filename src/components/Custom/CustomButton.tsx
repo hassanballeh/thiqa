@@ -35,6 +35,9 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   const baseClasses = clsx(
     "rounded-3xl px-6 py-1.5 transition-all duration-300",
+    bgColor,
+    fontSize,
+    textColor,
     borderColor ? `border ${borderColor}` : "",
     bold ? "font-semibold" : "font-medium",
     hoverBg && `hover:${hoverBg}`,
