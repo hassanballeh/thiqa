@@ -6,19 +6,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Gallery = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
   const eventsData = [
     {
       year: "2025",
       items: [
         {
-          date: { day: "28", month: "June" },
+          date: { day: "28", month: t("months.sixth") },
           title: "Top 50 Future Companies",
           description: t("gallery.2"),
           image: "/gallery/Mask group (2).png",
         },
         {
-          date: { day: "6", month: "May" },
+          date: { day: "6", month: t("months.fifth") },
           title: "Majra Sustainable Impact Challenge",
           description: t("gallery.1"),
           image: "/gallery/Mask group (1).png",
@@ -29,61 +31,61 @@ const Gallery = () => {
       year: "2024",
       items: [
         {
-          date: { day: "18", month: "Dec" },
+          date: { day: "18", month: t("months.twelveth") },
           title: "HolonIQ List",
           description: t("gallery.3"),
           image: "/gallery/Mask group (3).png",
         },
         {
-          date: { day: "19", month: "Nov" },
+          date: { day: "19", month: t("months.eleventh") },
           title: "Forbes Under 30",
           description: t("gallery.4"),
           image: "/gallery/Mask group (4).png",
         },
         {
-          date: { day: "13", month: "Oct" },
+          date: { day: "13", month: t("months.tenth") },
           title: "GITEX Global",
           description: t("gallery.5"),
           image: "/gallery/Mask group (5).png",
         },
         {
-          date: { day: "5", month: "Sep" },
+          date: { day: "5", month: t("months.nineth") },
           title: " Ma'an Certificate",
           description: t("gallery.6"),
           image: "/gallery/Mask group (6).png",
         },
         {
-          date: { day: "20", month: "June" },
+          date: { day: "20", month: t("months.sixth") },
           title: " Sharjah Entrepreneurship Festival",
           description: t("gallery.10"),
           image: "/gallery/Mask group (9).png",
         },
         {
-          date: { day: "23", month: "May" },
+          date: { day: "23", month: t("months.fifth") },
           title: "UAE Hackathon",
-          description: t("gallery.16"),
+          description: t("gallery.8"),
           image: "/gallery/image7.webp",
         },
         {
-          date: { day: "10", month: "April" },
+          date: { day: "10", month: t("months.fourth") },
           title: "One Dirham Makes a Difference' Initiative",
-          description: t("gallery.9"),
+          description: t("gallery.7"),
           image: "/gallery/Mask group (14).png",
         },
         {
-          date: { day: "6", month: "March" },
+          date: { day: "6", month: t("months.third") },
           title: "LEAP Festival (Saudi Arabia)",
-          description: t("gallery.7"),
+          description: t("gallery.9"),
           image: "/gallery/Mask group (7).png",
         },
         {
-          date: { day: "16", month: "Feb" },
+          date: { day: "16", month: t("months.second") },
           title: "Bibin Program Investment",
           description: t("gallery.15"),
           image: "/gallery/بيبان.jpeg",
         },
         {
-          date: { day: "24", month: "January" },
+          date: { day: "24", month: t("months.first") },
           title: "Bett UK",
           description: t("gallery.11"),
           image: "/gallery/Mask group (10).png",
@@ -98,10 +100,10 @@ const Gallery = () => {
         <div className=" flex flex-col md:flex-row justify-between gap-4">
           <div>
             <h2 className="md:text-3xl text-2xl font-bold text-primary leading-tight">
-              Our Events Gallery
+              {t("gallery.heading1")}
             </h2>
             <p className="xl:text-[20px] sm:text-[18px] text-[16px]  font-light mt-4">
-              {t("gallery.heading2")}
+              {t("gallery.heading3")}
             </p>
           </div>
         </div>
@@ -115,8 +117,13 @@ const Gallery = () => {
           {eventsData.map((yearBlock) => (
             <div key={yearBlock.year} className="mb-12">
               {/* عنوان السنة */}
-              <h3 className="text-lg md:text-xl font-semibold mb-6 ">
-                {yearBlock.year} Events
+              <h3
+                className={`text-lg md:text-xl font-semibold mb-6 ${
+                  isRTL && "text-right"
+                }`}
+                dir="ltr"
+              >
+                {yearBlock.year} {t("gallery.heading2")}
               </h3>
 
               {yearBlock.items.map((event, idx) => (

@@ -5,7 +5,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const Company = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   return (
     <div className="pt-20 bg-white">
@@ -46,19 +47,25 @@ const Company = () => {
       </div>
 
       <section className=" mx-auto mt-32 grid grid-cols-1 md:grid-cols-2 w-full">
-        <div className="flex flex-col px-4 md:px-0 md:mb-0 mb-10 md:justify-start xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]  md:text-center md:text-start max-w-lg relative">
+        <div
+          className={`flex flex-col px-4 md:px-0 md:mb-0 mb-10 md:justify-start ${
+            isRTL
+              ? "xl:mr-[75px] 2xl:mr-[200px]  sm:mr-[40px]"
+              : "xl:ml-[75px] 2xl:ml-[200px]  sm:ml-[40px]"
+          }   md:text-center md:text-start max-w-lg relative z-10`}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-primary leading-relaxed">
-            Ready?
+            {t("home.79-heading1-1")}
           </h2>
 
           <div className="text-xl md:text-3xl">
             <h2 className=" text-gray1 leading-snug mt-2 relative">
-              {t("home.79-heading1-1")}
+              {t("home.79-heading1-2")}
               <span className="relative inline-block">
-                &apos;{t("home.79-heading1-2")}
+                &apos;{t("home.79-heading1-3")}
                 {/* <span className="absolute left-0 -bottom-1 w-full h-1 bg-gold rounded-sm"></span> */}
               </span>{" "}
-              {t("home.79-heading1-3")}
+              {t("home.79-heading1-4")}
             </h2>
           </div>
 
@@ -70,12 +77,18 @@ const Company = () => {
             </p>
 
             <div className="absolute end-12 top-16 transform  hidden md:block">
-              <img src="/qurly-line.svg" alt="arrow" className="h-20 mt-4" />
+              <img
+                src="/qurly-line.svg"
+                alt="arrow"
+                className={`h-20 mt-4 ${isRTL && "-scale-x-100"}`}
+              />
             </div>
           </div>
 
           <div className="relative z-[12] sm:static flex gap- mt-6 flex-col">
-            <h3 className="font-semibold text-gray1">Download ON:</h3>
+            <h3 className="font-semibold text-gray1">
+              {t("home.79-download")}
+            </h3>
             <div className="flex sm:flex-row flex-col sm:items-center gap-2 mt-4">
               <Link href="https://play.google.com/store/apps/details?id=com.thiqaeducation.tutoringapp&hl=en">
                 <img
@@ -96,14 +109,16 @@ const Company = () => {
         <div className="relative  md:block" dir="ltr">
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
-            className={`block absolute  z-[9] sm:z-0 -bottom-[62%] sm:-bottom-[34%]`}
+            className={`block absolute  z-[9] sm:z-0  ${
+              isRTL ? "-scale-x-100 -bottom-[90%]" : "-bottom-[62%]"
+            }  sm:-bottom-[34%]`}
             style={{
               backgroundImage: "url('/bg-blue.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
               width: "1000px", // العرض كما هو
               height: "1000px", // 👈 زيادة الطول
-              left: "-14%",
+              left: `${isRTL ? "-112%" : "-14%"}`,
             }}
           />
 

@@ -177,10 +177,12 @@
     "71-5": " We also took part in the Sharjah Entrepreneurship Festival 2024, presenting innovative learning solutions that reflect our commitment to advanced education and leadership in the field.",
     "71-6": "We are proud to have secured a $300,000 investment during our participation in the Biban Program 2024, supporting our mission to deliver innovative educational solutions for students and families in the UAE.",
 
-    "79-heading1-1": " Start your children",
-    "79-heading1-2": "'s journey ",
-    "79-heading1-3": "to academic excellence today.",
+    "79-heading1-1": "Ready?",
+    "79-heading1-2": " Start your children",
+    "79-heading1-3": "'s journey ",
+    "79-heading1-4": "to academic excellence today.",
     "79-heading2": "We're here to support your children's learning at home or online, with top private tutors dedicated to their academic success. Let us be part of their journey.",
+    "79-download": "Download ON:",
 
     "81-heading1": "Do you have questions about Thiqa's teaching for your children?",
     "81-heading2": "Discover how we can help you ensure their academic success, whether through homeschooling or online learning.",
@@ -772,8 +774,9 @@
     "31-number4-2": "Thiqah was recognized among the leading companies and initiatives impacting the development of the education sector. This acknowledgment highlights our active role in shaping the future of education through innovation and forward-thinking."
   },
   "gallery": {
-    "heading1": "",
-    "heading2": "Every event leaves a mark, these are our highlights.",
+    "heading1": " Our Events Gallery",
+    "heading2": "Events",
+    "heading3": "Every event leaves a mark, these are our highlights.",
     "16": "Achieved 4th place in the UAE Hackathon organized by the Telecommunications and Digital Government Regulatory Authority.",
     "15": "Received a $300,000 investment during participation in the Bipin program.",
     "14": "Participated to support innovation in education.",
@@ -781,9 +784,9 @@
     "12": "Participated and redefined private tutoring with an innovative approach.",
     "11": "Selected among the Top 16 EdTech startups in the UAE and honored by H.E. Dr. Ahmad Belhoul Al Falasi.",
     "10": "Honored to be part of the Entrepreneurial Challenge, celebrating innovative ideas and pioneering projects in the UAE.",
-    "9": " One Dirham Makes a Difference nitiative Launched the initiative and supported 20 students through partnership with Mosaic Foundation.",
-    "8": "",
-    "7": "Participated in this major event gathering top companies and innovations to showcase the future of technology and exchange global expertise.",
+    "7": " One Dirham Makes a Difference nitiative Launched the initiative and supported 20 students through partnership with Mosaic Foundation.",
+    "8": "Achieved 4th place in the UAE Hackathon organized by the Telecommunications and Digital Government Regulatory Authority.",
+    "9": "Participated in this major event gathering top companies and innovations to showcase the future of technology and exchange global expertise.",
     "6": "Awarded for active commitment in national initiatives..",
     "5": "Showcased the latest educational innovations at one of the world’s largest tech exhibitions.",
     "4": "Selected for continuous efforts and achievements in educational technology.",
@@ -804,5 +807,17 @@
   },
   "messsage": {
     "success": "✔️ Form has been sent successfully..."
+  },
+  "months": {
+    "first": "January",
+    "second": "Feb",
+    "third": "March",
+    "fourth": "April",
+    "fifth": "May",
+    "sixth": "June",
+    "nineth": "Sep",
+    "tenth": "Oct",
+    "eleventh": "Nov",
+    "twelveth": "Dec"
   }
 }

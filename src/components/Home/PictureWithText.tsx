@@ -3,7 +3,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const PictureWithText = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   return (
     <div className="bg-white pb-8 md:pb-0">
@@ -40,7 +41,9 @@ const PictureWithText = () => {
                 <img
                   src="/line-income.svg"
                   alt="underline"
-                  className="hidden lg:block absolute -bottom-[15%] left-[-20%]  "
+                  className={`hidden lg:block absolute  ${
+                    isRTL ? "-bottom-[35%]" : "-bottom-[15%] left-[-20%]"
+                  }  `}
                 />
               </span>
             </h2>
@@ -74,7 +77,9 @@ const PictureWithText = () => {
             <img
               src="/arrow-passion.svg"
               alt="Arrow"
-              className="hidden lg:block absolute  right-[70px] top-0 -translate-y-1/2 w-16 h-16"
+              className={`hidden lg:block absolute  ${
+                isRTL ? "left-[70px] -scale-x-100" : " right-[70px]"
+              } top-0 -translate-y-1/2 w-16 h-16`}
             />
           </div>
         </div>
