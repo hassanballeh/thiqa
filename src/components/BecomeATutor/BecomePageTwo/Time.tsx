@@ -132,7 +132,7 @@ const Time = () => {
           {/* Progress line */}
           <input
             type="range"
-            className="w-full accent-primary h-3 absolute left-0 border-none outline-none slider transition-all duration-500 ease-linear"
+            className="w-full accent-primary h-3 absolute left-0 border-none outline-none slider "
             style={{
               background: `linear-gradient(to right, #0056B1 0%, #0056B1 ${percentage}%, #e5e7eb ${percentage}%, #e5e7eb 100%)`,
             }}
