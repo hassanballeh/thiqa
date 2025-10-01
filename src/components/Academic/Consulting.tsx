@@ -113,7 +113,9 @@ const Consulting = () => {
             src="/col.svg"
             alt="icon2"
             className={`md:block absolute md:top-10 z-10 ${
-              isRTL ? "-left-[13px] 2xl:left-32" : "-right-[13px] 2xl:right-32"
+              isRTL
+                ? "-left-[13px] 2xl:left-32"
+                : "-right-[13px] xl:-right-1 2xl:right-12"
             }`}
           />
         </div>

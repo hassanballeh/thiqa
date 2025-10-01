@@ -110,15 +110,16 @@ const Company = () => {
           {/* الخلفية صورة PNG أكبر وأطول */}
           <div
             className={`block absolute  z-[9] sm:z-0  ${
-              isRTL ? "-scale-x-100 -bottom-[90%]" : "-bottom-[62%]"
-            }  sm:-bottom-[34%]`}
+              isRTL
+                ? "-scale-x-100 -bottom-[90%] -left-[112%]"
+                : "-bottom-[62%] -left-[14%]"
+            }  sm:-left-[14%] sm:-bottom-[34%]`}
             style={{
               backgroundImage: "url('/bg-blue.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
               width: "1000px", // العرض كما هو
               height: "1000px", // 👈 زيادة الطول
-              left: `${isRTL ? "-112%" : "-14%"}`,
             }}
           />
 
