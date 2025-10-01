@@ -37,11 +37,11 @@ const Question = () => {
     <div className="max-w-6xl mx-auto px-4 py-20">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-gray1">
         {/* Text Section */}
-        <div className="text-2xl md:text-4xl  max-w-md flex flex-col justify-center text-center md:text-start">
+        <div className="text-2xl sm:text-3xl lg:text-4xl  max-w-md flex flex-col justify-center text-center md:text-start mx-auto md:mx-0">
           <h2 className="font-bold text-primary leading-relaxed whitespace-pre-line">
             {t("academic.36-heading1")}
           </h2>
-          <p className="text-sm font-light mt-4 leading-relaxed md:max-w-[80%] ">
+          <p className="text-sm md:text-[15px] md:leading-normal font-light mt-4  md:max-w-[85%] ">
             {t("academic.36-heading2")}{" "}
           </p>
         </div>
